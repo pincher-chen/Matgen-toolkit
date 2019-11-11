@@ -1,4 +1,5 @@
 #include <iostream>
+#include "iohelper.h"
 #include "cmdline.h"
 
 using namespace std;
@@ -20,7 +21,16 @@ int main(int argc, char *argv[]) {
     }
 
 
-    
+    CIF cif = CIF(parser.get<string>("cif_in"));
+
+    try {
+        cif.split_cif();
+    } 
+    catch(Exception err) {
+        cout << err.msg << endl;
+        return -1;
+    }
+
 
     return 0;
 }

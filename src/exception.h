@@ -4,17 +4,11 @@
 #include <string>
 using std::string;
 
-class exception
+class Exception
 {
 public:
-    exception(string err) {
-        this->msg = err;
-    }
-    
-    
-private:
+    Exception(string err) : msg(err) {}
     string msg;
 };
-
 
 #endif
