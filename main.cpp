@@ -1,6 +1,6 @@
 #include <iostream>
-#include "iohelper.h"
-#include "cmdline.h"
+#include "include/cifhelper.h"
+#include "include/cmdline.h"
 
 using namespace std;
 
@@ -20,11 +20,30 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    if(parser.exist("skin_distance")) {
+        double distance = parser.get<double>("distance");
+        if(distance < 1.0) {
+            skin_distance = distance;
+            coefficient = -1.0;
+        }
+        else {
+            coefficient = distance;
+            skin_distance = -1.0;
+        }
+    }
 
     CIF cif = CIF(parser.get<string>("cif_in"));
 
     try {
         cif.split_cif();
+        cif.seek_crystal_info();
+        cif.cal_crystal_info();
+        cif.deal_site_loop();
+        cif.get_known_solvent();
+        cif.get_atom_radius();
+        cif.get_atom_coordinates();
+        cif.calc_bond_distance();
+        cif.judge_if_have_bond();
     } 
     catch(Exception err) {
         cout << err.msg << endl;

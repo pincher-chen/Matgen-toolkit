@@ -43,6 +43,7 @@ class rmsolvent:
     def __init__(self, filename, outpath):
         self.filename = filename
         self.outpath = outpath
+        # print(filename)
 
     def real_num(value):
         try:
@@ -166,6 +167,7 @@ class rmsolvent:
             ap, bt, ga = cell_parameters_dict['_cell_angle_alpha'] / 180 * m.pi, \
                 cell_parameters_dict['_cell_angle_beta'] / 180 * m.pi, \
                 cell_parameters_dict['_cell_angle_gamma'] / 180 * m.pi
+            # print(a, b, c, ap, bt, ga)
         except KeyError:
             print('Cell parameter extract failed')
             exit(1)
@@ -180,6 +182,8 @@ class rmsolvent:
             h6 = m.sqrt(c ** 2 - h4 ** 2 - h5 ** 2)
             self.cell = ([h1, 0., 0.], [h2, h3, 0.], [h4, h5, h6])
             self.angle = (ap, bt, ga)
+            # print(self.cell)
+            # print(self.angle)
 
         return self.cell, self.angle
 
@@ -192,12 +196,17 @@ class rmsolvent:
             atom_cd_x, atom_cd_y, atom_cd_z = atom_dict.get('_atom_site_fract_x'), \
                 atom_dict.get('_atom_site_fract_y'), \
                 atom_dict.get('_atom_site_fract_z')
+            
             atom_cd = (atom_cd_x, atom_cd_y, atom_cd_z)
+            
             species, atom_site = atom_dict.get('_atom_site_type_symbol'), \
                 atom_dict.get('_atom_site_label')
             name = atom_site + '-' + species
             atom_cd_dict['label'], atom_cd_dict['atom_cd'] = name, atom_cd
+            # print(atom_cd_dict)
             atom_cd_list.append(atom_cd_dict)
+        
+        # print(site_loop_list)
         # print(atom_cd_list)
 
         return atom_cd_list
@@ -205,6 +214,7 @@ class rmsolvent:
     def get_cart(atom_array_cd, cell):
         '''Convert fractional coordinates to real coordinates and calculate bond lengths between different atoms'''
         lx_vector, ly_vector, lz_vector = cell[0], cell[1], cell[2]
+        
         frac_a, frac_b, frac_c = atom_array_cd[0], \
             atom_array_cd[1], \
             atom_array_cd[2]
@@ -244,16 +254,19 @@ class rmsolvent:
                 dt_dict[dt_name] = distance
                 dt_list.append(dt_dict)
         # print(dt_list)
+        # print(cell)
+        # print(len(dt_list), tt_atom_num)
         return dt_list
 
     @staticmethod
     def atom_radius():
         radius_list = []
-        with open('./conf/raduis.txt', 'r') as f:
+        with open('./conf/radius.txt', 'r') as f:
             data = f.readlines()
         for line in data:
             radius_dict = {}
             radius = re.split('\s+?', line)
+            # print(radius)
             chem_species, data = radius[0], radius[1:-1]
             radius_dict['species'] = chem_species
             radius_dict['radius'] = data[1]
@@ -287,6 +300,7 @@ class rmsolvent:
             # print(dt_mof)
             atom_a, atom_b, dt_value = dt_mof[0], dt_mof[1], dt_mof[2]
             for radius_dict in radius_list:
+                # print(radius_dict)
                 atom_species = rmsolvent.get_atom_radius(radius_dict)[0]
                 atom_radius = rmsolvent.get_atom_radius(radius_dict)[1]
                 if atom_a == atom_species:
@@ -305,7 +319,7 @@ class rmsolvent:
                     bond = True
                     have_bond_list.append(dt)
                 # print('have bond ', dt)
-        # print(have_bond_list)
+        print(have_bond_list)
         print('The number of bonded atom pairs is ', len(have_bond_list))
 
         return bond, have_bond_list
@@ -524,15 +538,15 @@ if __name__ == '__main__':
     # print(cell_parameter)
     cell, angle = cell_parameter[0], cell_parameter[1]
     site_loop = go.site_loop(loop_dict)
-    # print(site_loop)
+    # # print(site_loop)
     solvent_list, radius_list = go.known_solvent(), go.atom_radius()
     site_list = go.get_atom_coordinates(site_loop)
     dt_list = go.bond_distance(site_list, cell, angle)
     bond = go.judge_if_have_bond(dt_list, solvent_list, radius_list,skin_distance)
     have_bond_list = bond[1]
     cn_species = go.connect_network(have_bond_list, site_list)
-    chk_solvent = go.cmp_solvent_known(cn_species, solvent_list, radius_list)
-    if not show:
-        go.modify_cif_file(cf, chk_solvent, cn_species,output_path,filename)
-    else:
-        exit(0)
+    # chk_solvent = go.cmp_solvent_known(cn_species, solvent_list, radius_list)
+    # if not show:
+    #     go.modify_cif_file(cf, chk_solvent, cn_species,output_path,filename)
+    # else:
+    #     exit(0)
