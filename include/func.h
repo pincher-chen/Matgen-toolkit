@@ -3,18 +3,59 @@
 
 #include <string>
 #include <iostream>
-#include <vector>
-#include <map>
 #include <regex>
 #include <algorithm>
+#include <vector>
+#include <map>
+#include <set>
+#include <io.h>
+#include <direct.h>
 
 using std::cerr;
 using std::cout;
 using std::endl;
-using std::map;
 using std::string;
+using std::map;
 using std::vector;
+using std::set;
 
+bool is_folder_exist(string folder) {
+    return _access(folder.c_str(), 0) == 0;
+}
+
+bool make_dir(string path) {
+    string cur = "";
+    for(auto c : path) {
+        cur += c;
+        if(c == '\\' || c == '/') {
+            if(!is_folder_exist(cur)) {
+                int ret = _mkdir(cur.c_str());
+                if(ret == -1) {
+                    return false;
+                }
+            }
+        }
+    }
+
+    if(!is_folder_exist(cur)) {
+        int ret = _mkdir(cur.c_str());
+        return ret != -1;
+    }
+
+    return true;
+}
+
+string get_filename(string path) {
+    string::size_type pos = path.find_last_of('\\');
+    
+    if(pos == string::npos) {
+        pos = path.find_last_not_of('/');
+        if(pos == string::npos) {
+            return path;
+        }
+    }
+    return path.substr(pos+1);
+}
 
 // trim string
 string trim(const string &str) {
@@ -81,10 +122,31 @@ double get_num(string value) {
 }
 
 // print vector for debugging
+template <typename T> 
+void printVec(vector<set<T>> &vec) {
+    for(auto item : vec) {
+        for(auto it = item.begin(); it != item.end(); it++) {
+            cerr << *it << " ";
+        }
+        cerr << endl << endl;
+    }
+}
+
+// print vector for debugging
 template <typename T>
 void printVec(vector<T> &vec) {
     for(auto &item : vec) {
         cerr << item << " ";
+    }
+    cerr << endl;
+}
+
+
+// print set for debugging
+template <typename T>
+void printSet(set<T> &set) {
+    for(auto iter = set.begin(); iter != set.end(); iter++) {
+        cerr << *iter << " ";
     }
     cerr << endl;
 }

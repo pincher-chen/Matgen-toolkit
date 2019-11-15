@@ -319,7 +319,7 @@ class rmsolvent:
                     bond = True
                     have_bond_list.append(dt)
                 # print('have bond ', dt)
-        print(have_bond_list)
+        # print(have_bond_list)
         print('The number of bonded atom pairs is ', len(have_bond_list))
 
         return bond, have_bond_list
@@ -372,6 +372,7 @@ class rmsolvent:
                 rmsolvent.same_atom(bond_dict)[1]
             atom_pair = [atom_a_site, atom_b_site]
             connect_list.append(atom_pair)
+        # print(len(connect_list))
         cn_atom_chain = rmsolvent.atom_subset(connect_list)
         # print(cn_atom_chain)
         for atom_chain in cn_atom_chain:
@@ -407,6 +408,7 @@ class rmsolvent:
     def cmp_solvent_known(self, cn_species, solvent_list, radius_list):
         ''' Compare existing list of solvents'''
         chem_list = rmsolvent.get_chem_formula(cn_species, radius_list)
+
         print('The calculated solvent molecule to be screened is',
               chem_list[1])
         print('The MOF framework is ', chem_list[0])
@@ -414,7 +416,7 @@ class rmsolvent:
         for solvent in solvent_list:
             solvent_formula = solvent.get('chem_formula')
             solvent_formula_list.append(solvent_formula)
-        # print(solvent_formula_list)
+
         chk_solvent = chem_list[1]
         inlist = []
         for unknow_chem in chk_solvent:
@@ -426,7 +428,7 @@ class rmsolvent:
                 print('Unable to find information about this molecule '
                       + unknow_chem)
                 inlist.append('0')
-
+        print(chk_solvent, inlist)
         return chk_solvent, inlist
 
     def cn_counter(chain):
@@ -442,19 +444,24 @@ class rmsolvent:
         return chem_formula
 
     def get_chem_formula(cn_species, radius_list):
+        # print(cn_species)
         framwork_list, solvent_chk_list = [], []
         for chain in cn_species:
             chem_formula = rmsolvent.cn_counter(chain)
+            # print(chem_formula)
             state_list = []
             chain_species = chain.get('species')
+            print(chain_species)
             for element in chain_species:
                 state = rmsolvent.get_atom_state(element, radius_list)
+                # print(state)
                 state_list.append(state)
             if '1' in state_list:
                 framwork_list.append(chem_formula)
             else:
                 solvent_chk_list.append(chem_formula)
 
+        print(framwork_list, solvent_chk_list)
         return framwork_list, solvent_chk_list
 
     def get_atom_state(element, radius_list):
@@ -472,11 +479,13 @@ class rmsolvent:
 
     def modify_cif_file(self, cf, chk_solvent, cn_species, output_path, filename):
         rm_atom_site = []
+        # print(chk_solvent)
         inlist = chk_solvent[1]
         if not os.path.exists(output_path):
             os.makedirs(output_path)
         for chain in cn_species:
             chem_formula = rmsolvent.cn_counter(chain)
+            # print(chain)
             if chem_formula in chk_solvent[0]:
                 atom_site = chain.get('atom_site')
                 rm_atom_site.append(atom_site)
@@ -485,6 +494,7 @@ class rmsolvent:
         # print(rm_atom_site)
         cf_file = os.path.split(filename)[1]
         # print(inlist)
+        print(cf_file);
         if len(rm_atom_site) != 0:
             if '0' not in inlist:
                 clean_name = str(cf_file).split('.')[0] + '_chk.cif'
@@ -496,7 +506,7 @@ class rmsolvent:
                 for num in range(list_range):
                     if inlist[num] == '0':
                         rmlist_index.append(num)
-                # print(rmlist_index)
+                # print(model)
                 if model:
                     print('Comparing known solvent lists, do not delete if this molecule don\'t exist\
                           \nCreating *ndchk.cif')
@@ -506,12 +516,14 @@ class rmsolvent:
                         chk_list.append(item)
                     for chk_item in chk_list:
                         rm_atom_site.remove(chk_item)
+                    # print(chk_list)
                 else:
                     print('Directly delete calculated solvent molecules\
                            \nCreating *ndchk.cif')
                 cf_list = re.split('\n', cf)
-                # print(len(cf_list))
+                print(len(rm_atom_site))
                 for single_solvent in rm_atom_site:
+                    print(single_solvent)
                     del_line_list = []
                     for atomsite in single_solvent:
                         for line in cf_list:
@@ -545,8 +557,8 @@ if __name__ == '__main__':
     bond = go.judge_if_have_bond(dt_list, solvent_list, radius_list,skin_distance)
     have_bond_list = bond[1]
     cn_species = go.connect_network(have_bond_list, site_list)
-    # chk_solvent = go.cmp_solvent_known(cn_species, solvent_list, radius_list)
-    # if not show:
-    #     go.modify_cif_file(cf, chk_solvent, cn_species,output_path,filename)
-    # else:
-    #     exit(0)
+    chk_solvent = go.cmp_solvent_known(cn_species, solvent_list, radius_list)
+    if not show:
+        go.modify_cif_file(cf, chk_solvent, cn_species,output_path,filename)
+    else:
+        exit(0)

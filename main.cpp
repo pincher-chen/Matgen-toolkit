@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     // 命令行参数获取
     cmdline::parser parser;
     parser.add<string>("cif_in", 'i', "input MOF cif file", true, "");
-    parser.add<string>("output_path", 'o', "output filepath", true, "");
+    parser.add<string>("output_path", 'o', "output filepath", false);
     parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
     parser.add("solvent", 's', "output the solvent was found");
     parser.add("model", 'm', "remove solvent molecules anyway");
@@ -44,6 +44,9 @@ int main(int argc, char *argv[]) {
         cif.get_atom_coordinates();
         cif.calc_bond_distance();
         cif.judge_if_have_bond();
+        cif.connect_network();
+        cif.find_solvent();
+        cif.export_modify_result(parser.get<string>("output_path"));
     } 
     catch(Exception err) {
         cout << err.msg << endl;

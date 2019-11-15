@@ -4,11 +4,12 @@
 #include <string>
 #include <fstream>
 #include <iostream>
+#include <cmath>
+#include <regex>
+#include <algorithm> 
 #include <vector>
 #include <map>
-#include <regex>
-#include <cmath>
-#include <algorithm> 
+#include <set>
 
 #include "exception.h"
 #include "func.h"
@@ -16,6 +17,7 @@
 
 using std::string;
 using std::ifstream;
+using std::ofstream;
 using std::cout;
 using std::cerr;
 using std::endl;
@@ -23,6 +25,8 @@ using std::ios;
 using std::vector;
 using std::map;
 using std::pair;
+using std::set;
+using std::to_string;
 
 #define PI acos(-1);
 
@@ -52,13 +56,11 @@ struct Radius {
     }
 };
 
-struct Distance {
+struct Connected {
     string atom_a;
     string atom_b;
-    double distance;
 
-    Distance(string _a, string _b, double _dis) : \
-        atom_a(_a), atom_b(_b), distance(_dis) {}
+    Connected(string _a, string _b) : atom_a(_a), atom_b(_b){}
 };
 
 
@@ -67,6 +69,8 @@ class CIF
 
 public:
     static vector<Solvent> solvent_list;
+
+    // species - Radius
     static map<string, Radius> radius_dict;
     
     CIF(string filename) { 
@@ -93,14 +97,6 @@ public:
                 solvent_list.push_back(Solvent(formula, ele));
             }
         }
-        
-        // for(auto item : solvent_list) {
-        //     cerr << item.chem_formula << " ";
-        //     for(auto it : item.elements) {
-        //         cerr << it << " ";
-        //     }
-        //     cerr << endl;
-        // }
     }
 
     // get atom radius
@@ -115,7 +111,7 @@ public:
         }
         else {
             string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
-
+            in.close();
             
             vector<string> all_radius = re_split(str, "\\n+");
             for(auto rad : all_radius) {
@@ -385,12 +381,14 @@ public:
                 double bond_ab = distance - radius_a - radius_b;
                 if(bond_ab < skin_distance) {
                     this->have_bond_list.push_back(iter->first);
+                    this->connect_list.push_back(Connected(values[0], values[2]));
                 }
             }
             else {
                 double bond_ab = (radius_a + radius_b) * coefficient;
                 if(distance < bond_ab) {
                     this->have_bond_list.push_back(iter->first);
+                    this->connect_list.push_back(Connected(values[0], values[2]));
                 }
             }
         }
@@ -398,7 +396,165 @@ public:
         cerr << "The number of bonded atom pairs is " << this->have_bond_list.size() << endl;
     }
 
+    string get_father(map<string, string> &atom_rel, string x) {
+        return (atom_rel[x] == x) ? x : get_father(atom_rel, atom_rel[x]);
+    }
 
+    void to_union(map<string, string> &atom_rel, string &a, string &b) {
+        string p1 = get_father(atom_rel, a);
+        string p2 = get_father(atom_rel, b);
+        atom_rel[p1] = p2;
+    }
+
+    // use disjoint set union
+    void connect_network() throw(Exception) {
+        map<string, string> atom_rel;
+        
+        for(auto item : this->connect_list) {
+            atom_rel[item.atom_a] = item.atom_a;
+            atom_rel[item.atom_b] = item.atom_b;
+        }
+        
+        for(auto &item : this->connect_list) {
+            to_union(atom_rel, item.atom_a, item.atom_b);
+        }
+        
+        for(auto &item : this->connect_list) {
+            bool inSet = false;
+            for(auto &s : this->atom_conn_set) {
+                if(get_father(atom_rel, *s.begin()) == get_father(atom_rel, item.atom_a)) {
+                    s.insert(item.atom_a);
+                    s.insert(item.atom_b);
+                    inSet = true;
+                    break;
+                }
+            }
+
+            if(!inSet) {
+                this->atom_conn_set.push_back(set<string>{item.atom_a, item.atom_b});
+            }
+        }
+
+        // printVec(this->atom_conn_set);
+    }
+
+    // get species for atom site
+    string get_species(const string &s) {
+        string species = "";
+        for(auto &c : s) {
+            if(c >= '0' && c <= '9') {
+                break;
+            }
+            species += c;
+        }
+        return species;
+    }
+
+    // get the chemical formula of the atoms in the group
+    string get_chem_formula(set<string> &s) {
+        map<string, int> cnt;
+        for(auto &atom : s) {
+            string species = get_species(atom);
+            cnt[species]++;
+        }
+
+        string chem_formula = "";
+        for(auto iter = cnt.begin(); iter != cnt.end(); iter++) {
+            chem_formula += iter->first + (iter->second == 1 ? "" : to_string(iter->second));
+        }
+        return chem_formula;
+    }
+
+    // return the element is metal or not
+    string get_atom_state(string element) throw(Exception) {
+        auto iter = radius_dict.find(element);
+        
+        if(iter == radius_dict.end()) {
+            throw Exception("unable to find the state information of the corresponding element...");
+        }
+
+        return iter->second.O_metal;
+    }
+
+    // 
+    void find_solvent() throw(Exception) {
+        vector<string> chem_list;
+        for(auto &chem : this->atom_conn_set) {
+            string formula = get_chem_formula(chem);
+            chem_list.push_back(formula);
+
+            bool isAdd = false;
+            for(auto &atom : chem) {
+                if(get_atom_state(get_species(atom)) == "1") {
+                    this->framwork_list.push_back(formula);
+                    isAdd = true;
+                    break;
+                }
+            }
+            if(!isAdd) {
+                this->solvent_chk_list.push_back(formula);
+            }
+        }
+
+        // printVec(chem_list);
+        cout << "The calculated solvent molecule to be screened is: ";
+        printVec(this->solvent_chk_list);
+
+        cout << "The MOF framework is: ";
+        printVec(this->framwork_list);
+    }
+
+
+    // compare existing list of solvent
+    void cmp_solvent_known() throw(Exception) {
+
+    }
+
+    void export_modify_result(string output_path) {
+        if(!is_folder_exist(output_path)) {
+            make_dir(output_path);
+        }
+
+        set<string> rm_atom_site;
+
+        for(auto &chem : this->atom_conn_set) {
+            string formula = get_chem_formula(chem);
+
+            if(find(this->solvent_chk_list.begin(), this->solvent_chk_list.end(), formula) == this->solvent_chk_list.end()) {
+                continue;
+            }
+        
+            for(auto item : chem) {
+                rm_atom_site.insert(item);
+            }
+        }
+
+        // printSet(rm_atom_site);
+
+        vector<string> cif_list = del_split(this->cif_buf, '\n');
+        for(auto iter = cif_list.begin(); iter != cif_list.end(); ) {
+            bool del = false;
+            for(auto it = rm_atom_site.begin(); it != rm_atom_site.end(); it++) {
+                if(std::regex_search(*iter, std::regex("^" + *it + "\\s+?"))) {
+                    iter = cif_list.erase(iter);
+                    del = true;
+                    break;
+                }
+            }
+            if(!del) {
+                iter++;
+            }
+        }
+        
+        string clean_name = output_path + "/" + del_split(get_filename(filename), '.')[0] + "_clean.cif";
+        cerr << clean_name << endl;
+
+        ofstream out(clean_name);
+        for(auto &line : cif_list) {
+            out << line << endl;
+        }
+        out.close();
+    }
 
 private:
     string filename;
@@ -412,6 +568,12 @@ private:
     // atom&atom - distance
     map<string, double> atom_dist;
     vector<string> have_bond_list;
+    
+    vector<Connected> connect_list;
+    vector<set<string>> atom_conn_set;
+
+    // atom_site - atom_species
+    map<set<string>, set<string>> cn_species;
 
     map<string, double> cell_params;
     vector<vector<double>> cell;
@@ -419,6 +581,9 @@ private:
 
     vector<string> site_label;
     vector<vector<string>> site_value;
+
+    vector<string> framwork_list;
+    vector<string> solvent_chk_list;
 };
 
 vector<Solvent> CIF::solvent_list;
