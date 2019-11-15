@@ -138,7 +138,7 @@ void printVec(vector<T> &vec) {
     for(auto &item : vec) {
         cerr << item << " ";
     }
-    cerr << endl;
+    // cerr << endl;
 }
 
 

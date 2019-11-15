@@ -1,17 +1,17 @@
 #include <iostream>
-#include "include/cifhelper.h"
+#include "include/cif.h"
 #include "include/cmdline.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    // 命令行参数获取
+    // cmd
     cmdline::parser parser;
     parser.add<string>("cif_in", 'i', "input MOF cif file", true, "");
     parser.add<string>("output_path", 'o', "output filepath", false);
     parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
     parser.add("solvent", 's', "output the solvent was found");
-    parser.add("model", 'm', "remove solvent molecules anyway");
+    parser.add("force", 'f', "remove solvent molecules anyway");
 
     parser.parse_check(argc, argv);
     
@@ -20,6 +20,8 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
+    double skin_distance = 0.25;
+    double coefficient = 0;
     if(parser.exist("skin_distance")) {
         double distance = parser.get<double>("distance");
         if(distance < 1.0) {
@@ -32,27 +34,25 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    // judge remove solvent molecules anyway
+    bool isForce = false;
+    if(parser.exist("force")) {
+        isForce = true;
+    }
+
     CIF cif = CIF(parser.get<string>("cif_in"));
 
     try {
-        cif.split_cif();
-        cif.seek_crystal_info();
-        cif.cal_crystal_info();
-        cif.deal_site_loop();
-        cif.get_known_solvent();
-        cif.get_atom_radius();
-        cif.get_atom_coordinates();
-        cif.calc_bond_distance();
-        cif.judge_if_have_bond();
-        cif.connect_network();
+        cif.parse_file();
+        cif.get_known_res();
+        cif.build_base_cell(skin_distance, coefficient);
         cif.find_solvent();
-        cif.export_modify_result(parser.get<string>("output_path"));
+        cif.export_modify_result(parser.get<string>("output_path"), isForce);
     } 
     catch(Exception err) {
         cout << err.msg << endl;
         return -1;
     }
-
 
     return 0;
 }

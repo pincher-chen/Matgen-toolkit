@@ -30,15 +30,21 @@ using std::to_string;
 
 #define PI acos(-1);
 
-double skin_distance = 0.25;
-double coefficient = 0;
-
 struct Solvent {
     string chem_formula;
     vector<string> elements;
     
     Solvent(string _chem_formula, vector<string> _elements) : \
         chem_formula(_chem_formula), elements(_elements) {}
+
+    Solvent(const Solvent& other) {
+        chem_formula = other.chem_formula;
+        elements = other.elements;
+    }
+
+    friend bool operator<(const Solvent& a, const Solvent& b) {
+        return a.chem_formula < b.chem_formula;
+    }
 };
 
 struct Radius {
@@ -68,7 +74,8 @@ class CIF
 {
 
 public:
-    static vector<Solvent> solvent_list;
+    // chem_formula - Solvent
+    static map<string ,Solvent> solvent_dict;
 
     // species - Radius
     static map<string, Radius> radius_dict;
@@ -77,9 +84,137 @@ public:
         this->filename = filename;
     }
 
+    // parse cif file and get information
+    void parse_file() throw(Exception) {
+        cout << "Parsing the cif file - " << get_filename(this->filename) << endl;
+        split_cif();
+        seek_crystal_info();
+        cal_crystal_info();
+        deal_site_loop();
+    }
+
+    // get known resources
+    void get_known_res() {
+        cout << "Getting some known resources..." << endl;
+        if(radius_dict.empty()) {
+            get_atom_radius();
+        }
+
+        if(solvent_dict.empty()) {
+            get_known_solvent();
+        }
+    }
+
+    // build base cell
+    void build_base_cell(double skin_distance, double coefficient) throw(Exception) {
+        cout << "Building base cell..." << endl;
+        if(radius_dict.empty() || solvent_dict.empty()) {
+            throw Exception("please get known resources first");
+        }
+
+        get_atom_coordinates();
+        calc_bond_distance();
+        judge_if_have_bond(skin_distance, coefficient);
+        connect_network();
+    }
+
+    // find exist solvent
+    void find_solvent() throw(Exception) {
+        cout << "Looking for solvent in " << get_filename(this->filename) << endl;
+
+        vector<string> chem_list;
+        for(auto &chem : this->atom_conn_set) {
+            string formula = get_chem_formula(chem);
+            chem_list.push_back(formula);
+
+            bool isAdd = false;
+            for(auto &atom : chem) {
+                if(get_atom_state(get_species(atom)) == "1") {
+                    this->framwork_list.push_back(formula);
+                    isAdd = true;
+                    break;
+                }
+            }
+            if(!isAdd) {
+                this->solvent_chk_list.push_back(formula);
+            }
+        }
+
+        // printVec(chem_list);
+        cout << "The calculated solvent molecule to be screened is";
+        cout << " [ ";
+        for(auto &sol : this->solvent_chk_list) {
+            if(cmp_solvent_known(sol)) {
+                cout << sol << "<known>" << " ";
+            }
+            else {
+                cout << sol << "<unknown>" << " ";
+            }
+        }
+        cout << " ] " << endl;
+
+        cout << "The MOF framework is ";
+        cout << " [ ";
+        printVec(this->framwork_list);
+        cout << " ] " << endl;
+    }
+
+    // export results after removing solvent
+    void export_modify_result(string output_path, bool isForce = false) {
+        cout << "Exporting result..." << endl;
+        if(!is_folder_exist(output_path)) {
+            make_dir(output_path);
+        }
+
+
+        set<string> rm_atom_site;
+
+        for(auto &chem : this->atom_conn_set) {
+            string formula = get_chem_formula(chem);
+            if(find(this->solvent_chk_list.begin(), this->solvent_chk_list.end(), formula) == this->solvent_chk_list.end()) {
+                continue;
+            }
+
+            if(!isForce && !cmp_solvent_known(formula)) {
+                continue;
+            }
+        
+            for(auto item : chem) {
+                rm_atom_site.insert(item);
+            }
+        }
+
+        // printSet(rm_atom_site);
+
+        vector<string> cif_list = del_split(this->cif_buf, '\n');
+        for(auto iter = cif_list.begin(); iter != cif_list.end(); ) {
+            bool del = false;
+            for(auto it = rm_atom_site.begin(); it != rm_atom_site.end(); it++) {
+                if(std::regex_search(*iter, std::regex("^" + *it + "\\s+?"))) {
+                    iter = cif_list.erase(iter);
+                    del = true;
+                    break;
+                }
+            }
+            if(!del) {
+                iter++;
+            }
+        }
+        
+        string clean_name = output_path + "/" + del_split(get_filename(filename), '.')[0] + "_clean.cif";
+
+        ofstream out(clean_name);
+        for(auto &line : cif_list) {
+            out << line << endl;
+        }
+        out.close();
+    }
+
+
+private:
     // get known solvent
     void get_known_solvent() throw(Exception) {
-        if(!solvent_list.empty()) {
+        if(!solvent_dict.empty()) {
             return;
         }
 
@@ -94,7 +229,9 @@ public:
                 vector<string> ele = del_split(sol, ' ');
                 string formula = ele[0];
                 ele.erase(ele.begin());
-                solvent_list.push_back(Solvent(formula, ele));
+
+                Solvent s = Solvent(formula, ele);
+                solvent_dict.insert(pair<string, Solvent>(formula, s));
             }
         }
     }
@@ -345,7 +482,7 @@ public:
         // printMap(this->atom_dist);
     }
 
-    void judge_if_have_bond() throw(Exception) {
+    void judge_if_have_bond(double skin_distance, double coefficient) throw(Exception) {
         for(auto iter = this->atom_dist.begin(); iter != this->atom_dist.end(); iter++) {
             vector<string> values = del_split(iter->first, '-');
             string atom_a = values[1];
@@ -464,84 +601,9 @@ public:
         return iter->second.O_metal;
     }
 
-    // 
-    void find_solvent() throw(Exception) {
-        vector<string> chem_list;
-        for(auto &chem : this->atom_conn_set) {
-            string formula = get_chem_formula(chem);
-            chem_list.push_back(formula);
-
-            bool isAdd = false;
-            for(auto &atom : chem) {
-                if(get_atom_state(get_species(atom)) == "1") {
-                    this->framwork_list.push_back(formula);
-                    isAdd = true;
-                    break;
-                }
-            }
-            if(!isAdd) {
-                this->solvent_chk_list.push_back(formula);
-            }
-        }
-
-        // printVec(chem_list);
-        cout << "The calculated solvent molecule to be screened is: ";
-        printVec(this->solvent_chk_list);
-
-        cout << "The MOF framework is: ";
-        printVec(this->framwork_list);
-    }
-
-
     // compare existing list of solvent
-    void cmp_solvent_known() throw(Exception) {
-
-    }
-
-    void export_modify_result(string output_path) {
-        if(!is_folder_exist(output_path)) {
-            make_dir(output_path);
-        }
-
-        set<string> rm_atom_site;
-
-        for(auto &chem : this->atom_conn_set) {
-            string formula = get_chem_formula(chem);
-
-            if(find(this->solvent_chk_list.begin(), this->solvent_chk_list.end(), formula) == this->solvent_chk_list.end()) {
-                continue;
-            }
-        
-            for(auto item : chem) {
-                rm_atom_site.insert(item);
-            }
-        }
-
-        // printSet(rm_atom_site);
-
-        vector<string> cif_list = del_split(this->cif_buf, '\n');
-        for(auto iter = cif_list.begin(); iter != cif_list.end(); ) {
-            bool del = false;
-            for(auto it = rm_atom_site.begin(); it != rm_atom_site.end(); it++) {
-                if(std::regex_search(*iter, std::regex("^" + *it + "\\s+?"))) {
-                    iter = cif_list.erase(iter);
-                    del = true;
-                    break;
-                }
-            }
-            if(!del) {
-                iter++;
-            }
-        }
-        
-        string clean_name = output_path + "/" + del_split(get_filename(filename), '.')[0] + "_clean.cif";
-        cerr << clean_name << endl;
-
-        ofstream out(clean_name);
-        for(auto &line : cif_list) {
-            out << line << endl;
-        }
-        out.close();
+    bool cmp_solvent_known(string formula) throw(Exception) {
+        return solvent_dict.count(formula) > 0;
     }
 
 private:
@@ -574,7 +636,7 @@ private:
     vector<string> solvent_chk_list;
 };
 
-vector<Solvent> CIF::solvent_list;
+map<string, Solvent> CIF::solvent_dict;
 map<string, Radius> CIF::radius_dict;
 
 #endif
