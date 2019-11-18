@@ -10,13 +10,12 @@ int main(int argc, char *argv[]) {
     parser.add<string>("cif_in", 'i', "input MOF cif file", true, "");
     parser.add<string>("output_path", 'o', "output filepath", false);
     parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
-    parser.add("solvent", 's', "output the solvent was found");
     parser.add("force", 'f', "remove solvent molecules anyway");
 
     parser.parse_check(argc, argv);
     
     if (argc == 1 || parser.exist("help")) {
-        cerr << parser.usage();
+        cout << parser.usage();
         return 0;
     }
 
