@@ -85,7 +85,7 @@ public:
     }
 
     // parse cif file and get information
-    void parse_file() throw(Exception) {
+    void parse_file() noexcept(false) {
         cout << "Parsing the cif file - " << get_filename(this->filename) << endl;
         split_cif();
         seek_crystal_info();
@@ -106,7 +106,7 @@ public:
     }
 
     // build base cell
-    void build_base_cell(double skin_distance, double coefficient) throw(Exception) {
+    void build_base_cell(double skin_distance, double coefficient) noexcept(false) {
         cout << "Building base cell..." << endl;
         if(radius_dict.empty() || solvent_dict.empty()) {
             throw Exception("please get known resources first");
@@ -119,7 +119,7 @@ public:
     }
 
     // find exist solvent
-    void find_solvent() throw(Exception) {
+    void find_solvent() noexcept(false) {
         cout << "Looking for solvent in " << get_filename(this->filename) << endl;
 
         vector<string> chem_list;
@@ -213,13 +213,13 @@ public:
 
 private:
     // get known solvent
-    void get_known_solvent() throw(Exception) {
+    void get_known_solvent() noexcept(false) {
         if(!solvent_dict.empty()) {
             return;
         }
 
         ifstream in("./conf/solvent.txt", ios::in);
-        if(in == nullptr) {
+        if(!in.is_open()) {
             throw Exception("known solvent file does not exist or fails to open!");
         }
         else {
@@ -237,13 +237,13 @@ private:
     }
 
     // get atom radius
-    void get_atom_radius() throw(Exception) {
+    void get_atom_radius() noexcept(false) {
         if(!radius_dict.empty()) {
             return;
         }
 
         ifstream in("./conf/radius.txt", ios::in);
-        if(in == nullptr) {
+        if(!in.is_open()) {
             throw Exception("radius file does not exist or fails to open!");
         }
         else {
@@ -260,9 +260,9 @@ private:
     }
 
     // split the information in the cif file and save in map
-    void split_cif() throw(Exception) {
+    void split_cif() noexcept(false) {
         ifstream in(this->filename, ios::in);
-        if(in == nullptr) {
+        if(!in.is_open()) {
             throw Exception(this->filename + " does not exist or fails to open!");
         }
         else {
@@ -309,7 +309,7 @@ private:
     }
 
     // get crystal cell parameters from cif file
-    void seek_crystal_info() throw(Exception) {
+    void seek_crystal_info() noexcept(false) {
         string str = this->cif_buf;
         std::regex rgx("(_cell_[l|a].*?)\\s+(.*)");
         
@@ -335,7 +335,7 @@ private:
     }
 
     // calculate lattice contstant and angle
-    void cal_crystal_info() throw(Exception) {
+    void cal_crystal_info() noexcept(false) {
         try {
             double a = this->cell_params["_cell_length_a"];
             double b = this->cell_params["_cell_length_b"];
@@ -370,7 +370,7 @@ private:
     }
     
     // get the site information of the atom in the loop
-    void deal_site_loop() throw(Exception) {
+    void deal_site_loop() noexcept(false) {
         try {
             vector<string> site_loop = this->loop_dict["site_loop"];
             vector<string> data_value;
@@ -397,7 +397,7 @@ private:
     }
 
     // get the coordinates information of the atom
-    void get_atom_coordinates() throw(Exception) {
+    void get_atom_coordinates() noexcept(false) {
         try {
             int x_index = std::distance(std::begin(this->site_label), \
                                         std::find(this->site_label.begin(), this->site_label.end(), "_atom_site_fract_x"));
@@ -482,7 +482,7 @@ private:
         // printMap(this->atom_dist);
     }
 
-    void judge_if_have_bond(double skin_distance, double coefficient) throw(Exception) {
+    void judge_if_have_bond(double skin_distance, double coefficient) noexcept(false) {
         for(auto iter = this->atom_dist.begin(); iter != this->atom_dist.end(); iter++) {
             vector<string> values = del_split(iter->first, '-');
             string atom_a = values[1];
@@ -532,7 +532,7 @@ private:
     }
 
     // use disjoint set union
-    void connect_network() throw(Exception) {
+    void connect_network() noexcept(false) {
         map<string, string> atom_rel;
         
         for(auto item : this->connect_list) {
@@ -591,7 +591,7 @@ private:
     }
 
     // return the element is metal or not
-    string get_atom_state(string element) throw(Exception) {
+    string get_atom_state(string element) noexcept(false) {
         auto iter = radius_dict.find(element);
         
         if(iter == radius_dict.end()) {
@@ -602,7 +602,7 @@ private:
     }
 
     // compare existing list of solvent
-    bool cmp_solvent_known(string formula) throw(Exception) {
+    bool cmp_solvent_known(string formula) noexcept(false) {
         return solvent_dict.count(formula) > 0;
     }
 

@@ -93,6 +93,10 @@ def symmetry(cif):
     # print(find_symm_info)
     #print(__HALL)
 
+    print(symm)
+    print(__HALL)
+    print(__H_M)
+
     if (find_symm_info==False):
         if (__H_M=='' and __HALL==''):
             print("P1 symmetry is assumed!")
@@ -339,7 +343,10 @@ def ord(ea,labels):
 
 def get_cell(filename):
     cif = readfile(filename)
+
+    # print(cif)
     s = symmetry(cif)
+    # print(s)
     a,labels = atominfo(cif)
     l = np.round(lattice(cif),8)
     order = ord(a,labels)
@@ -351,7 +358,7 @@ def get_cell(filename):
         tt += spgt
     #print(tt)
     cell = (l, p, tt)
-    
+    # print(cell)
     return cell
  
 # spglib methods:

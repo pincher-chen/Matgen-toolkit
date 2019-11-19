@@ -4,7 +4,7 @@
 
 ### 编译
 > C++ 11
-* g++ main.cpp -o rmsol -std=c++11
+* g++ rm_mof_solvents.cpp -o rmsol -std=c++11
 
 ### 使用
 * .\rmsol -i [cif_file]
@@ -24,3 +24,17 @@
   * `-d, --skin_distance`   需要使用的表层距离（系数）
   * `-f, --force`   强制去除结构中的未知溶剂，默认只去除公知溶剂 
   * `-?, --help`    帮助说明
+
+## 寻找空间群
+
+### 编译
+* g++ find_space_groups.cpp  ./include/spglib/_build/libsymspg.so -o a -I./include/spglib/src
+
+### 设计相关的工具包
+* [spglib](https://github.com/atztogo/spglib)
+
+### 补充
+* [spglib 安装与配置](https://atztogo.github.io/spglib/install.html)
+* [编译引入动态链接库](https://www.cnblogs.com/dongfangchun/p/9078751.html)
+* `error while loading shared libraries: libsymspg.so.1: cannot open shared object file: No such file or directory` 因为程序默认会到/lib64/libsymspg.so不在/lib64/中。因此需要增加如下命令，让程序也到指令的目录中找库
+    `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./include/spglib/_build`

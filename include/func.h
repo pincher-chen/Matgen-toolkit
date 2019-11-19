@@ -8,8 +8,12 @@
 #include <vector>
 #include <map>
 #include <set>
-#include <io.h>
-#include <direct.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+
+// #include <io.h>
+// #include <direct.h>
 
 using std::cerr;
 using std::cout;
@@ -20,7 +24,7 @@ using std::vector;
 using std::set;
 
 bool is_folder_exist(string folder) {
-    return _access(folder.c_str(), 0) == 0;
+    return access(folder.c_str(), 0) == 0;
 }
 
 bool make_dir(string path) {
@@ -29,7 +33,7 @@ bool make_dir(string path) {
         cur += c;
         if(c == '\\' || c == '/') {
             if(!is_folder_exist(cur)) {
-                int ret = _mkdir(cur.c_str());
+                int ret = mkdir(cur.c_str(), S_IRWXU);
                 if(ret == -1) {
                     return false;
                 }
@@ -38,7 +42,7 @@ bool make_dir(string path) {
     }
 
     if(!is_folder_exist(cur)) {
-        int ret = _mkdir(cur.c_str());
+        int ret = mkdir(cur.c_str(), S_IRWXU);
         return ret != -1;
     }
 
