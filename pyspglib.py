@@ -57,7 +57,10 @@ def symmetry(cif):
                         iitem = item[1:-1]
                     else:
                         iitem = item[:]
-                    symm.append(iitem.strip().split(','))
+                    tmp = iitem.strip().split(',')
+                    if(len(tmp[0].split(' ')) > 1):
+                        tmp[0] = tmp[0].split(' ')[1]
+                    symm.append(tmp)
                     find_symm_info=True
                 else:
                     break
@@ -122,42 +125,34 @@ def symmetry(cif):
         tran1 = []
         for subtem in item:
             subtem = subtem.strip()
-            try:
-                isprit = subtem.index('/')
-                stt = [istr for istr in subtem]
-                for i in range(0, 3): del(stt[isprit - 1])
-                if stt[-1] == '+' or stt[-1] == '-': del(stt[-1])
-                subt = ''.join(stt)
-            except:
-                subt = subtem[:]
-            s1 = [0, 0, 0]
-            if subt[0] == '-' or subt[0] == '+':
-                for i in range(0, len(subt) - 1, 2):
-                    if subt[i:i+2] == '-x': s1[0] = -1
-                    if subt[i:i+2] == '+x': s1[0] = 1
-                    if subt[i:i+2] == '-y': s1[1] = -1
-                    if subt[i:i+2] == '+y': s1[1] = 1
-                    if subt[i:i+2] == '-z': s1[2] = -1
-                    if subt[i:i+2] == '+z': s1[2] = 1
+            index = subtem.find('/')
+            f = '0.0'
+            real = ''
+            if index == -1:
+                real = subtem
             else:
-                if subt[0] == 'x': s1[0] = 1
-                if subt[0] == 'y': s1[1] = 1
-                if subt[0] == 'z': s1[2] = 1
-                for i in range(1, len(subt) - 1, 2):
-                    if subt[i:i+2] == '-x': s1[0] = -1
-                    if subt[i:i+1] == '+x': s1[0] = 1
-                    if subt[i:i+2] == '-y': s1[1] = -1
-                    if subt[i:i+2] == '+y': s1[1] = 1
-                    if subt[i:i+2] == '-z': s1[2] = -1
-                    if subt[i:i+2] == '+z': s1[2] = 1
-            t1 = 0.
-            for subsub in re.split('[+,-]', subtem):
-                try:
-                    t1 = float(frac(subsub))
-                except:
-                    continue
+                f = subtem[0 : index + 2]
+                real = subtem[index + 2: ]
+            
+            s1 = [0, 0, 0]
+            t1 = float(frac(f))
+            if real == 'x' or real == '+x':
+                s1[0] = 1
+            if real == '-x':
+                s1[0] = -1
+            if real == 'y' or real == '+y':
+                s1[1] = 1
+            if real == '-y':
+                s1[1] = -1
+            if real == 'z' or real == '+z':
+                s1[2] = 1
+            if real == '-z':
+                s1[2] = -1
             tran1.append(t1)
             s2.append(s1)
+
+            # print(s1)
+        # print(item, "t1:", tran1, "s2:", s2)
         symmetry.append(s2)
         trans.append(tran1)
     return (np.array(symmetry), np.array(trans))

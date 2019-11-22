@@ -53,7 +53,7 @@ string get_filename(string path) {
     string::size_type pos = path.find_last_of('\\');
     
     if(pos == string::npos) {
-        pos = path.find_last_not_of('/');
+        pos = path.find_last_of('/');
         if(pos == string::npos) {
             return path;
         }
@@ -72,6 +72,39 @@ string trim(const string &str) {
         return str.substr(pos, pos2 - pos + 1);
     }
     return str.substr(pos);
+}
+
+double frac2double(const string &str) {
+    if(str.find("/") == string::npos) {
+        return 0.0;
+    }
+
+    int coff = 1;
+    int pos = str.find("/"), i = pos-1, j = pos+1;
+    double numerator = 0, denominator = 0;
+    while(i >= 0 && str[i] >= '0' && str[i] <= '9') {
+        numerator += (str[i] - '0') * pow(10, abs(i - pos) - 1);
+        --i;
+    }
+
+    if(i >= 0 && str[i] == '-') {
+        coff = -1;
+    }
+
+    while(j < str.size() && str[j] >= '0' && str[j] <= '9') {
+        denominator = denominator * 10 + (str[j] - '0');
+        ++j;
+    }
+    
+    return coff * numerator / denominator;
+}
+
+// remove \' and \"
+string clean_str(const string &str) {
+    int start = 0, end = str.size() - 1;
+    while(str[start] == '\'' || str[start] == '\"') ++start;
+    while(str[end] == '\'' || str[end] == '\"') --end;
+    return str.substr(start, end - start + 1);
 }
 
 // divide strings according to delimiters
@@ -162,6 +195,19 @@ void printMap(map<key, vector<member>> &m) {
         cerr << iter->first << " : ";
         for(auto it = iter->second.begin(); it != iter->second.end(); it++) {
             cerr << *it << " ";
+        }
+        cerr << endl;
+    }
+}
+
+// print map for debugging
+template <typename key, typename member>
+void printMap(map<key, vector<vector<member>>> &m) {
+    for(auto iter = m.begin(); iter != m.end(); iter++) {
+        cerr << iter->first << " : ";
+        for(auto it = iter->second.begin(); it != iter->second.end(); it++) {
+            printVec(*it);
+            cerr << "\t";
         }
         cerr << endl;
     }
