@@ -1,0 +1,95 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_83-ICSD
+_database_code_ICSD 83
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Vanadium phosphide (1/1.7)'
+_chemical_formula_structural 'V P1.7455'
+_chemical_formula_sum 'P1.7455 V1'
+_exptl_crystal_density_diffrn 4.8
+_publ_section_title
+
+;
+High-pressure phases with ordered defect Pb F Cl type structures in the
+systems V-P and Nb-P
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1499 1505 ACBCAR
+loop_
+_publ_author_name
+'Jeitschko, W.'
+'Donohue, P.C.'
+'Johnson, V.'
+_cell_length_a 6.3237(4)
+_cell_length_b 6.3237(4)
+_cell_length_c 7.2671(7)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 290.61
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'P -4 m 2'
+_symmetry_Int_Tables_number 115
+_refine_ls_R_factor_all 0.044
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y, -x, -z'
+2 'x, -y, z'
+3 'y, x, -z'
+4 '-x, y, z'
+5 'y, -x, -z'
+6 '-x, -y, z'
+7 '-y, x, -z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+V0+ 0
+P0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+V1 V0+ 4 j 0.2502(1) 0 0.2619(1) . 1. 0
+V2 V0+ 4 k 0.2555(1) 0.5 0.2548(1) . 1. 0
+P1 P0+ 4 j 0.2480(2) 0 0.6063(2) . 1. 0
+P2 P0+ 4 k 0.2494(2) 0.5 0.5995(2) . 1. 0
+P3 P0+ 1 b 0.5 0.5 0 . 1. 0
+P4 P0+ 4 j 0.4658(4) 0 0.9981(7) 0.40(5) 0.367(5) 0
+P5 P0+ 8 l 0.2116(3) 0.2418(3) 0.0026(9) 0.40(3) 0.437(3) 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+V1 V0+ 0.0036(3) 0.0029(3) 0.0015(2) 0 0.0003(1) 0
+V2 V0+ 0.0010(3) 0.0048(4) 0.0009(1) 0 -.0001(1) 0
+P1 P0+ 0.0045(6) 0.0023(5) 0.0021(2) 0 0.0005(2) 0
+P2 P0+ 0.0030(6) 0.0037(5) 0.0015(2) 0 -.0004(2) 0
+P3 P0+ 0.0062(3) 0.0062(3) 0.0007(3) 0 0 0
+#End of TTdata_83-ICSD

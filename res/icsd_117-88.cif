@@ -1,0 +1,105 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_117-ICSD
+_database_code_ICSD 117
+_audit_creation_date 1980-01-01
+_audit_update_record 2010-02-01
+_chemical_name_systematic
+'Hexaamminecobalt(III) tetrachlorostannate(II) chloride'
+_chemical_formula_structural '(Co (N H3)6) (Sn Cl4) Cl'
+_chemical_formula_sum 'H18 Cl5 Co1 N6 Sn1'
+_exptl_crystal_density_diffrn 2.16
+_publ_section_title
+
+;
+Darstellung und Kristallstruktur von Hexamminkobalt (III)-tetrachloro-stannat
+(II)-chlorid (Co (N H3)6)(Sn Cl4) Cl
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)' 1976
+422 97 103 ZAACAB
+loop_
+_publ_author_name
+'Haupt, H.J.'
+'Huber, F.'
+'Preut, H.'
+_cell_length_a 8.821(9)
+_cell_length_b 22.197(27)
+_cell_length_c 7.178(19)
+_cell_angle_alpha 90.
+_cell_angle_beta 91.41(3)
+_cell_angle_gamma 90.
+_cell_volume 1405.02
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 1 21/a 1'
+_symmetry_Int_Tables_number 14
+_refine_ls_R_factor_all 0.039
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y+1/2, z'
+2 '-x, -y, -z'
+3 '-x+1/2, y+1/2, -z'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Sn2+ 2
+Co3+ 3
+Cl1- -1
+N3- -3
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Sn1 Sn2+ 4 e 0.20886(5) 0.14206(2) 0.35636(6) . 1. 0
+Co1 Co3+ 4 e 0.19775(8) 0.38173(3) 0.83537(10) . 1. 0
+Cl1 Cl1- 4 e 0.49374(17) 0.06908(8) 0.32450(21) . 1. 0
+Cl2 Cl1- 4 e 0.13749(18) 0.07059(8) 0.09479(22) . 1. 0
+Cl3 Cl1- 4 e 0.14242(19) 0.06409(8) 0.58712(22) . 1. 0
+Cl4 Cl1- 4 e 0.42258(21) 0.31894(10) 0.34153(26) . 1. 0
+Cl5 Cl1- 4 e 0.28714(20) 0.20420(8) 0.80833(31) . 1. 0
+N1 N3- 4 e 0.99567(57) 0.42042(24) 0.83981(74) . 1. 0
+N2 N3- 4 e 0.39880(55) 0.34310(23) 0.83102(73) . 1. 0
+N3 N3- 4 e 0.26471(60) 0.44088(25) 0.65241(69) . 1. 0
+N4 N3- 4 e 0.12530(62) 0.32803(26) 0.63500(74) . 1. 0
+N5 N3- 4 e 0.13017(61) 0.32145(24) 0.01760(71) . 1. 0
+N6 N3- 4 e 0.26880(24) 0.43416(71) 0.04062(72) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Sn1 Sn2+ 0.00777(6) 0.00138(1) 0.01642(10) -.00012(2) 0.00018(8) -.00054(2)
+Co1 Co3+ 0.00490(9) 0.00083(2) 0.00885(14) -.00009(3) 0.00031(8) 0.00014(3)
+Cl1 Cl1- 0.00691(19) 0.00177(4) 0.01273(30) 0.00005(6) 0.00029(18) -.00008(8)
+Cl2 Cl1- 0.00912(21) 0.00159(3) 0.01248(29) 0.00083(7) -.00223(19) -.00065(8)
+Cl3 Cl1- 0.00925(21) 0.00172(4) 0.01311(31) 0.00003(7) 0.0020(2) -.00053(8)
+Cl4 Cl1- 0.01049(24) 0.00281(5) 0.01764(38) -.00208(9) 0.00001(24) 0.00096(11)
+Cl5 Cl1- 0.00853(22) 0.00108(3) 0.03507(53) 0.00048(7) 0.00013(27) -.00032(10)
+N1 N3- 0.00648(64) 0.00121(11) 0.0166(11) 0.00036(21) 0.00023(67) 0.00028(28)
+N2 N3- 0.00609(62) 0.00126(11) 0.0155(11) 0.00015(65) -.00010(65) -.00032(26)
+N3 N3- 0.00964(74) 0.00127(11) 0.0127(11) -.00042(22) 0.00092(71) 0.00096(26)
+N4 N3- 0.00943(72) 0.00141(12) 0.0141(11) 0.00003(24) -.00047(70) -.00066(29)
+N5 N3- 0.00975(73) 0.00139(12) 0.0122(10) -.00032(23) 0.00090(68) 0.00086(27)
+N6 N3- 0.00847(71) 0.00147(12) 0.0126(10) -.00059(23) 0.00050(67) -.00084(27)
+#End of TTdata_117-ICSD

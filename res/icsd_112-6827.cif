@@ -1,0 +1,94 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_112-ICSD
+_database_code_ICSD 112
+_audit_creation_date 1980-01-01
+_audit_update_record 2016-02-01
+_chemical_name_systematic 'Cesium oxide (7/1)'
+_chemical_formula_structural 'Cs7 O'
+_chemical_formula_sum 'Cs7 O1'
+_exptl_crystal_density_diffrn 2.2
+_cell_measurement_temperature 253.
+_publ_section_title 'Metallreichstes Caesiumoxid - Cs7 O'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)' 1976
+422 208 218 ZAACAB
+loop_
+_publ_author_name
+'Simon, A.'
+_cell_length_a 16.3930(10)
+_cell_length_b 16.3930(10)
+_cell_length_c 9.193(4)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 2139.46
+_cell_formula_units_Z 3
+_symmetry_space_group_name_H-M 'P -6 m 2'
+_symmetry_Int_Tables_number 187
+_refine_ls_R_factor_all 0.046
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, x-y, -z'
+2 '-x+y, y, -z'
+3 '-y, -x, -z'
+4 'x, x-y, z'
+5 '-x+y, y, z'
+6 '-y, -x, z'
+7 '-x+y, -x, -z'
+8 '-y, x-y, -z'
+9 'x, y, -z'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Cs1+ 1
+Cs0+ 0
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Cs1 Cs1+ 6 n 0.81241(28) -.81241(28) 0.21832(44) . 1. 0
+Cs2 Cs0+ 2 i 0.6667 0.3333 0.20144(47) . 1. 0
+Cs3 Cs0+ 3 j 0.55210(29) -.55210(29) 0 . 1. 0
+Cs4 Cs0+ 3 k 0.44930(39) -.44930(39) 0.5 . 1. 0
+Cs5 Cs0+ 3 j 0.21604(38) -.21604(38) 0 . 1. 0
+Cs6 Cs0+ 3 k 0.11176(37) -.11176(37) 0.5 . 1. 0
+Cs7 Cs0+ 1 a 0 0 0 . 1. 0
+O1 O2- 3 j 0.7463(24) -0.7463(24) 0 . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Cs1 Cs1+ 17.42 17.42 22.32 10.68 -4.84 0
+Cs2 Cs0+ 10.18 10.18 6.51 5.09 0 0
+Cs3 Cs0+ 9.68 9.68 20.07 6.28 0 0
+Cs4 Cs0+ 14.53 14.53 12.57 4.94 0 0
+Cs5 Cs0+ 13.92 13.92 13.66 3.95 0 0
+Cs6 Cs0+ 12.79 12.79 17.26 6.81 0 0
+Cs7 Cs0+ 13.22 13.22 13.31 6.61 0 0
+O1 O2- 7.74 7.74 9.39 3.66 0 0
+#End of TTdata_112-ICSD

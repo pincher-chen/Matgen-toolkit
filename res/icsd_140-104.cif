@@ -1,0 +1,105 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_140-ICSD
+_database_code_ICSD 140
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-02-01
+_chemical_name_systematic 'Barium thiosulfate(VI) hydrate'
+_chemical_formula_structural 'Ba (S2 O3) (H2 O)'
+_chemical_formula_sum 'H2 Ba1 O4 S2'
+_chemical_name_structure_type BaSe2O3H2O
+_exptl_crystal_density_diffrn 3.34
+_publ_section_title
+
+;
+A neutron diffraction study of barium thiosulphate monohydrate, Ba S2 O3 (H2
+O)
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1975 31 135 139 ACBCAR
+loop_
+_publ_author_name
+'Manojlovic Muir, L.M.'
+_cell_length_a 20.07(1)
+_cell_length_b 7.19(1)
+_cell_length_c 7.37(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 1063.52
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'P b c n'
+_symmetry_Int_Tables_number 60
+_refine_ls_R_factor_all 0.034
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x+1/2, y+1/2, z'
+3 'x+1/2, y+1/2, -z+1/2'
+4 '-x, -y, -z'
+5 '-x, y, -z+1/2'
+6 'x+1/2, -y+1/2, -z'
+7 '-x+1/2, -y+1/2, z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ba2+ 2
+S6+ 6
+S2- -2
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ba1 Ba2+ 8 d 0.16419(6) 0.2208(2) 0.0499(2) . 1. 0
+S1 S6+ 8 d 0.15904(11) 0.7280(3) 0.0432(3) . 1. 0
+S2 S2- 8 d 0.08356(11) 0.6086(3) 0.1708(3) . 1. 0
+O1 O2- 8 d 0.19969(6) 0.8337(2) 0.1760(1) . 1. 0
+O2 O2- 8 d 0.13494(6) 0.8592(2) -.0954(1) . 1. 0
+O3 O2- 8 d 0.20192(6) 0.5864(1) -.0423(1) . 1. 0
+O4 O2- 8 d 0.02640(8) 0.1619(3) 0.0749(3) . 1. 0
+H1 H1+ 8 d -.00003(16) 0.2512(4) 0.0101(4) . 0.666 0
+H2 H1+ 8 d 0.01066(29) 0.0439(8) 0.0214(9) . 0.666 0
+H3 H1+ 8 d 0.00649(31) 0.1658(7) 0.1988(6) . 0.666 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Ba1 Ba2+ 0.00083(3) 0.00418(24) 0.00526(24) 0.00002(7) 0.00023(7) -.00012(19)
+S1 S6+ 0.00065(6) 0.00308(38) 0.00311(38) -.00010(14) 0.00023(13) 0.00005(34)
+S2 S2- 0.00073(6) 0.00652(47) 0.00699(38) -.00036(13) 0.00044(13) 0.00169(37)
+O1 O2- 0.00118(4) 0.00822(23) 0.00538(19) -.00108(8) -.00025(7) -.00133(19)
+O2 O2- 0.00130(3) 0.00642(20) 0.00577(21) 0.00003(8) -.00016(7) 0.00171(20)
+O3 O2- 0.00088(3) 0.00553(22) 0.01013(21) 0.0002(7) 0.00091(8) -.00169(19)
+O4 O2- 0.00094(4) 0.00986(36) 0.01093(36) -.00023(12) -.00032(11) 0.00094(33)
+H1 H1+ 0.00217(6) 0.01740(54) 0.01997(57) 0.00100(19) -.00078(17) 0.00442(57)
+H2 H1+ 0.00173(25) 0.0186(26) 0.0166(16) -.00107(51) -.00071(48) -0.0013(16)
+H3 H1+ 0.00197(18) 0.0169(10) 0.0138(18) 0.00049(37) 0.00101(62) 0.00019(84)
+#End of TTdata_140-ICSD

@@ -1,0 +1,107 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_76-ICSD
+_database_code_ICSD 76
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Tripotassium cyclo-triphosphate(V)'
+_chemical_formula_structural 'K3 (P3 O9)'
+_chemical_formula_sum 'K3 O9 P3'
+_exptl_crystal_density_diffrn 2.47
+_publ_section_title
+'Structure cristalline du trimetaphosphate de potassium K3 P3 O9'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1427 1430 ACBCAR
+loop_
+_publ_author_name
+'Bagieu-Beucher, M.'
+'Tordjman, I.'
+'Durif, A.'
+'Guitel, J.C.'
+_cell_length_a 11.074(8)
+_cell_length_b 11.965(9)
+_cell_length_c 7.350(6)
+_cell_angle_alpha 90.
+_cell_angle_beta 102.18(3)
+_cell_angle_gamma 90.
+_cell_volume 951.96
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 1 21/n 1'
+_symmetry_Int_Tables_number 14
+_refine_ls_R_factor_all 0.04
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x+1/2, y+1/2, -z+1/2'
+2 '-x, -y, -z'
+3 'x+1/2, -y+1/2, z+1/2'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+K1+ 1
+P5+ 5
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+K1 K1+ 4 e 0.4002(2) 0.7569(2) 0.0972(4) . 1. 0
+K2 K1+ 4 e 0.3783(2) 0.4183(2) 0.1469(4) . 1. 0
+K3 K1+ 4 e 0.0806(3) 0.6418(2) 0.1586(4) . 1. 0
+P1 P5+ 4 e 0.1641(3) 0.5547(3) 0.7715(4) . 1. 0
+P2 P5+ 4 e 0.3463(3) 0.4293(2) 0.6270(4) . 1. 0
+P3 P5+ 4 e 0.3246(3) 0.6719(3) 0.5757(4) . 1. 0
+O1 O2- 4 e 0.2109(6) 0.4449(6) 0.6762(10) . 1. 0
+O2 O2- 4 e 0.1924(6) 0.6523(6) 0.6337(9) . 1. 0
+O3 O2- 4 e 0.3573(6) 0.5460(6) 0.5206(10) . 1. 0
+O4 O2- 4 e 0.2415(6) 0.5717(6) 0.9582(10) . 1. 0
+O5 O2- 4 e 0.0280(6) 0.5482(6) 0.7499(10) . 1. 0
+O6 O2- 4 e 0.3357(6) 0.3400(6) 0.4869(10) . 1. 0
+O7 O2- 4 e 0.4425(6) 0.4225(6) 0.8006(10) . 1. 0
+O8 O2- 4 e 0.2978(7) 0.7388(6) 0.404(1) . 1. 0
+O9 O2- 4 e 0.4188(6) 0.7103(6) 0.7388(9) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+K1 K1+ 0.00309(22) 0.00381(21) 0.00959(53) 0.00025(19) 0.00258(27) -.00008(28)
+K2 K1+ 0.00418(25) 0.00377(22) 0.01089(63) 0.00042(20) 0.00192(32) 0.00136(30)
+K3 K1+ 0.00505(25) 0.00343(23) 0.01630(69) -.00027(20) 0.00581(32) -.00106(31)
+P1 P5+ 0.00254(27) 0.00263(24) 0.00990(78) 0.00039(22) 0.00296(36) 0.00049(34)
+P2 P5+ 0.00237(26) 0.00263(26) 0.00711(66) -.00002(21) 0.00206(33) -.00102(32)
+P3 P5+ 0.00264(25) 0.00258(23) 0.00657(62) 0.00018(22) 0.00218(32) 0.00073(34)
+O1 O2- 0.00337(71) 0.00275(65) 0.0104(18) -.00038(52) 0.00222(88) -.00089(81)
+O2 O2- 0.00249(64) 0.00282(63) 0.0088(16) 0.00069(55) 0.00253(79) 0.00224(84)
+O3 O2- 0.00320(68) 0.00337(62) 0.0094(17) -.00075(56) 0.00399(91) -.00079(86)
+O4 O2- 0.00429(75) 0.00364(69) 0.0055(17) 0.00103(58) 0.00208(89) -.00074(86)
+O5 O2- 0.00163(67) 0.00554(71) 0.0174(20) 0.00001(56) 0.00345(90) 0.0013(10)
+O6 O2- 0.00415(74) 0.00492(71) 0.0113(18) -.00053(62) 0.00368(93) -.00101(95)
+O7 O2- 0.00237(67) 0.00475(69) 0.0084(17) 0.00051(58) 0.00168(84) 0.00040(88)
+O8 O2- 0.00431(74) 0.00431(70) 0.0103(18) 0.00125(63) 0.00288(88) 0.00246(91)
+O9 O2- 0.00268(68) 0.00520(69) 0.0076(17) -.00051(56) 0.00155(87) -.00029(89)
+#End of TTdata_76-ICSD

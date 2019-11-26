@@ -1,0 +1,76 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_269-ICSD
+_database_code_ICSD 269
+_audit_creation_date 1980-01-01
+_audit_update_record 2009-08-01
+_chemical_name_systematic 'Hexathallium lead(IV) iodide'
+_chemical_formula_structural 'Tl6 Pb I10'
+_chemical_formula_sum 'I10 Pb1 Tl6'
+_exptl_crystal_density_diffrn 6.87
+_publ_section_title 'A polyiodide with regular I4(2-) chains: Tl6 Pb I10'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary Naturwissenschaften 1976 63 245 245 NATWAY
+loop_
+_publ_author_name
+'Rabenau, A.'
+'Schulz, H.'
+'Stoeger, W.'
+_cell_length_a 10.561(4)
+_cell_length_b 10.561(4)
+_cell_length_c 13.522(5)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 1306.12
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P -6 2 c'
+_symmetry_Int_Tables_number 190
+_refine_ls_R_factor_all 0.08
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -x+y, -z'
+2 'x-y, -y, -z'
+3 'y, x, -z'
+4 '-x, -x+y, z+1/2'
+5 'x-y, -y, z+1/2'
+6 'y, x, z+1/2'
+7 '-x+y, -x, -z+1/2'
+8 '-y, x-y, -z+1/2'
+9 'x, y, -z+1/2'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Tl1+ 1
+Pb4+ 4
+I1- -1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Tl1 Tl1+ 6 g 0.371(1) 0 0 5.8 1. 0
+Tl2 Tl1+ 6 h 0.604(1) 0.969(1) 0.25 2.6 1. 0
+Pb1 Pb4+ 4 e 0 0 0.390(2) 2. 0.5 0
+I1 I1- 6 g 0.743(2) 0 0 1.2 1. 0
+I2 I1- 6 h 0.263(3) 0.002(4) 0.25 4.1 1. 0
+I3 I1- 4 f 0.3333 0.6667 0.399(1) 1. 1. 0
+I4 I1- 4 f 0.3333 0.6667 0.866(2) 4.6 1. 0
+#End of TTdata_269-ICSD

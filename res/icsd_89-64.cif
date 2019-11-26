@@ -1,0 +1,100 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_89-ICSD
+_database_code_ICSD 89
+_audit_creation_date 1980-01-01
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Tricadmium cyclo-triphosphate(V) tetradecahydrate'
+_chemical_formula_structural 'Cd3 (P3 O9)2 (H2 O)14'
+_chemical_formula_sum 'H28 Cd3 O32 P6'
+_chemical_name_structure_type Cd3(P3O9)2(H2O)14
+_exptl_crystal_density_diffrn 2.46
+_cell_measurement_temperature 293.
+_publ_section_title
+
+;
+Etude a basse temperature du trimetaphosphate de cadmium tetradeca-hydrate Cd3
+(P3 O9)2 (H2 O)14
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1533 1535 ACBCAR
+loop_
+_publ_author_name
+'Averbuch-Pouchot, M.T.'
+'Durif, A.'
+'Guitel, J.C.'
+_cell_length_a 12.285(3)
+_cell_length_b 12.285(3)
+_cell_length_c 5.494(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 718.07
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'P -3'
+_symmetry_Int_Tables_number 147
+_refine_ls_R_factor_all 0.039
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x-y, x, -z'
+2 'y, -x+y, -z'
+3 '-x, -y, -z'
+4 '-x+y, -x, z'
+5 '-y, x-y, z'
+6 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Cd2+ 2
+P5+ 5
+O2- -2
+H1+ 1
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Cd1 Cd2+ 3 e 0.5 0.5 0 . 1. 0
+P1 P5+ 6 g 0.54217(7) 0.35524(7) 0.49038(14) . 1. 0
+O1 O2- 6 g 0.5413(2) 0.2267(2) 0.5338(6) . 1. 0
+O2 O2- 6 g 0.6456(2) 0.1580(3) 0.2220(5) . 1. 0
+O3 O2- 6 g 0.0918(3) 0.4633(3) 0.3318(5) . 1. 0
+O4 O2- 6 g 0.8973(2) 0.2815(2) -.0073(6) . 1. 0
+O5 O2- 6 g 0.2454(4) 0.0408(4) 0.5248(10) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Cd1 Cd2+ 0.00346(3) 0.00291(2) 0.00802(9) 0.00198(2) -.00033(3) -.00004(3)
+P1 P5+ 0.00236(5) 0.00241(5) 0.0091(12) 0.00145(4) 0.00022(7) -.00004(7)
+O1 O2- 0.00268(16) 0.00242(16) 0.0297(11) 0.00121(13) 0.00031(32) 0.00089(31)
+O2 O2- 0.00516(22) 0.00481(21) 0.01261(65) 0.00143(17) -.00017(30) -.00136(31)
+O3 O2- 0.00471(20) 0.00345(18) 0.01576(76) 0.00143(16) -.00271(31) -.00073(30)
+O4 O2- 0.00452(20) 0.00431(20) 0.02146(87) 0.00126(16) -.00023(33) 0.00024(31)
+O5 O2- 0.00682(33) 0.00804(36) 0.0525(21) 0.00412(29) 0.00042(68) -.00335(69)
+#End of TTdata_89-ICSD

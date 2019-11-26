@@ -1,0 +1,89 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_91-ICSD
+_database_code_ICSD 91
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Dirubidium tecto-tetragermanate'
+_chemical_formula_structural 'Rb2 (Ge4 O9)'
+_chemical_formula_sum 'Ge4 O9 Rb2'
+_chemical_name_structure_type Rb2Ge4O9
+_exptl_crystal_density_diffrn 4.84
+_publ_section_title
+
+;
+Structure cristalline de Rb2 Ge4 O9 et Rb2 Ti Ge3 O9 de type tetragermanate et
+etude structurale comparee de germanates en anneaux
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1536 1540 ACBCAR
+loop_
+_publ_author_name
+'Goreaud, M.'
+'Raveau, B.'
+_cell_length_a 12.08(7)
+_cell_length_b 12.08(7)
+_cell_length_c 9.86(5)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 1246.07
+_cell_formula_units_Z 6
+_symmetry_space_group_name_H-M 'P -3 c 1'
+_symmetry_Int_Tables_number 165
+_refine_ls_R_factor_all 0.076
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x-y, -y, -z+1/2'
+2 '-x, -x+y, -z+1/2'
+3 'y, x, -z+1/2'
+4 'x-y, x, -z'
+5 'y, -x+y, -z'
+6 '-x, -y, -z'
+7 '-x+y, y, z+1/2'
+8 'x, x-y, z+1/2'
+9 '-y, -x, z+1/2'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Rb1+ 1
+Ge4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Rb1 Rb1+ 12 g 0.0040(8) 0.3387(8) 0.4303(4) 1.19 1. 0
+Ge1 Ge4+ 2 b 0 0 0 0.72 1. 0
+Ge2 Ge4+ 4 d 0.3333 0.6666 0.4705(8) 0.52 1. 0
+Ge3 Ge4+ 6 f 0 0.1755(8) 0.75 0.55 1. 0
+Ge4 Ge4+ 12 g 0.1500(6) 0.4824(6) 0.7201(4) 0.56 1. 0
+O1 O2- 6 f 0 0.4773(44) 0.75 0.93 1. 0
+O2 O2- 12 g 0.0724(42) 0.1480(36) 0.8821(26) 0.89 1. 0
+O3 O2- 12 g 0.1190(37) 0.3260(37) 0.6780(29) 0.81 1. 0
+O4 O2- 12 g 0.2496(36) 0.5199(32) 0.8584(24) 0.53 1. 0
+O5 O2- 12 g 0.1832(40) 0.5784(43) 0.5774(29) 1.52 1. 0
+#End of TTdata_91-ICSD

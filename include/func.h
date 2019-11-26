@@ -169,14 +169,14 @@ void cross(double a[3], double b[3], double res[3]) {
 }
 
 double round(double number, unsigned int bits) {
-    double integerPart = floor(number);
-    number -= integerPart;
+    double integer = floor(number);
+    number -= integer;
     for (unsigned int i = 0; i < bits; ++i)
         number *= 10;
     number = floor(number + 0.5);
     for (unsigned int i = 0; i < bits; ++i)
         number /= 10;
-    return integerPart + number;
+    return integer + number;
 }
 
 // print vector for debugging

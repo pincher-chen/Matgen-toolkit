@@ -1,0 +1,108 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_228-ICSD
+_database_code_ICSD 228
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic
+'Octapotassium undecatungstosilicate tridecahydrate - alpha'
+_chemical_formula_structural 'K8 (Si W11 O39) (H2 O)13'
+_chemical_formula_sum 'H26 K8 O52 Si1 W11'
+_exptl_crystal_density_diffrn 4.42
+_publ_section_title 'The crystal structure of alpha-K8 Si W11 O39 (H2 O)13'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Bulletin of the Chemical Society of Japan' 1976 49 156 158 BCSJA8
+loop_
+_publ_author_name
+'Matsumoto, K.'
+'Sasaki, Y.'
+_cell_length_a 10.654(1)
+_cell_length_b 10.654(1)
+_cell_length_c 10.654(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 1209.31
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'P -4 3 m'
+_symmetry_Int_Tables_number 215
+_refine_ls_R_factor_all 0.069
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-z, -y, x'
+2 '-y, -x, z'
+3 '-x, -z, y'
+4 '-z, -x, y'
+5 '-y, -z, x'
+6 '-x, -y, z'
+7 '-z, y, -x'
+8 '-y, x, -z'
+9 '-x, z, -y'
+10 '-z, x, -y'
+11 '-y, z, -x'
+12 '-x, y, -z'
+13 'z, -y, -x'
+14 'y, -x, -z'
+15 'x, -z, -y'
+16 'z, -x, -y'
+17 'y, -z, -x'
+18 'x, -y, -z'
+19 'z, y, x'
+20 'y, x, z'
+21 'x, z, y'
+22 'z, x, y'
+23 'y, z, x'
+24 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+W6+ 6
+Si4+ 4
+O2- -2
+K1+ 1
+O2- -2
+K1+ 1
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+W1 W6+ 12 i 0.2349 0.2349 0.0038 . 0.917 0
+Si1 Si4+ 1 a 0 0 0 . 1. 0
+O1 O2- 4 e 0.0877 0.0877 -.0877 . 0.975 0
+O2 O2- 12 i 0.3328 0.1412 -.1412 . 0.975 0
+O3 O2- 12 i 0.2908 0.112 0.112 . 0.975 0
+O4 O2- 12 i 0.3438 0.3438 0.0285 . 0.975 0
+K1 K1+ 3 d 0.5 0 0 . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+W1 W6+ 0.0025(1) 0.0025(1) 0.0054(3) -.0005(2) 0.0000(2) 0.0000(4)
+Si1 Si4+ 0.0072(34) 0.0072(34) 0.0072(34) 0 0 0
+O1 O2- 0.0050(39) 0.0050(39) 0.0050(39) -.0019(41) 0.0019(41) 0.0019(41)
+O2 O2- 0.0077(70) 0.0090(46) 0.0090(46) 0.0022(40) -.0022(40) 0.0033(67)
+O3 O2- 0.0045(49) 0.0028(24) 0.0028(24) -.0004(28) -.0004(28) 0.0001(34)
+O4 O2- 0.0036(29) 0.0036(29) 0.009(12) 0.0019(40) -.0016(37) -.0016(36)
+K1 K1+ 0.0011(21) 0.0108(26) 0.0108(26) 0 0 0
+#End of TTdata_228-ICSD

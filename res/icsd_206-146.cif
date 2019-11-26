@@ -1,0 +1,105 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_206-ICSD
+_database_code_ICSD 206
+_audit_creation_date 1980-01-01
+_audit_update_record 2012-08-01
+_chemical_name_systematic 'Ditin sulfide diiodide - alpha'
+_chemical_formula_structural 'Sn2 S I2'
+_chemical_formula_sum 'I2 S1 Sn2'
+_exptl_crystal_density_diffrn 5.07
+_publ_section_title
+
+;
+Contribution a l'etude du systeme forme par l'etain, le soufre et l'iode mise
+en evidence des deux varietes de l'iodosulfure stanneux Sn2 S I2: comportement
+thermique et etude structurale
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1976 18 175 182 JSSCBI
+loop_
+_publ_author_name
+'Thevet, F.'
+'Nguyen, H.D.'
+'Dagron, C.'
+'Flahaut, J.'
+_cell_length_a 14.305(6)
+_cell_length_b 17.281(4)
+_cell_length_c 4.435(5)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 110.28(3)
+_cell_volume 1028.39
+_cell_formula_units_Z 6
+_symmetry_space_group_name_H-M 'B 1 1 2/m'
+_symmetry_Int_Tables_number 12
+_refine_ls_R_factor_all 0.045
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, z'
+2 '-x, -y, -z'
+3 'x, y, -z'
+4 'x, y, z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x+1/2, -y, -z+1/2'
+7 'x+1/2, y, -z+1/2'
+8 'x+1/2, y, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Sn2+ 2
+S2- -2
+Sn2+ 2
+S2- -2
+Sn2+ 2
+S2- -2
+I1- -1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Sn1 Sn2+ 2 a 0 0 0 . 0.88 0
+S1 S2- 2 a 0 0 0 . 0.12 0
+Sn2 Sn2+ 4 i 0.2164 0.2753 0 . 1. 0
+Sn3 Sn2+ 4 i 0.3833 0.0576 0 . 0.57 0
+S2 S2- 4 i 0.3833 0.0576 0 . 0.43 0
+Sn4 Sn2+ 4 i 0.6204 0.4715 0 . 1. 0
+S3 S2- 4 i 0.1973(5) 0.4203(4) 0 . 1. 0
+I1 I1- 4 i 0.5499(1) 0.2417(1) 0 . 1. 0
+I2 I1- 4 i 0.7709(1) 0.1183(1) 0 . 1. 0
+I3 I1- 4 i 0.8891(1) 0.3742(1) 0 . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Sn1 Sn2+ 0.0032(2) 0.0062(2) 0.017(2) 0.0037(2) 0 0
+S1 S2- 0.0032(2) 0.0062(2) 0.017(2) 0.0037(2) 0 0
+Sn2 Sn2+ 0.0041(1) 0.0021(1) 0.034(1) 0.0015(1) 0 0
+Sn3 Sn2+ 0.0029(2) 0.0027(1) 0.034(2) 0.0012(1) 0 0
+S2 S2- 0.0029(2) 0.0027(1) 0.034(2) 0.0012(1) 0 0
+Sn4 Sn2+ 0.0014(1) 0.0028(1) 0.027(1) 0.0008(1) 0 0
+S3 S2- 0.0017(3) 0.0013(2) 0.022(3) 0.0006(2) 0 0
+I1 I1- 0.0021(1) 0.0024(1) 0.025(1) 0.0015(7) 0 0
+I2 I1- 0.0035(1) 0.0023(1) 0.033(1) 0.0013(1) 0 0
+I3 I1- 0.0018(1) 0.0023(1) 0.023(1) 0.0009(1) 0 0
+#End of TTdata_206-ICSD

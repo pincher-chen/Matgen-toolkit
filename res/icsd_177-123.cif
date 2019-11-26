@@ -1,0 +1,115 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_177-ICSD
+_database_code_ICSD 177
+_audit_creation_date 1980-01-01
+_audit_update_record 2009-08-01
+_chemical_name_systematic
+'Hexapotassium pentaoxalatobis(dioxouranate) decahydrate'
+_chemical_formula_structural 'K6 ((U O2)2 (C2 O4)5) (H2 O)10'
+_chemical_formula_sum 'C10 H20 K6 O34 U2'
+_exptl_crystal_density_diffrn 2.73
+_publ_section_title
+
+;
+Structure de l'ion my-oxalato-bis(dioxalatodioxouranium(VI), ((U O2)2 (C2 O4)5
+)(6-)
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 2497 2503 ACBCAR
+loop_
+_publ_author_name
+'Legros, J.P.'
+'Jeannin, Y.P.'
+_cell_length_a 10.103(8)
+_cell_length_b 10.944(8)
+_cell_length_c 10.021(8)
+_cell_angle_alpha 121.4(2)
+_cell_angle_beta 104.7(1)
+_cell_angle_gamma 63.8(2)
+_cell_volume 848.16
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'P -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.063
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+U6+ 6
+K1+ 1
+O2- -2
+C3+ 3
+O2- -2
+C3+ 3
+O2- -2
+C3+ 3
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+U1 U6+ 2 i 0.2403(1) 0.1301(1) 0.6627(1) . 1. 0
+K1 K1+ 2 i 0.5120(7) 0.3412(7) 0.5970(8) . 1. 0
+K2 K1+ 2 i 0.1416(6) 0.0596(6) 0.9812(6) . 1. 0
+K3 K1+ 2 i 0.9107(7) 0.4632(6) 0.2897(7) . 1. 0
+O1 O2- 2 i 0.141(2) 0.035(2) 0.688(2) 2.8 1. 0
+O2 O2- 2 i 0.338(2) 0.231(2) 0.646(2) 3.5 1. 0
+C1 C3+ 2 i 0.501(3) 0.094(3) 0.921(3) 2.6 1. 0
+C2 C3+ 2 i 0.543(3) -.044(3) 0.766(3) 2.5 1. 0
+O3 O2- 2 i 0.371(2) 0.179(2) 0.908(2) 3.2 1. 0
+O4 O2- 2 i 0.453(2) -.064(2) 0.651(2) 2.6 1. 0
+O5 O2- 2 i 0.581(2) 0.126(2) 1.039(2) 3.4 1. 0
+O6 O2- 2 i 0.665(2) -.135(2) 0.766(2) 3.7 1. 0
+C3 C3+ 2 i 0.161(3) -.015(3) 0.286(3) 2.6 1. 0
+C4 C3+ 2 i 0.056(2) 0.136(2) 0.350(3) 2. 1. 0
+O7 O2- 2 i 0.249(2) -.045(2) 0.392(2) 3.3 1. 0
+O8 O2- 2 i 0.054(2) 0.214(2) 0.495(2) 3.2 1. 0
+O9 O2- 2 i 0.158(2) -.105(2) 0.143(2) 3.4 1. 0
+O10 O2- 2 i -.027(2) 0.182(2) 0.261(2) 3.5 1. 0
+C5 C3+ 2 i 0.042(2) 0.409(2) 0.959(2) 2.9 1. 0
+O11 O2- 2 i 0.099(2) 0.362(2) 0.838(2) 2.9 1. 0
+O12 O2- 2 i 0.050(2) 0.346(2) 1.035(2) 4.2 1. 0
+O13 O2- 2 i 0.782(2) 0.366(2) 0.619(3) 6.6 1. 0
+O14 O2- 2 i 0.202(2) 0.419(2) 0.437(2) 4.7 1. 0
+O15 O2- 2 i 0.690(2) 0.380(2) 0.065(2) 5.5 1. 0
+O16 O2- 2 i 0.364(2) 0.479(2) 0.111(3) 6.6 1. 0
+O17 O2- 2 i 0.588(2) 0.359(2) 0.344(2) 6.1 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+U1 U6+ 0.02057 0.02385 0.02138 0.01098 0.01162 0.01535
+K1 K1+ 0.0619 0.0533 0.0601 -.0157 0.0293 0.0085
+K2 K1+ 0.0335 0.0371 0.0334 0.0059 0.0081 0.0222
+K3 K1+ 0.0582 0.0432 0.0474 0.0113 0.0248 0.0296
+#End of TTdata_177-ICSD

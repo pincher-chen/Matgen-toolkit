@@ -1,0 +1,117 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_328-ICSD
+_database_code_ICSD 328
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic
+'Bis(dioxouranium) dihydroxide dinitrate(V) tetrahydrate'
+_chemical_formula_structural '(U O2)2 (O H)2 (N O3)2 (H2 O)4'
+_chemical_formula_sum 'H10 N2 O16 U2'
+_exptl_crystal_density_diffrn 3.8
+_publ_section_title
+'Structure cristalline du nitrate de dihydroxo diuranyle tetrahydrate'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1658 1661 ACBCAR
+loop_
+_publ_author_name
+'Perrin, A.'
+_cell_length_a 8.622(8)
+_cell_length_b 8.628(15)
+_cell_length_c 10.393(16)
+_cell_angle_alpha 109.57(12)
+_cell_angle_beta 105.56(14)
+_cell_angle_gamma 99.65(14)
+_cell_volume 672.95
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P -1'
+_symmetry_Int_Tables_number 2
+_refine_ls_R_factor_all 0.083
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -y, -z'
+2 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+U6+ 6
+O2- -2
+N5+ 5
+O2- -2
+N5+ 5
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+U1 U6+ 2 i 0.98308(15) 0.78630(16) 0.23351(13) . 1. 0
+U2 U6+ 2 i 0.30701(15) 0.71966(16) 0.54475(13) . 1. 0
+O1 O2- 2 i 0.8619(28) 0.8544(32) 0.3394(24) . 1. 0
+O2 O2- 2 i 0.1100(29) 0.7182(28) 0.1300(23) . 1. 0
+O3 O2- 2 i 0.2042(33) 0.7925(31) 0.6695(27) . 1. 0
+O4 O2- 2 i 0.4080(24) 0.6373(26) 0.4164(22) . 1. 0
+O5 O2- 2 i 0.0428(27) 0.5934(28) 0.3534(24) . 1. 0
+O6 O2- 2 i 0.2356(28) 0.9128(28) 0.4413(24) . 1. 0
+N1 N5+ 2 i 0.0195(38) 0.1172(41) 0.1909(35) . 1. 0
+O7 O2- 2 i 0.1266(28) 0.1039(29) 0.3014(24) . 1. 0
+O8 O2- 2 i 0.9041(38) 0.9825(35) 0.1056(34) . 1. 0
+O9 O2- 2 i 0.0329(34) 0.2479(28) 0.1716(24) . 1. 0
+N2 N5+ 2 i 0.6920(29) 0.5165(34) 0.9932(27) . 1. 0
+O10 O2- 2 i 0.7370(32) 0.6621(33) 0.9977(27) . 1. 0
+O11 O2- 2 i 0.7768(30) 0.4924(28) 0.1046(23) . 1. 0
+O12 O2- 2 i 0.5745(31) 0.4119(33) 0.8956(26) . 1. 0
+O13 O2- 2 i 0.5343(29) 0.9800(37) 0.6781(29) . 1. 0
+O14 O2- 2 i 0.5067(35) 0.6865(36) 0.7426(31) . 1. 0
+O15 O2- 2 i 0.2028(26) 0.4338(29) 0.5328(24) . 1. 0
+O16 O2- 2 i 0.3734(35) 0.9071(48) 0.0296(29) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+U1 U6+ 0.00736(25) 0.00842(28) 0.00466(20) 0.00292(20) 0.00218(17) 0.00435(19)
+U2 U6+ 0.00728(25) 0.00906(28) 0.00540(21) 0.00318(21) 0.00304(17) 0.00463(20)
+O1 O2- 0.0076(48) 0.0075(41) 0.0080(34) 0.0039(32) 0.0066(30) 0.0038(31)
+O2 O2- 0.0085(41) 0.0164(53) 0.0057(33) 0.0023(38) 0.0045(30) 0.0033(34)
+O3 O2- 0.0150(47) 0.0093(44) 0.0026(29) 0.0060(37) 0.0049(29) 0.0035(29)
+O4 O2- 0.0189(54) 0.0141(53) 0.0115(42) 0.0033(46) 0.0113(39) 0.0075(38)
+O5 O2- 0.0056(35) 0.0075(40) 0.0032(28) -.0015(29) -.0003(24) 0.0038(27)
+O6 O2- 0.0091(42) 0.0102(46) 0.0070(34) 0.0063(36) 0.0036(30) 0.0046(33)
+N1 N5+ 0.0138(61) 0.0102(61) 0.0121(52) 0.0054(50) 0.0090(47) 0.0069(47)
+O7 O2- 0.0102(42) 0.0083(44) 0.0059(43) 0.0013(34) -.0026(29) 0.0061(32)
+O8 O2- 0.0228(68) 0.0119(59) 0.0105(44) 0.0095(54) 0.0072(45) 0.0076(43)
+O9 O2- 0.0297(68) 0.0052(42) 0.0058(34) 0.0064(43) 0.0098(39) 0.0004(31)
+N2 N5+ 0.0029(40) 0.0090(51) 0.0036(35) -.0001(36) -.0011(29) -.0012(34)
+O10 O2- 0.0159(52) 0.0141(56) 0.0096(39) -.0012(43) -.0015(35) 0.0107(40)
+O11 O2- 0.0128(46) 0.0060(41) 0.0021(29) 0.0034(35) -.0015(28) -.0009(27)
+O12 O2- 0.0115(49) 0.0148(55) 0.0055(35) 0.0002(42) -.0033(32) -.0008(36)
+O13 O2- 0.0068(42) 0.0229(67) 0.0112(42) 0.0046(44) 0.0030(34) 0.0089(45)
+O14 O2- 0.0232(65) 0.0189(65) 0.0165(49) 0.0045(53) -.0030(46) 0.0147(49)
+O15 O2- 0.0060(38) 0.0095(45) 0.0053(31) 0.0031(33) -.0007(27) 0.0023(30)
+O16 O2- 0.0159(58) 0.048(11) 0.0079(41) -.0027(63) 0.0007(39) 0.0127(56)
+#End of TTdata_328-ICSD

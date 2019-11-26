@@ -1,0 +1,97 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_87-ICSD
+_database_code_ICSD 87
+_audit_creation_date 1980-01-01
+_audit_update_record 2009-08-01
+_chemical_name_systematic 'Cobalt bis(thiocyanate) trihydrate'
+_chemical_formula_structural 'Co (S C N)2 (H2 O)3'
+_chemical_formula_sum 'C2 H6 Co1 N2 O3 S2'
+_exptl_crystal_density_diffrn 1.88
+_publ_section_title 'The crystal structure of cobalt(II) thiocyanate trihydrate'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1526 1529 ACBCAR
+loop_
+_publ_author_name
+'Cano, F.H.'
+'Garcia Blanco, S.'
+'Laverat, A.G.'
+_cell_length_a 12.490(2)
+_cell_length_b 6.024(1)
+_cell_length_c 10.740(2)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.49(1)
+_cell_angle_gamma 90.
+_cell_volume 808.05
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/c 1'
+_symmetry_Int_Tables_number 15
+_refine_ls_R_factor_all 0.03
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x, -y, -z'
+3 '-x, y, -z+1/2'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, -y+1/2, -z'
+7 '-x+1/2, y+1/2, -z+1/2'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Co2+ 2
+N3- -3
+C4+ 4
+S2- -2
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Co1 Co2+ 4 d 0.25 0.25 0.5 . 1. 0
+N1 N3- 8 f 0.2908(2) 0.1190(2) 0.6715(2) . 1. 0
+C1 C4+ 8 f 0.3306(2) 0.0770(3) 0.7666(2) . 1. 0
+S1 S2- 8 f 0.3893 0.0178(1) 0.9021 . 1. 0
+O1 O2- 8 f 0.3740(1) 0.4787(3) 0.5269(2) . 1. 0
+O2 O2- 4 e 0.5 -.4304(5) 0.75 . 1. 0
+H1 H1+ 8 f 0.3728(33) 0.6050(81) 0.5015(40) 0.041(11) 1. 0
+H2 H1+ 8 f 0.4116(34) 0.4827(70) 0.5965(44) 0.035(11) 1. 0
+H3 H1+ 8 f 0.4550(48) -0.338(11) 0.7836(62) 0.079(19) 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Co1 Co2+ 0.0284(2) 0.0240(2) 0.0159(2) -0.0050(1) -0.0054(1) 0.0034(1)
+N1 N3- 0.0410(9) 0.0321(9) 0.0206(8) 0.0021(7) -0.0047(7) 0.0045(6)
+C1 C4+ 0.0306(8) 0.0239(8) 0.0202(8) 0.0002(6) -0.0020(6) 0.0020(6)
+S1 S2- 0.0347(3) 0.0312(3) 0.0218(2) -0.0027(2) -0.0100(2) 0.0056(2)
+O1 O2- 0.0379(8) 0.0323(8) 0.0386(8) -0.0115(6) -0.0113(6) 0.0051(6)
+O2 O2- 0.0526(14) 0.0423(13) 0.0435(14) 0 0.0010(11) 0
+#End of TTdata_87-ICSD

@@ -1,0 +1,107 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_142-ICSD
+_database_code_ICSD 142
+_audit_creation_date 1980-01-01
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Trilead octaantimony sulfide'
+_chemical_formula_structural 'Pb3 Sb8 S15'
+_chemical_formula_sum 'Pb3 S15 Sb8'
+_chemical_name_structure_type Pb3Sb8S15
+_chemical_name_mineral Fueloeppite
+_exptl_crystal_density_diffrn 5.19
+_publ_section_title 'The crystal structure of fueloeppite, Pb3 Sb8 S15'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1975 31 151 157 ACBCAR
+loop_
+_publ_author_name
+'Nuffield, E.W.'
+_cell_length_a 13.441(15)
+_cell_length_b 11.726(15)
+_cell_length_c 16.930(15)
+_cell_angle_alpha 90.
+_cell_angle_beta 94.71(8)
+_cell_angle_gamma 90.
+_cell_volume 2659.31
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/c 1'
+_symmetry_Int_Tables_number 15
+_refine_ls_R_factor_all 0.0607
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x, -y, -z'
+3 '-x, y, -z+1/2'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, -y+1/2, -z'
+7 '-x+1/2, y+1/2, -z+1/2'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Pb2+ 2
+Sb3+ 3
+S2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Pb1 Pb2+ 4 e 0 0.37137(17) 0.25 . 1. 0
+Pb2 Pb2+ 8 f 0.30719(9) 0.42895(12) 0.33253(9) . 1. 0
+Sb1 Sb3+ 8 f 0.37263(14) 0.13632(18) 0.49484(13) . 1. 0
+Sb2 Sb3+ 8 f 0.40863(15) 0.17955(18) 0.15600(12) . 1. 0
+Sb3 Sb3+ 8 f 0.08902(15) 0.04903(19) 0.41560(14) . 1. 0
+Sb4 Sb3+ 8 f 0.14000(14) 0.25122(18) 0.06034(12) . 1. 0
+S1 S2- 8 f 0.3566(6) 0.04863(71) 0.25578(51) . 1. 0
+S2 S2- 4 e 0.5 0.31669(94) 0.25 . 1. 0
+S3 S2- 8 f 0.26624(52) 0.02731(63) 0.03609(47) . 1. 0
+S4 S2- 8 f 0.18550(57) 0.24606(71) 0.39631(53) . 1. 0
+S5 S2- 8 f 0.46720(54) 0.36518(67) 0.46177(69) . 1. 0
+S6 S2- 8 f 0.02975(53) 0.41679(61) 0.08294(44) . 1. 0
+S7 S2- 8 f 0.07034(54) 0.13327(67) 0.16400(49) . 1. 0
+S8 S2- 8 f 0.27204(53) 0.32013(66) 0.15967(48) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Pb1 Pb2+ 0.00347(12) 0.00235(14) 0.00108(7) 0 0.00095(7) 0
+Pb2 Pb2+ 0.00192(7) 0.0030(1) 0.00157(5) -.00027(7) 0.00047(4) 0.00003(6)
+Sb1 Sb3+ 0.00092(10) 0.00191(15) 0.00095(8) -.00035(10) 0.00044(7) 0.00011(8)
+Sb2 Sb3+ 0.00114(10) 0.00156(15) 0.00073(7) -.00016(10) 0.00031(6) 0.00031(6)
+Sb3 Sb3+ 0.00132(11) 0.00197(17) 0.00146(9) -.00082(10) 0.00002(7) 0.00058(9)
+Sb4 Sb3+ 0.00067(10) 0.00168(15) 0.00056(7) 0.00021(9) 0.00023(6) -.00025(8)
+S1 S2- 0.00203(41) 0.00238(61) 0.00114(29) 0.00022(41) 0.00032(27) 0.00018(33)
+S2 S2- 0.00161(57) 0.00103(72) 0.00113(40) 0 -.00034(36) 0
+S3 S2- 0.00101(35) 0.00091(48) 0.00110(28) 0.00016(35) 0.00066(25) 0.0005(3)
+S4 S2- 0.0014(4) 0.00201(58) 0.00182(33) -.00040(39) 0.00083(28) -.00078(37)
+S5 S2- 0.00138(39) 0.00173(54) 0.00115(29) 0.00024(39) 0.00068(27) -.00035(33)
+S6 S2- 0.00135(36) 0.00044(46) 0.00065(25) 0.00002(34) 0.00036(23) 0.00002(29)
+S7 S2- 0.00122(37) 0.00179(53) 0.00104(27) 0.00023(38) 0.00043(25) 0.00017(33)
+S8 S2- 0.00109(39) 0.00130(52) 0.00142(31) 0.00038(37) -.00057(26) 0.00002(33)
+#End of TTdata_142-ICSD

@@ -1,0 +1,70 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_195-ICSD
+_database_code_ICSD 195
+_audit_creation_date 2012-02-01
+_audit_update_record 2018-08-01
+_chemical_name_systematic 'Vanadium oxide (3/5)'
+_chemical_formula_structural 'V3 O5'
+_chemical_formula_sum 'O5 V3'
+_chemical_name_structure_type V3O5
+_exptl_crystal_density_diffrn 4.64
+_publ_section_title 'Crystal structures of VnO2n-1(2<=n<=7)'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1976 17 407 424 JSSCBI
+loop_
+_publ_author_name
+'Horiuchi, Hiroyuki'
+'Morimoto, Nobuo'
+'Tokonami, Masayasu'
+_cell_length_a 10.004
+_cell_length_b 5.04
+_cell_length_c 9.854
+_cell_angle_alpha 90.
+_cell_angle_beta 137.9
+_cell_angle_gamma 90.
+_cell_volume 333.09
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 1 21/n 1'
+_symmetry_Int_Tables_number 14
+_refine_ls_R_factor_all 0.099
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x+1/2, y+1/2, -z+1/2'
+2 '-x, -y, -z'
+3 'x+1/2, -y+1/2, z+1/2'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+V3+ 3
+V4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+V1 V3+ 4 e 0.8406(3) 0.2559(5) 0.7211(3) .33(4) 1. 0
+V2 V3+ 4 e 0.6596(3) 0.2461(5) 0.2789(3) .32(4) 1. 0
+V3 V4+ 4 e 0.2483(3) 0.2520(5) 0.5009(3) .35(4) 1. 0
+O1 O2- 4 e 0.2138(15) 0.5929(21) 0.1611(15) 1.13(15) 1. 0
+O2 O2- 4 e 0.7210(13) 0.0962(17) 0.1608(12) .30(15) 1. 0
+O3 O2- 4 e 0.1140(13) 0.9071(19) 0.4398(13) .56(17) 1. 0
+O4 O2- 4 e 0.6100(13) 0.4053(19) 0.4417(14) .66(17) 1. 0
+O5 O2- 4 e 0.0024(14) 0.444(2) 0.2509(14) .77(11) 1. 0
+#End of TTdata_195-ICSD

@@ -1,4 +1,4 @@
 ./res
-*.cif
+./in_cell
+./clean
 *.exe
-*.rar

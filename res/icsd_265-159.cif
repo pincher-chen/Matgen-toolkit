@@ -1,0 +1,67 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_265-ICSD
+_database_code_ICSD 265
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Ditellurium trioxide sulfate(VI)'
+_chemical_formula_structural 'Te2 O3 (S O4)'
+_chemical_formula_sum 'O7 S1 Te2'
+_exptl_crystal_density_diffrn 4.63
+_publ_section_title 'Verfeinerung der Kristallstruktur von Te2 O3 (S O4)'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Monatshefte fuer Chemie' 1976 107 721 730 MOCMB7
+loop_
+_publ_author_name
+'Mayer, H.'
+'Pupp, G.'
+_cell_length_a 8.879(2)
+_cell_length_b 6.936(2)
+_cell_length_c 4.646(4)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 286.12
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P m n 21'
+_symmetry_Int_Tables_number 31
+_refine_ls_R_factor_all 0.063
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y, z+1/2'
+2 '-x+1/2, -y, z+1/2'
+3 '-x, y, z'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Te4+ 4
+S6+ 6
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Te1 Te4+ 4 b 0.3008(1) 0.6782(1) 0.25 0.39 1. 0
+S1 S6+ 2 a 0 0.0210(8) 0.3270(13) 0.35 1. 0
+O1 O2- 4 b 0.365(1) 0.946(2) -.003(3) 0.5 1. 0
+O2 O2- 2 a 0 0.166(3) 0.089(4) 0.9 1. 0
+O3 O2- 2 a 0 0.416(2) 0.648(4) 0.5 1. 0
+O4 O2- 4 b 0.261(1) 0.406(2) 0.377(3) 0.6 1. 0
+O5 O2- 2 a 0 0.825(3) 0.207(5) 1.1 1. 0
+#End of TTdata_265-ICSD

@@ -1,0 +1,97 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_297-ICSD
+_database_code_ICSD 297
+_audit_creation_date 1980-01-01
+_audit_update_record 2005-10-01
+_chemical_name_systematic 'Cadmium dinitrate(V)'
+_chemical_formula_structural 'Cd (N O3)2'
+_chemical_formula_sum 'Cd1 N2 O6'
+_exptl_crystal_density_diffrn 3.63
+_publ_section_title
+'Structure cristalline et polymorphisme du nitrate de cadmium anhydre'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1976 17 231 237 JSSCBI
+loop_
+_publ_author_name
+'Louer, M.'
+'Louer, D.'
+'Grandjean, D.'
+_cell_length_a 7.5073(14)
+_cell_length_b 15.3692(35)
+_cell_length_c 7.5073(14)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 866.2
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'P c a 21'
+_symmetry_Int_Tables_number 29
+_refine_ls_R_factor_all 0.044
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y, z'
+2 '-x+1/2, y, z+1/2'
+3 '-x, -y, z+1/2'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Cd2+ 2
+N5+ 5
+O2- -2
+N5+ 5
+O2- -2
+N5+ 5
+O2- -2
+N5+ 5
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Cd1 Cd2+ 4 a 0.9729(4) 0.1245(2) 0.25 . 1. 0
+Cd2 Cd2+ 4 a 0.4824(4) 0.3785(2) 0.2698(3) . 1. 0
+N1 N5+ 4 a 0.3426(26) 0.2928(13) 0.6312(24) 0.78 1. 0
+O1 O2- 4 a 0.2422(23) 0.2683(11) 0.7459(35) 2.35 1. 0
+O2 O2- 4 a 0.3156(28) 0.3611(14) 0.5623(30) 2.56 1. 0
+O3 O2- 4 a 0.4661(26) 0.2472(12) 0.5926(22) 1.9 1. 0
+N2 N5+ 4 a 0.1731(35) 0.5537(15) 0.9380(29) 1.24 1. 0
+O4 O2- 4 a 0.1972(26) 0.5051(13) 0.8083(25) 1.48 1. 0
+O5 O2- 4 a 0.2800(28) 0.6086(15) 0.9742(28) 1.65 1. 0
+O6 O2- 4 a 0.0333(35) 0.5425(13) 0.0254(31) 1.91 1. 0
+N3 N5+ 4 a 0.8709(27) 0.2128(15) 0.5959(27) 1.27 1. 0
+O7 O2- 4 a 0.8414(21) 0.2544(11) 0.7337(22) 1.39 1. 0
+O8 O2- 4 a 0.7832(30) 0.1448(13) 0.5754(32) 2.35 1. 0
+O9 O2- 4 a 0.982(3) 0.2428(12) 0.4714(21) 2.49 1. 0
+N4 N5+ 4 a 0.1731(36) 0.0479(17) 0.9242(32) 1.43 1. 0
+O10 O2- 4 a 0.206(3) -.0062(15) 0.7958(30) 2.29 1. 0
+O11 O2- 4 a 0.0315(38) 0.0428(14) 0.0152(23) 2.3 1. 0
+O12 O2- 4 a 0.2789(33) 0.1088(18) 0.9521(32) 2.67 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Cd1 Cd2+ 0.0098(5) 0.0018(1) 0.0064(5) -.0007(2) -.0013(6) -.0007(2)
+Cd2 Cd2+ 0.0059(4) 0.0019(1) 0.0084(6) -.0002(2) -.0011(5) 0.0005(2)
+#End of TTdata_297-ICSD

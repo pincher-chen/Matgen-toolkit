@@ -1,0 +1,140 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_296-ICSD
+_database_code_ICSD 296
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Iron boron (1.06/51.68)'
+_chemical_formula_structural 'Fe1.062 B51.678'
+_chemical_formula_sum 'B51.678 Fe1.062'
+_chemical_name_structure_type B(beta)
+_exptl_crystal_density_diffrn 2.48
+_publ_section_title
+
+;
+A single-crystal diffractometry investigation of iron in beta-rhombohedral
+boron
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1976 17 165 170 JSSCBI
+loop_
+_publ_author_name
+'Callmer, B.'
+'Lundstroem, T.'
+_cell_length_a 10.9514(8)
+_cell_length_b 10.9514(8)
+_cell_length_c 23.8609(16)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 2478.32
+_cell_formula_units_Z 6
+_symmetry_space_group_name_H-M 'R -3 m H'
+_symmetry_Int_Tables_number 166
+_refine_ls_R_factor_all 0.045
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x-y, -y, -z'
+2 '-x, -x+y, -z'
+3 'y, x, -z'
+4 'x-y, x, -z'
+5 'y, -x+y, -z'
+6 '-x, -y, -z'
+7 '-x+y, y, z'
+8 'x, x-y, z'
+9 '-y, -x, z'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+13 'x-y+2/3, -y+1/3, -z+1/3'
+14 '-x+2/3, -x+y+1/3, -z+1/3'
+15 'y+2/3, x+1/3, -z+1/3'
+16 'x-y+2/3, x+1/3, -z+1/3'
+17 'y+2/3, -x+y+1/3, -z+1/3'
+18 '-x+2/3, -y+1/3, -z+1/3'
+19 '-x+y+2/3, y+1/3, z+1/3'
+20 'x+2/3, x-y+1/3, z+1/3'
+21 '-y+2/3, -x+1/3, z+1/3'
+22 '-x+y+2/3, -x+1/3, z+1/3'
+23 '-y+2/3, x-y+1/3, z+1/3'
+24 'x+2/3, y+1/3, z+1/3'
+25 'x-y+1/3, -y+2/3, -z+2/3'
+26 '-x+1/3, -x+y+2/3, -z+2/3'
+27 'y+1/3, x+2/3, -z+2/3'
+28 'x-y+1/3, x+2/3, -z+2/3'
+29 'y+1/3, -x+y+2/3, -z+2/3'
+30 '-x+1/3, -y+2/3, -z+2/3'
+31 '-x+y+1/3, y+2/3, z+2/3'
+32 'x+1/3, x-y+2/3, z+2/3'
+33 '-y+1/3, -x+2/3, z+2/3'
+34 '-x+y+1/3, -x+2/3, z+2/3'
+35 '-y+1/3, x-y+2/3, z+2/3'
+36 'x+1/3, y+2/3, z+2/3'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+B0+ 0
+Fe0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+B1 B0+ 36 i 0.17503(19) 0.17544(19) 0.17689(7) . 1. 0
+B2 B0+ 36 i 0.31875(19) 0.29492(19) 0.12892(7) . 1. 0
+B3 B0+ 36 i 0.26155(19) 0.21724(19) 0.41965(7) . 1. 0
+B4 B0+ 36 i 0.23580(18) 0.25150(19) 0.34683(17) . 1. 0
+B5 B0+ 18 h 0.05465(13) 0.10930(26) 0.94412(10) . 1. 0
+B6 B0+ 18 h 0.08596(13) 0.17192(26) 0.01329(10) . 1. 0
+B7 B0+ 18 h 0.11048(14) 0.22096(28) 0.88704(10) . 1. 0
+B8 B0+ 18 h 0.16968(14) 0.33936(28) 0.0279(10) . 1. 0
+B9 B0+ 18 h 0.12900(14) 0.25800(28) 0.76628(10) . 1. 0
+B10 B0+ 18 h 0.10226(14) 0.20452(28) 0.69834(10) . 1. 0
+B11 B0+ 18 h 0.05651(13) 0.11302(26) 0.32662(10) . 1. 0
+B12 B0+ 18 h 0.08991(14) 0.17982(28) 0.39848(10) . 1. 0
+B13 B0+ 18 h 0.05641(21) 0.11282(41) 0.55487(16) . 0.726(11) 0
+B14 B0+ 6 c 0 0 0.38550(19) . 1. 0
+B15 B0+ 3 b 0 0 0.5 . 1. 0
+Fe1 Fe0+ 6 c 0 0 0.13528(4) . 0.507(3) 0
+Fe2 Fe0+ 18 h 0.20235(11) 0.40470(21) 0.17302(8) . 0.185(2) 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_B_11
+_atom_site_aniso_B_22
+_atom_site_aniso_B_33
+_atom_site_aniso_B_12
+_atom_site_aniso_B_13
+_atom_site_aniso_B_23
+B1 B0+ 0.517(63) 0.538(65) 0.492(59) 0.300(52) 0.032(48) 0.033(48)
+B2 B0+ 0.361(60) 0.444(62) 0.383(57) 0.174(50) -.055(44) -.035(46)
+B3 B0+ 0.399(63) 0.510(62) 0.517(64) 0.266(62) -.030(16) -.042(45)
+B4 B0+ 0.364(61) 0.472(62) 0.403(59) 0.188(51) -.031(45) -.036(47)
+B5 B0+ 0.300(62) 0.300(62) 0.519(84) 0.143(71) -.002(33) 0.002(33)
+B6 B0+ 0.289(59) 0.289(59) 0.385(84) 0.101(69) -.001(33) 0.001(33)
+B7 B0+ 0.318(63) 0.318(63) 0.522(82) 0.101(71) -.062(33) 0.062(33)
+B8 B0+ 0.426(63) 0.426(63) 0.405(89) 0.193(71) 0.042(33) -.042(33)
+B9 B0+ 0.398(64) 0.398(64) 0.487(84) 0.195(63) 0.018(33) -.018(33)
+B10 B0+ 0.402(65) 0.402(65) 0.301(82) 0.212(74) -.024(33) 0.024(33)
+B11 B0+ 0.443(65) 0.443(65) 0.369(82) 0.277(74) 0.014(33) -.014(3)
+B12 B0+ 0.458(63) 0.458(63) 0.241(80) 0.228(72) 0.009(32) -.009(32)
+B13 B0+ 0.97(12) 0.97(12) 0.88(15) 0.55(12) -.046(53) 0.046(53)
+B14 B0+ 0.435(93) 0.435(93) 0.35(14) 0.217(47) 0 0
+B15 B0+ 0.78(14) 0.78(14) 0.09(20) 0.392(72) 0 0
+Fe1 Fe0+ 0.257(31) 0.257(31) 0.210(41) 0.128(15) 0 0
+Fe2 Fe0+ 0.899(64) 0.899(64) 0.979(84) 0.397(63) -.031(28) 0.031(28)
+#End of TTdata_296-ICSD

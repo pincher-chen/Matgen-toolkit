@@ -1,0 +1,109 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_367-ICSD
+_database_code_ICSD 367
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Strontium digallodigermanate'
+_chemical_formula_structural 'Sr (Ga2 Ge2 O8)'
+_chemical_formula_sum 'Ga2 Ge2 O8 Sr1'
+_chemical_name_structure_type CaBe2(PO4)2
+_exptl_crystal_density_diffrn 4.36
+_publ_section_title
+
+;
+The structures of (Sr, Ba) ( (Al, Ga)2 (Si, Ge)2 O8). III. The crystal
+structures of the paracelsian-like modifications of synthetic Sr Ga2 Ge2 O8
+and Ba Ga2 Ge2 O8
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1196 1205 ACBCAR
+loop_
+_publ_author_name
+'Calleri, M.'
+'Gazzoni, G.'
+_cell_length_a 9.210(8)
+_cell_length_b 9.666(8)
+_cell_length_c 8.570(7)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.56(10)
+_cell_angle_gamma 90.
+_cell_volume 762.9
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P 1 21/a 1'
+_symmetry_Int_Tables_number 14
+_refine_ls_R_factor_all 0.066
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y+1/2, z'
+2 '-x, -y, -z'
+3 '-x+1/2, y+1/2, -z'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Sr2+ 2
+Ge4+ 4
+Ga3+ 3
+Ge4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Sr1 Sr2+ 4 e 0.8853(1) 0.4127(1) 0.2498(1) . 1. 0
+Ge1 Ge4+ 4 e 0.0564(1) 0.1992(1) 0.9411(1) . 1. 0
+Ga1 Ga3+ 4 e 0.0527(1) 0.1942(1) 0.5689(1) . 1. 0
+Ga2 Ga3+ 4 e 0.2355(1) 0.9243(1) 0.9324(1) . 1. 0
+Ge2 Ge4+ 4 e 0.2427(1) 0.9206(1) 0.5621(1) . 1. 0
+O1 O2- 4 e 0.1938(5) 0.0921(5) 0.0175(6) . 1. 0
+O2 O2- 4 e 0.1910(5) 0.0798(5) 0.4844(6) . 1. 0
+O3 O2- 4 e 0.1160(5) 0.3708(5) 0.9350(6) . 1. 0
+O4 O2- 4 e 0.1184(5) 0.3736(5) 0.5681(6) . 1. 0
+O5 O2- 4 e 0.9146(5) 0.1971(5) 1.0753(6) . 1. 0
+O6 O2- 4 e 0.8999(5) 0.1971(5) 0.4310(5) . 1. 0
+O7 O2- 4 e 0.0011(6) 0.1362(6) 0.7606(5) . 1. 0
+O8 O2- 4 e 0.3303(5) 0.9248(6) 0.7442(6) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Sr1 Sr2+ 0.0025(1) 0.0015(1) 0.0018(1) 0.0001 -.0002 -.0001
+Ge1 Ge4+ 0.0014(1) 0.0011(1) 0.0011(1) -.0001 0 0
+Ga1 Ga3+ 0.0014(1) 0.0011(1) 0.0013(1) 0 -.0001 0.0001(1)
+Ga2 Ga3+ 0.0014(1) 0.0013(1) 0.0014(1) 0 -.0001(1) -.0001(1)
+Ge2 Ge4+ 0.0012(1) 0.0013(1) 0.0013(1) 0.0001 0.0001 0.0001(9)
+O1 O2- 0.0024(5) 0.0027(4) 0.0028(6) 0.0009(4) -.0008(4) -.0009(4)
+O2 O2- 0.0025(5) 0.0017(4) 0.0038(6) 0.0007(4) 0.0005(4) 0.0010(4)
+O3 O2- 0.0031(5) 0.0009(4) 0.0039(6) -.0007(4) -.0015(4) 0.0007(4)
+O4 O2- 0.0026(5) 0.0018(4) 0.0031(5) -.0007(3) 0.0009(4) -.0007(4)
+O5 O2- 0.0015(4) 0.0028(5) 0.0038(6) -.0007(4) 0.0003(4) -.0010(4)
+O6 O2- 0.0023(4) 0.0027(5) 0.0024(5) -.0005(4) -.0007(4) 0.0009(4)
+O7 O2- 0.0052(6) 0.0035(5) 0.0015(5) -.0016(4) 0.0006(4) -.0002(4)
+O8 O2- 0.0023(5) 0.0060(6) 0.0016(5) -.0003(4) 0.0001(4) -.0004(5)
+#End of TTdata_367-ICSD

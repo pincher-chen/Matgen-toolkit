@@ -1,0 +1,87 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_84-ICSD
+_database_code_ICSD 84
+_audit_creation_date 1980-01-01
+_audit_update_record 2005-10-01
+_chemical_name_systematic
+'Lead titanium iron manganese oxide (0.83/13.68/6.32/1/38)'
+_chemical_formula_structural 'Pb0.83 Ti13.68 Fe6.32 Mn O38'
+_chemical_formula_sum 'Fe6.32 Mn1 O38 Pb0.83 Ti13.68'
+_chemical_name_structure_type Ca2Zn4Ti16O38
+_chemical_name_mineral Senaite
+_exptl_crystal_density_diffrn 4.72
+_publ_section_title 'Crystal structure of senaite'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1509 1513 ACBCAR
+loop_
+_publ_author_name
+'Grey, I.E.'
+'Lloyd, D.J.'
+_cell_length_a 9.172(1)
+_cell_length_b 9.172(1)
+_cell_length_c 9.172(1)
+_cell_angle_alpha 69.020(5)
+_cell_angle_beta 69.020(5)
+_cell_angle_gamma 69.020(5)
+_cell_volume 648.89
+_cell_formula_units_Z 1
+_symmetry_space_group_name_H-M 'R -3 R'
+_symmetry_Int_Tables_number 148
+_refine_ls_R_factor_all 0.077
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-z, -x, -y'
+2 '-y, -z, -x'
+3 '-x, -y, -z'
+4 'z, x, y'
+5 'y, z, x'
+6 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Pb2+ 2
+Mn2+ 2
+Fe2+ 2.3
+Fe3+ 3
+Ti4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Pb1 Pb2+ 1 a 0 0 0 2.13(9) 0.83 0
+Mn1 Mn2+ 1 b 0.5 0.5 0.5 0.47(12) 1. 0
+Fe1 Fe2+ 2 c 0.3101(2) 0.3101(2) 0.3101(2) 0.53(9) 1. 0
+Fe2 Fe3+ 6 f 0.3486(4) 0.0190(4) 0.1263(4) 0.43(5) 0.7233 0
+Ti1 Ti4+ 6 f 0.3486(4) 0.0190(4) 0.1263(4) 0.43(5) 0.2767 0
+Ti2 Ti4+ 6 f 0.3076(5) 0.1494(5) 0.7184(5) 0.62(6) 1. 0
+Ti3 Ti4+ 6 f 0.4737(5) 0.6412(5) 0.0840(5) 0.58(6) 1. 0
+O1 O2- 6 f 0.3013(17) 0.3771(17) 0.6280(17) 0.71(25) 1. 0
+O2 O2- 6 f 0.1492(17) 0.9413(17) 0.2394(17) 0.64(24) 1. 0
+O3 O2- 6 f 0.9176(19) 0.3030(19) 0.4590(19) 1.05(25) 1. 0
+O4 O2- 6 f 0.1426(18) 0.9909(18) 0.5127(18) 1.01(26) 1. 0
+O5 O2- 6 f 0.3933(21) 0.1339(21) 0.4874(21) 1.67(32) 1. 0
+O6 O2- 6 f 0.7091(17) 0.0718(17) 0.2453(17) 0.85(24) 1. 0
+O7 O2- 2 c 0.2134(10) 0.2134(10) 0.2134(10) 1.58(52) 1. 0
+#End of TTdata_84-ICSD

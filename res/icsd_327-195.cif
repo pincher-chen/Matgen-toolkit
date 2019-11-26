@@ -1,0 +1,78 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_327-ICSD
+_database_code_ICSD 327
+_audit_creation_date 1980-01-01
+_audit_update_record 2009-08-01
+_chemical_name_systematic 'Samarium cobalt (5/2)'
+_chemical_formula_structural 'Sm5 Co2'
+_chemical_formula_sum 'Co2 Sm5'
+_chemical_name_structure_type Pd5B2
+_exptl_crystal_density_diffrn 7.91
+_publ_section_title
+
+;
+The monoclinic crystal structure of R5 Co2 (R= Pr, Nd, Sm) with the Mn5 C2
+structure type
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1654 1657 ACBCAR
+loop_
+_publ_author_name
+'Moreau, J.M.'
+'Paccard, D.'
+_cell_length_a 16.282
+_cell_length_b 6.392
+_cell_length_c 7.061
+_cell_angle_alpha 90.
+_cell_angle_beta 96.61
+_cell_angle_gamma 90.
+_cell_volume 729.99
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'C 1 2/c 1'
+_symmetry_Int_Tables_number 15
+_refine_ls_R_factor_all 0.07
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x, -y, -z'
+3 '-x, y, -z+1/2'
+4 'x, y, z'
+5 'x+1/2, -y+1/2, z+1/2'
+6 '-x+1/2, -y+1/2, -z'
+7 '-x+1/2, y+1/2, -z+1/2'
+8 'x+1/2, y+1/2, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Sm0+ 0
+Co0+ 0
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Sm1 Sm0+ 8 f 0.0940(1) 0.1116(3) 0.4156(2) 0.0161 1. 0
+Sm2 Sm0+ 8 f 0.2162(1) 0.5701(3) 0.3156(2) 0.0156 1. 0
+Sm3 Sm0+ 4 e 0 0.5750(4) 0.25 0.0158 1. 0
+Co1 Co0+ 8 f 0.1107(3) 0.2901(7) 0.0738(6) 0.019 1. 0
+#End of TTdata_327-ICSD

@@ -1,0 +1,86 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_295-ICSD
+_database_code_ICSD 295
+_audit_creation_date 1980-01-01
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Tribismuth oxide bicyclo-undecaoxopentaborate'
+_chemical_formula_structural 'Bi3 O (B5 O11)'
+_chemical_formula_sum 'B5 Bi3 O12'
+_chemical_name_structure_type Bi3B5O12
+_exptl_crystal_density_diffrn 6.18
+_publ_section_title
+
+;
+Crystal structure of (Bi2 O3)3 (B2 O3)5. A new type of polyborate-anion (B5
+O11)7-
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Solid State Chemistry' 1976 17 151 155 JSSCBI
+loop_
+_publ_author_name
+'Vegas, A.'
+'Cano, F.H.'
+'Garcia Blanco, S.'
+_cell_length_a 6.532(1)
+_cell_length_b 7.733(1)
+_cell_length_c 18.566(2)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 937.8
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P n m a'
+_symmetry_Int_Tables_number 62
+_refine_ls_R_factor_all 0.097
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, y, -z+1/2'
+2 'x, -y+1/2, z'
+3 '-x+1/2, y+1/2, z+1/2'
+4 '-x, -y, -z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x, y+1/2, -z'
+7 'x+1/2, -y+1/2, -z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Bi3+ 3
+O2- -2
+B3+ 3
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Bi1 Bi3+ 4 c 0.4594(4) 0.25 -.1866(1) 0.00607(69) 1. 0
+Bi2 Bi3+ 8 d -.0147(3) 0.5171(2) 0.0957(1) 0.00702(58) 1. 0
+O1 O2- 4 c 0.358(7) 0.25 0.083(2) 0.00607(69) 1. 0
+O2 O2- 4 c 0.483(10) 0.25 -.043(3) 0.02684(69) 1. 0
+O3 O2- 4 c 0.159(7) 0.25 -.144(2) 0.006(15) 1. 0
+O4 O2- 4 c 0.725(7) 0.25 0.051(2) 0.00607(69) 1. 0
+O5 O2- 4 c 0.811(7) 0.25 -.075(2) 0.0018(99) 1. 0
+O6 O2- 4 c 0.615(8) 0.25 0.269(3) 0.013(12) 1. 0
+O7 O2- 8 d 0.177(5) 0.407(5) -.003(2) 0.0100(76) 1. 0
+O8 O2- 8 d 0.591(6) 0.414(5) 0.155(3) 0.0175(87) 1. 0
+O9 O2- 8 d 0.651(5) 0.552(4) 0.265(2) 0.0022(66) 1. 0
+B1 B3+ 4 c 0.545(12) 0.25 0.107(4) 0.007(16) 1. 0
+B2 B3+ 4 c 0.294(11) 0.25 0.011(3) 0.006(11) 1. 0
+B3 B3+ 4 c 0.667(11) 0.25 -.024(4) 0.006(11) 1. 0
+B4 B3+ 8 d 0.619(8) 0.401(7) 0.229(3) 0.006(11) 1. 0
+#End of TTdata_295-ICSD

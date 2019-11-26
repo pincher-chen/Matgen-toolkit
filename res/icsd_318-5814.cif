@@ -1,0 +1,79 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_318-ICSD
+_database_code_ICSD 318
+_audit_creation_date 1980-01-01
+_audit_update_record 2015-02-01
+_chemical_name_systematic 'Manganese niobium tantalum oxide'
+_chemical_formula_structural 'Mn (Nb0.5 Ta0.5)2 O6'
+_chemical_formula_sum 'Mn1 Nb1 O6 Ta1'
+_chemical_name_structure_type Columbite-MgNb2O6
+_chemical_name_mineral Manganotantalite
+_exptl_crystal_density_diffrn 6.66
+_publ_section_title
+'Magnetische Struktur von Mn (Nb0.5 Ta0.5)2 O6, Manganotantalit'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section A: Crystal Physics, Diffraction, Theoretical
+and General Crystallography
+; 1976 32 587 591 ACACBN
+loop_
+_publ_author_name
+'Klein, S.'
+'Weitzel, H.'
+_cell_length_a 14.418
+_cell_length_b 5.76
+_cell_length_c 5.099
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 423.46
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P b c n'
+_symmetry_Int_Tables_number 60
+_refine_ls_R_factor_all 0.078
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x+1/2, y+1/2, z'
+3 'x+1/2, y+1/2, -z+1/2'
+4 '-x, -y, -z'
+5 '-x, y, -z+1/2'
+6 'x+1/2, -y+1/2, -z'
+7 '-x+1/2, -y+1/2, z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Mn2+ 2
+Nb5+ 5
+Ta5+ 5
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Mn1 Mn2+ 4 c 0 0.1769(6) 0.25 0.57(4) 1. 0
+Nb1 Nb5+ 8 d 0.1627(1) 0.3233(2) 0.7643(2) 0.34(1) 0.5 0
+Ta1 Ta5+ 8 d 0.1627(1) 0.3233(2) 0.7643(2) 0.34(1) 0.5 0
+O1 O2- 8 d 0.0993(1) 0.4019(2) 0.4422(3) 0.50(2) 1. 0
+O2 O2- 8 d 0.0828(1) 0.1159(2) 0.9022(3) 0.61(2) 1. 0
+O3 O2- 8 d 0.2562(1) 0.1266(2) 0.5913(3) 0.52(2) 1. 0
+#End of TTdata_318-ICSD

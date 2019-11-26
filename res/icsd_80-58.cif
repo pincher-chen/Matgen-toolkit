@@ -1,0 +1,99 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_80-ICSD
+_database_code_ICSD 80
+_audit_creation_date 1980-01-01
+_audit_update_record 2014-08-01
+_chemical_name_systematic 'Bismuth cerium oxide disulfide'
+_chemical_formula_structural 'Ce Bi O S2'
+_chemical_formula_sum 'Bi1 Ce1 O1 S2'
+_chemical_name_structure_type CeBiOS2
+_exptl_crystal_density_diffrn 6.57
+_publ_section_title
+'Structure cristalline de l' oxysulfure de cerium et de bismuth Ce Bi O S2'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1976 32 1476 1479 ACBCAR
+loop_
+_publ_author_name
+'Ceolin, R.'
+'Rodier, N.'
+_cell_length_a 4.008(4)
+_cell_length_b 4.008(4)
+_cell_length_c 13.50(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 216.86
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 4/n m m Z'
+_symmetry_Int_Tables_number 129
+_refine_ls_R_factor_all 0.055
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'y+1/2, x+1/2, -z'
+2 '-y, x+1/2, -z'
+3 'y+1/2, -x, -z'
+4 '-y, -x, -z'
+5 'x+1/2, y+1/2, -z'
+6 '-x, y+1/2, -z'
+7 'x+1/2, -y, -z'
+8 '-x, -y, -z'
+9 '-y+1/2, -x+1/2, z'
+10 'y, -x+1/2, z'
+11 '-y+1/2, x, z'
+12 'y, x, z'
+13 '-x+1/2, -y+1/2, z'
+14 'x, -y+1/2, z'
+15 '-x+1/2, y, z'
+16 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ce3+ 3
+Bi3+ 3
+S2- -2
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ce1 Ce3+ 2 c 0.25 0.25 0.5936(3) . 1. 0
+Bi1 Bi3+ 2 c 0.25 0.25 0.1263(2) . 1. 0
+S1 S2- 2 c 0.25 0.25 0.313(1) . 1. 0
+S2 S2- 2 c 0.25 0.25 0.879(2) . 1. 0
+O1 O2- 2 b 0.75 0.25 0.5 . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Ce1 Ce3+ 0.01 0.01 0.0021 0 0 0
+Bi1 Bi3+ 0.025 0.025 0.001 0 0 0
+S1 S2- 0.01 0.01 0.0012 0 0 0
+S2 S2- 0.02 0.02 0.004 0 0 0
+O1 O2- 0.08 0.08 0.001 0 0 0
+#End of TTdata_80-ICSD

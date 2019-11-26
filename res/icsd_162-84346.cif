@@ -1,0 +1,112 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_162-ICSD
+_database_code_ICSD 162
+_audit_creation_date 1980-01-01
+_audit_update_record 2011-08-01
+_chemical_name_systematic 'Strontium digallium disilicate'
+_chemical_formula_structural 'Sr Ga2 Si2 O8'
+_chemical_formula_sum 'Ga2 O8 Si2 Sr1'
+_chemical_name_structure_type Feldspar#-(MO,I12/c1)-Celsian
+_exptl_crystal_density_diffrn 3.76
+_publ_section_title
+
+;
+Structures of (Sr, Ba) ((Al, Ga)2 (Si, Ge)2 O8). I. The crystal structures of
+the synthetic feldspars Sr Ga2 Si2 O8 and Ba Ga2 Si2 O8
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Acta Crystallographica, Section B: Structural Crystallography and Crystal
+Chemistry
+; 1975 31 560 568 ACBCAR
+loop_
+_publ_author_name
+'Calleri, M.'
+'Gazzoni, G.'
+_cell_length_a 8.481(2)
+_cell_length_b 13.142(2)
+_cell_length_c 14.444(3)
+_cell_angle_alpha 90.
+_cell_angle_beta 115.48(4)
+_cell_angle_gamma 90.
+_cell_volume 1453.3
+_cell_formula_units_Z 8
+_symmetry_space_group_name_H-M 'I 1 2/c 1'
+_symmetry_Int_Tables_number 15
+_refine_ls_R_factor_all 0.056
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z+1/2'
+2 '-x, -y, -z'
+3 'x, -y, z+1/2'
+4 'x, y, z'
+5 '-x+1/2, y+1/2, -z'
+6 '-x+1/2, -y+1/2, -z+1/2'
+7 'x+1/2, -y+1/2, z'
+8 'x+1/2, y+1/2, z+1/2'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Sr2+ 2
+Si4+ 4
+Ga3+ 3
+Si4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Sr1 Sr2+ 8 f 0.2668(1) -.0034 0.0664(1) . 1. 0
+Si1 Si4+ 8 f 0.0072(2) 0.1721(1) 0.1057(1) . 1. 0
+Ga1 Ga3+ 8 f 0.9999(1) 0.1788(1) 0.6193(1) . 1. 0
+Ga2 Ga3+ 8 f 0.6943(1) 0.1232(1) 0.1702(1) . 1. 0
+Si2 Si4+ 8 f 0.6797(2) 0.1107(1) 0.6712(1) . 1. 0
+O1 O2- 8 f 0.0047(5) 0.1244(4) 0.0001(3) . 1. 0
+O2 O2- 8 f 0.5853(8) 0.0003(3) 0.1427(4) . 1. 0
+O3 O2- 8 f 0.8325(7) 0.1229(4) 0.1014(4) . 1. 0
+O4 O2- 8 f 0.7961(8) 0.1245(4) 0.6098(4) . 1. 0
+O5 O2- 8 f 0.0069(7) 0.2942(4) 0.1137(4) . 1. 0
+O6 O2- 8 f 0.0115(7) 0.3151(4) 0.6308(4) . 1. 0
+O7 O2- 8 f 0.1852(8) 0.1255(4) 0.1906(4) . 1. 0
+O8 O2- 8 f 0.2001(7) 0.1156(4) 0.7060(4) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Sr1 Sr2+ 0.0124(4) 0.0132(4) 0.0153(4) -.0003(2) 0.0054(4) -.0024(2)
+Si1 Si4+ 0.0109(8) 0.0058(9) 0.0085(9) -.0013(6) 0.0038(7) -.0017(6)
+Ga1 Ga3+ 0.0150(5) 0.0055(4) 0.0096(5) -.0011(3) 0.0069(4) -.0005(3)
+Ga2 Ga3+ 0.0140(5) 0.0055(5) 0.0089(5) -.0004(3) 0.0061(4) -.0005(3)
+Si2 Si4+ 0.0072(8) 0.0041(8) 0.0063(8) 0.0011(6) 0.0021(6) 0.0006(3)
+O1 O2- 0.0112(27) 0.0101(25) 0.0144(28) -.0014(14) 0.0049(23) -.0003(5)
+O2 O2- 0.0219(27) 0.0038(24) 0.0147(27) 0.0011(15) 0.0093(24) 0.0018(14)
+O3 O2- 0.0196(26) 0.0165(25) 0.0203(26) -.0042(19) 0.0087(21) -.0030(19)
+O4 O2- 0.0224(26) 0.0161(25) 0.0214(28) -.0069(21) 0.0112(23) -.0022(21)
+O5 O2- 0.0236(25) 0.0147(26) 0.0155(25) -.0044(21) 0.0081(21) -.0035(19)
+O6 O2- 0.0144(22) 0.0083(23) 0.0169(25) -.0028(17) 0.0044(19) -.0029(18)
+O7 O2- 0.0249(28) 0.0166(25) 0.0082(23) 0.003(2) 0.0047(21) -.0040(17)
+O8 O2- 0.0201(25) 0.0160(25) 0.0146(25) -.0017(21) 0.008(2) -.005(2)
+#End of TTdata_162-ICSD
