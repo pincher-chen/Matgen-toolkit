@@ -1,1 +1,3 @@
-Parsing the cif file - WAJZUE.cif
+Parsing the cif file - ABAVIJ_clean.cif
+Getting some known resources...
+Number of ir-kpoints: 4

@@ -28,7 +28,7 @@ using std::pair;
 using std::set;
 using std::to_string;
 
-#define PI acos(-1);
+#define PI acos(-1)
 
 
 class CIF
@@ -309,9 +309,9 @@ private:
             double h5 = (pow(h2 - h4, 2) + pow(h3, 2) + pow(c, 2) - pow(h4, 2) - bc2) / (2 * h3);
             double h6 = sqrt(pow(c, 2) - pow(h4, 2) - pow(h5, 2));
             
-            this->cell.push_back({h1, 0.0, 0.0});
-            this->cell.push_back({h2, h3, 0.0});
-            this->cell.push_back({h4, h5, h6});
+            this->cell.push_back({h1, h2, h4});
+            this->cell.push_back({0, h3, h5});
+            this->cell.push_back({0, 0, h6});
 
             this->angel.push_back(ap);
             this->angel.push_back(bt);
@@ -498,9 +498,9 @@ private:
         double frac_b = atom_frac_cd[1];
         double frac_c = atom_frac_cd[2];
 
-        double x_cart = lx_vec[0] * frac_a + ly_vec[0] * frac_b + lz_vec[0] * frac_c;
-        double y_cart = lx_vec[1] * frac_a + ly_vec[1] * frac_b + lz_vec[1] * frac_c;
-        double z_cart = lx_vec[2] * frac_a + ly_vec[2] * frac_b + lz_vec[2] * frac_c;
+        double x_cart = lx_vec[0] * frac_a + lx_vec[1] * frac_b + lx_vec[2] * frac_c;
+        double y_cart = ly_vec[0] * frac_a + ly_vec[1] * frac_b + ly_vec[2] * frac_c;
+        double z_cart = lz_vec[0] * frac_a + lz_vec[1] * frac_b + lz_vec[2] * frac_c;
 
         return vector<double>{x_cart, y_cart, z_cart};
     }

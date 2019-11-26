@@ -41,6 +41,17 @@
     `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./include/spglib/_build`
 
 
+### 问题
+* 部分api调用有问题
+  * spg_niggli_reduce
+  * spg_delaunay_reduce
+* 
+
+## IN CELL 功能
+
+### 编译
+* g++ in_cell.cpp -o a -std=c++11
+
 
 ## 问题补充
 * `Window`读取文件和`Linux`读取文件的文本换行格式问题

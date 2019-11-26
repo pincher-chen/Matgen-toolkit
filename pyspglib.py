@@ -416,12 +416,17 @@ def delaunay_reduce(cell):
     return delaunay_lattice
 
 def get_mesh(cell):
+    # print(1, cell[0])
     primitive_lattice = primitive(cell)[0]
+    # print(2, primitive_lattice)
     l = np.vsplit(primitive_lattice,3)
+    # print(l, "**")
     a1,a2,a3 = np.squeeze(l[0]),np.squeeze(l[1]),np.squeeze(l[2])
+    
     outer_result = np.squeeze(np.cross(a2, a3))
     omega = np.dot(a1, outer_result)
     b1 = 2 * m.pi * np.cross(a2, a3) / omega
+    print("**", b1)
     b2 = 2 * m.pi * np.cross(a3, a1) / omega
     b3 = 2 * m.pi * np.cross(a1, a2) / omega
     calc1, calc2, calc3 = 0, 0, 0
@@ -439,7 +444,7 @@ def get_mesh(cell):
     k3 = int(round(rlc_3 / (2 * m.pi * kpresolv)))
     
     mesh = [k1,k2,k3]
-    print(mesh) 
+    print("++", mesh) 
     return mesh
 
 def get_ir_reciprocal_mesh(mesh,cell):
@@ -12101,6 +12106,7 @@ if __name__ == '__main__':
         print("The space group is :\n", spgroup)
     elif args.symmetry:
         symm = symm(cell)
+        # print(len(symm["rotations"]))
         print("The symmetry is :\n", symm)
     elif args.refine:
         refinecell = spg.refine_cell(cell)

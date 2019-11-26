@@ -8,6 +8,7 @@
 #include <vector>
 #include <map>
 #include <set>
+#include <cmath>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -156,6 +157,26 @@ double get_num(string value) {
 
         return -1;
     }
+}
+
+void cross(double a[3], double b[3], double res[3]) {
+    // a = (a1, a2, a3), b = (b1, b2, b3)
+    // a x b = (a2b3-a3b2, a3b1-a1b3, a1b2-a2b1)
+
+    res[0] = a[1] * b[2] - a[2] * b[1];
+    res[1] = a[2] * b[0] - a[0] * b[2];
+    res[2] = a[0] * b[1] - a[1] * b[0];
+}
+
+double round(double number, unsigned int bits) {
+    double integerPart = floor(number);
+    number -= integerPart;
+    for (unsigned int i = 0; i < bits; ++i)
+        number *= 10;
+    number = floor(number + 0.5);
+    for (unsigned int i = 0; i < bits; ++i)
+        number /= 10;
+    return integerPart + number;
 }
 
 // print vector for debugging

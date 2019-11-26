@@ -72,20 +72,20 @@ int main(int argc, char *argv[]) {
             
             int size = symm_arr.size();
             for(int i = 0; i < size; i++) {
-                double x =  modify_num(symm_arr[i][0][0] * iter->second[0] + trans_arr[i][0]);
-                double y =  modify_num(symm_arr[i][1][1] * iter->second[1] + trans_arr[i][1]);
-                double z =  modify_num(symm_arr[i][2][2] * iter->second[2] + trans_arr[i][2]);
-                if(x < 0 || y < 0 || z < 0) {
-                    cerr << x << " " << y << " " << z << endl;
-                    printVec(iter->second);
-                    cerr << endl;
+                double x = modify_num(symm_arr[i][0][0] * iter->second[0] + trans_arr[i][0]);
+                double y = modify_num(symm_arr[i][1][1] * iter->second[1] + trans_arr[i][1]);
+                double z = modify_num(symm_arr[i][2][2] * iter->second[2] + trans_arr[i][2]);
+                // if(x < 0 || x > 1 || y < 0 || y > 1 || z < 0 || z > 1) {
+                //     cerr << x << " " << y << " " << z << endl;
+                //     printVec(iter->second);
+                //     cerr << endl;
 
-                    cerr << i << endl;
-                    for(auto num : trans_arr[i]) {
-                        cerr << num << " " ;
-                    }
-                    cerr << endl;
-                }
+                //     cerr << i << endl;
+                //     for(auto num : trans_arr[i]) {
+                //         cerr << num << " " ;
+                //     }
+                //     cerr << endl;
+                // }
                 all_atoms[species].insert(vector<double> {x, y, z});
             }
 
