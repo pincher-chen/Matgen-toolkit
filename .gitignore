@@ -1,4 +1,4 @@
-./res
-./in_cell
-./clean
+/res/
+/in_cell/
+/clean/
 *.exe
