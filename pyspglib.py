@@ -426,7 +426,7 @@ def get_mesh(cell):
     outer_result = np.squeeze(np.cross(a2, a3))
     omega = np.dot(a1, outer_result)
     b1 = 2 * m.pi * np.cross(a2, a3) / omega
-    print("**", b1)
+    # print("**", b1)
     b2 = 2 * m.pi * np.cross(a3, a1) / omega
     b3 = 2 * m.pi * np.cross(a1, a2) / omega
     calc1, calc2, calc3 = 0, 0, 0
@@ -444,19 +444,21 @@ def get_mesh(cell):
     k3 = int(round(rlc_3 / (2 * m.pi * kpresolv)))
     
     mesh = [k1,k2,k3]
-    print("++", mesh) 
+    # print("++", mesh) 
     return mesh
 
 def get_ir_reciprocal_mesh(mesh,cell):
     mesh = get_mesh(cell)
 # Gamma centre mesh
     mapping, grid = spg.get_ir_reciprocal_mesh(mesh, cell, is_shift=[0, 0, 0])
+    print(mapping, grid)
 # All k-points and mapping to ir-grid points
     for i, (ir_gp_id, gp) in enumerate(zip(mapping, grid)):
         print("%3d ->%3d %s" % (i, ir_gp_id, gp.astype(float) / mesh))
 
 # Irreducible k-points
     print("Number of ir-kpoints: %d" % len(np.unique(mapping)))
+    # print("++", grid[np.unique(mapping)], np.array(mesh, dtype=float))
     print(grid[np.unique(mapping)] / np.array(mesh, dtype=float))
 
 

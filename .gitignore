@@ -1,5 +1,7 @@
 /res
 /in_cell
+/csd*
 /clean
 *.exe
 *.cif
+/*.txt

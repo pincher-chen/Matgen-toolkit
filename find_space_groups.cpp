@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "include/cmdline.h"
 #include "include/cif.h"
 #include "spglib.h"
@@ -548,8 +549,11 @@ void get_ir_reciprocal_mesh(Cell *cell) {
     mesh[2] = int(round(rlc_3 / (2 * PI * kpresolv)));
 
     int is_shift[] = {0, 0, 0};
-    int grid_address[mesh[0] * mesh[1] * mesh[2]][3];
-    int grid_mapping_table[mesh[0] * mesh[1] * mesh[2]];
+    int cnt = mesh[0] * mesh[1] * mesh[2];
+
+    int grid_address[cnt][3];
+    int grid_mapping_table[cnt];
+    
 
     int num_ir = spg_get_ir_reciprocal_mesh(grid_address,
                                             grid_mapping_table,
@@ -563,6 +567,16 @@ void get_ir_reciprocal_mesh(Cell *cell) {
                                             SYMPREC);
 
     cout << "Number of ir-kpoints: " << num_ir << endl;
+
+    cout << "[ " << endl;
+    for(int i = 0; i < cnt; i++) {
+        cout << "  [";
+        for(int j = 0; j < 3; j++) {
+            cout << setw(4) << left << grid_address[grid_mapping_table[i]][j] * 1.0 / mesh[j];
+        }
+        cout << "]" << endl;
+    }
+    cout << "]" << endl;
 }
 
 void show_cell(double lattice[3][3], double position[][3], const int types[], const int atom_num) {

@@ -76,7 +76,7 @@ public:
     }
 
     // find exist solvent
-    void find_solvent() noexcept(false) {
+    void find_solvent(bool print = true) noexcept(false) {
         cout << "Looking for solvent in " << get_filename(this->filename) << endl;
 
         vector<string> chem_list;
@@ -97,23 +97,25 @@ public:
             }
         }
 
-        // printVec(chem_list);
-        cout << "The calculated solvent molecule to be screened is";
-        cout << " [ ";
-        for(auto &sol : this->solvent_chk_list) {
-            if(cmp_solvent_known(sol)) {
-                cout << sol << "<known>" << " ";
+        if(print) {
+            // printVec(chem_list);
+            cout << "The calculated solvent molecule to be screened is";
+            cout << " [ ";
+            for(auto &sol : this->solvent_chk_list) {
+                if(cmp_solvent_known(sol)) {
+                    cout << sol << "<known>" << " ";
+                }
+                else {
+                    cout << sol << "<unknown>" << " ";
+                }
             }
-            else {
-                cout << sol << "<unknown>" << " ";
-            }
-        }
-        cout << " ] " << endl;
+            cout << " ] " << endl;
 
-        cout << "The MOF framework is ";
-        cout << " [ ";
-        printVec(this->framwork_list);
-        cout << " ] " << endl;
+            cout << "The MOF framework is ";
+            cout << " [ ";
+            printVec(this->framwork_list);
+            cout << " ] " << endl;
+        }
     }
 
     // export results after removing solvent
@@ -204,6 +206,42 @@ public:
         return this->loop_dict;
     }
 
+    set<string> get_atoms() {
+        return this->atoms;
+    }
+
+    vector<string> get_solvent_chk_list() {
+        return this->solvent_chk_list;
+    }
+
+    bool judge_if_have_disorder() noexcept(false) {
+        for(auto iter = this->atom_dist.begin(); iter != this->atom_dist.end(); iter++) {
+            vector<string> values = del_split(iter->first, '-');
+
+            string atom_a = values[1];
+            string atom_b = values[3];
+            double distance = iter->second;
+
+            auto a = radius_dict.find(atom_a), b = radius_dict.find(atom_b);
+
+            if(a == radius_dict.end()) {
+                throw Exception(atom_a + " 's radius not found");
+            }
+
+            if(b == radius_dict.end()) {
+                throw Exception(atom_b + " 's radius not found");
+            }
+
+            double radius_a = get_num(a->second.radius);
+            double radius_b = get_num(b->second.radius);
+
+            if(distance - radius_a - radius_b < 0.7) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 private:
     // split the information in the cif file and save in map
     void split_cif() noexcept(false) {
@@ -258,6 +296,8 @@ private:
                     // cerr << "5" << endl;
                 }
             }
+
+            in.close();
         }
     }
 
@@ -477,7 +517,9 @@ private:
                 string atom_site = atom_info[atom_site_index];
 
                 string key = atom_site + "-" + species;
+            
                 this->atom_cd[key] = vector<double>{x, y, z};
+                this->atoms.insert(species);
             }
 
             // printMap(this->atom_cd);
@@ -663,6 +705,8 @@ private:
 
     // label - atom coordinates
     map<string, vector<double>> atom_cd;
+    // atom
+    set<string> atoms;
 
     // atom&atom - distance
     map<string, double> atom_dist;
@@ -672,7 +716,7 @@ private:
     vector<set<string>> atom_conn_set;
 
     // atom_site - atom_species
-    map<set<string>, set<string>> cn_species;
+    // map<set<string>, set<string>> cn_species;
 
     map<string, double> cell_params;
     vector<vector<double>> cell;
@@ -681,9 +725,11 @@ private:
     vector<string> site_label;
     vector<vector<string>> site_value;
 
+    // solvents
     vector<string> framwork_list;
     vector<string> solvent_chk_list;
 
+    // symmetry
     vector<vector<string>> symm;
     string name_Hall;
     string name_HM;

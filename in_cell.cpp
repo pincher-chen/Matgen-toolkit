@@ -114,7 +114,7 @@ void get_symm_info(CIF &cif, vector<vector<double>> &trans_arr, vector<vector<ve
 
 void export_in_cell_result(string input, string output, CIF &cif, map<string, set<vector<double>>> &all_atoms) {
     // export
-    cout << "Exporting in cell result..." << endl;
+    cout << "Exporting in-cell result..." << endl;
     if(!is_folder_exist(output)) {
         make_dir(output);
     }
@@ -126,13 +126,29 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
 
     if(loop_dict.count("chaos_loop")) {
         for(auto str : loop_dict["chaos_loop"]) {
+            if(str.find("END") != string::npos) {
+                continue;
+            }
+            if(str.find("_symmetry_") != string::npos || str.find("space_group") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
+        out << "_symmetry_space_group_name_H-M    \"P 1\"" << endl;
+        out << "_symmetry_int_tables_number 1" << endl;
     }
 
     if(loop_dict.count("sym_loop")) {
         out << "loop_" << endl;
+        out << "_symmetry_equiv_pos_as_xyz" << endl;
+        out << "'x, y, z'" << endl;
         for(auto str : loop_dict["sym_loop"]) {
+            if(str.find("x") != string::npos || str.find("y") != string::npos || str.find("z") != string::npos) {
+                continue;
+            }
+            if(str.find("END") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
     }
@@ -140,6 +156,9 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
     if(loop_dict.count("type_loop")) {
         out << "loop_" << endl;
         for(auto str : loop_dict["type_loop"]) {
+            if(str.find("END") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
     }
@@ -147,6 +166,9 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
     if(loop_dict.count("bond_loop")) {
         out << "loop_" << endl;
         for(auto str : loop_dict["bond_loop"]) {
+            if(str.find("END") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
     }
@@ -154,6 +176,9 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
     if(loop_dict.count("unknow_loop")) {
         out << "loop_" << endl;
         for(auto str : loop_dict["unknow_loop"]) {
+            if(str.find("END") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
     }
@@ -161,6 +186,9 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
     if(loop_dict.count("aniso_site_loop")) {
         out << "loop_" << endl;
         for(auto str : loop_dict["aniso_site_loop"]) {
+            if(str.find("END") != string::npos) {
+                continue;
+            }
             out << str << endl;
         }
     }

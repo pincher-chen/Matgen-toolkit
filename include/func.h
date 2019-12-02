@@ -1,6 +1,7 @@
 #ifndef FUNC_H
 #define FUNC_H
 
+#include <fstream>
 #include <string>
 #include <iostream>
 #include <regex>
@@ -10,6 +11,7 @@
 #include <set>
 #include <cmath>
 #include <unistd.h>
+#include <dirent.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
@@ -19,10 +21,14 @@
 using std::cerr;
 using std::cout;
 using std::endl;
-using std::string;
+using std::ifstream;
 using std::map;
-using std::vector;
+using std::ofstream;
+using std::regex;
 using std::set;
+using std::string;
+using std::vector;
+using std::ios;
 
 bool is_folder_exist(string folder) {
     return access(folder.c_str(), 0) == 0;
@@ -61,6 +67,42 @@ string get_filename(string path) {
     }
     return path.substr(pos+1);
 }
+
+vector<string> get_all_files(string base_dir, string extend) {
+
+    vector<string> files;
+
+    DIR *pDir;
+    dirent* ptr;
+    if(!(pDir = opendir(base_dir.c_str()))) {
+        return files;
+    }
+    while((ptr = readdir(pDir))!=0) {
+        if (strcmp(ptr->d_name, ".") != 0 && strcmp(ptr->d_name, "..") != 0 && 
+            std::regex_search(ptr->d_name, std::regex("\\w+\\." + extend + "$"))) {
+            files.push_back(base_dir + "/" + ptr->d_name);
+        }
+    }
+    closedir(pDir);
+
+    return files;
+}
+
+bool cp_file(string file, string destination) {
+    string filename = get_filename(file);
+    if (!is_folder_exist(destination)) {
+        make_dir(destination);
+    }
+
+    ifstream in(file, ios::in);
+    string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
+    ofstream out(destination + filename);
+    out << str;
+
+    in.close();
+    out.close();
+}
+
 
 // trim string
 string trim(const string &str) {
@@ -178,6 +220,7 @@ double round(double number, unsigned int bits) {
         number /= 10;
     return integer + number;
 }
+
 
 // print vector for debugging
 template <typename T> 

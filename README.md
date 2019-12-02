@@ -1,16 +1,15 @@
 # MOFKit/ Porous material kit 开发
 
+---
+---
+
 ## 去除溶剂、金属离子
 
 ### 编译
 > C++ 11
-* g++ rm_mof_solvents.cpp -o rmsol -std=c++11
+* g++ rm_mof_solvents.cpp -o a -std=c++11
 
-### 使用
-* .\rmsol -i [cif_file]
-* 具体使用参照参数说明
-
-### 涉及相关的工具包
+### 相关工具包
 * [命令行参数解析 - cmdline](https://github.com/tanakh/cmdline)
 
 ### 补充
@@ -26,12 +25,14 @@
   * `-f, --force`   强制去除结构中的未知溶剂，默认只去除公知溶剂 
   * `-?, --help`    帮助说明
 
+--- 
+
 ## 寻找空间群
 
 ### 编译
 * g++ find_space_groups.cpp  ./include/spglib/_build/libsymspg.so -o a -I./include/spglib/src
 
-### 设计相关的工具包
+### 相关工具包
 * [spglib](https://github.com/atztogo/spglib)
 
 ### 补充
@@ -45,15 +46,44 @@
 * 部分api调用有问题
   * spg_niggli_reduce
   * spg_delaunay_reduce
-* 
 
-## IN CELL 功能
+---
+
+## IN-CELL
 
 ### 编译
 * g++ in_cell.cpp -o a -std=c++11
 
+---
+
+## 分类与去重
+
+
+### 编译
+
+### 思路
+* 逐一读入输入文件cif文件，按照：component/element type/space group/（元素总数/元素类型/空间群编号）建立相应的文件夹进行归类
+* 如果发现space group文件夹下有cif文件，则进行去重，按照相似性法则，如果相似，根据文献发表时间顺序，保存最新发表的结构；如果不相似，则全部保存
+
+### 相似性计算
+**仿射对应（affine mapping）**
+基本原理是将两个晶体结构中的原子点阵互相对应起来，首先把需要对比的两个晶体结构调节为同一原子数密度，然后找到一个仿射转换 T 能将 A 结构中的每个原子都和 B 结构中的每个原子唯一对应上。如果两个结构可以建立起这样的仿射对应关系，则认为这两个结构是相似的并且属于同一晶体结构原型。
+
+**配位特征函数（Coordination Characterization Function，CCF）**
+一个稳定且高效的结构表征方法 CCF，通过计算原子间距并使用归一化的高斯函数将其展宽并累加得到光滑连续的 CCF。使用关联系数公式可以计算出不同结构的 CCF 的相似性，最终可以得到一个定量的数值标定两结构间的差异程度。
+
+
+
+---
+
+## CSD数据库分类 （剔除含金属有机分子和disorder分子）
+
+
+
+
+---
 
 ## 问题补充
 * `Window`读取文件和`Linux`读取文件的文本换行格式问题
   * 参考-[linux和windows文本换行格式问题（^M）](https://www.cnblogs.com/feer/p/9578059.html)
-* 
+
