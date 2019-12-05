@@ -78,11 +78,20 @@
 
 ## CSD 分类
 
-* 剔除含金属有机分子和`disorder`分子
+> 剔除含金属有机分子和`disorder`分子
 
 ### 编译
 * g++ CSD_classify.cpp -o a -std=c++11
 
+
+---
+
+## 格式转换
+
+> 将 cif 文件转换成特定的格式
+
+### 编译
+* g++ format_conversion.cpp -o a -std=c++11
 
 ---
 
