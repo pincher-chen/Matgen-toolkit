@@ -35,7 +35,7 @@ void get_cell(CIF &cif, Cell *cell);
 
 vector<int> get_spglib_info();
 
-void get_spacegroup(Cell *cell);
+void get_spacegroup(CIF &cif, Cell *cell);
 
 void get_symmetry(Cell *cell);
 
@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
             cout << "Error Message: " << spg_get_error_message((SpglibError)info[3]) << endl;
         }
         else if(parser.exist("spacegroup")) {
-            get_spacegroup(&cell);
+            get_spacegroup(cif, &cell);
         }
         else if(parser.exist("symmetry")) {
             get_symmetry(&cell);
@@ -264,7 +264,21 @@ vector<int> get_spglib_info() {
     return vector<int>{major_version, minor_version, micro_version, error};
 }
 
-void get_spacegroup(Cell *cell) {
+void get_spacegroup(CIF &cif, Cell *cell) {
+    string name_Hall = cif.get_name_Hall();
+    string name_HM = cif.get_name_HM();
+    if(!name_Hall.empty()) {
+        cout << "The space group is: ";
+        cout << Hall2HM[name_Hall] << " " << Hall2Number[name_Hall] << endl;
+        return;
+    }
+
+    if(!name_HM.empty()) {
+        cout << "The space group is: ";
+        cout << name_HM << " " << Hall2Number[HM2Hall[name_HM]] << endl;
+        return;
+    }
+    
     double position[cell->atom_num][3];
     for(int i = 0; i < cell->position.size(); i++) {
         for(int j = 0; j < 3; j++) {

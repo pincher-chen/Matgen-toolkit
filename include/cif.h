@@ -30,6 +30,7 @@ using std::to_string;
 
 #define PI acos(-1)
 
+const string Universal = "XX";
 
 class CIF
 {
@@ -38,6 +39,7 @@ public:
     
     CIF(string filename) { 
         this->filename = filename;
+        time = "";
     }
 
     // parse cif file and get information
@@ -225,11 +227,13 @@ public:
             auto a = radius_dict.find(atom_a), b = radius_dict.find(atom_b);
 
             if(a == radius_dict.end()) {
-                throw Exception(atom_a + " 's radius not found");
+                a = radius_dict.find(Universal);
+                // throw Exception(atom_a + " 's radius not found");
             }
 
             if(b == radius_dict.end()) {
-                throw Exception(atom_b + " 's radius not found");
+                b = radius_dict.find(Universal);
+                // throw Exception(atom_b + " 's radius not found");
             }
 
             double radius_a = get_num(a->second.radius);
@@ -240,6 +244,39 @@ public:
             }
         }
         return false;
+    }
+
+    // convert fractional coordinates to real coordinates
+    vector<double> frac2cart(vector<double> &atom_frac_cd) {
+        vector<double> lx_vec = this->cell[0];
+        vector<double> ly_vec = this->cell[1];
+        vector<double> lz_vec = this->cell[2];
+
+        double frac_a = atom_frac_cd[0];
+        double frac_b = atom_frac_cd[1];
+        double frac_c = atom_frac_cd[2];
+
+        double x_cart = lx_vec[0] * frac_a + lx_vec[1] * frac_b + lx_vec[2] * frac_c;
+        double y_cart = ly_vec[0] * frac_a + ly_vec[1] * frac_b + ly_vec[2] * frac_c;
+        double z_cart = lz_vec[0] * frac_a + lz_vec[1] * frac_b + lz_vec[2] * frac_c;
+
+        return vector<double>{x_cart, y_cart, z_cart};
+    }
+
+    // return the element is metal or not
+    string get_atom_state(string element) noexcept(false) {
+        auto iter = radius_dict.find(element);
+        
+        if(iter == radius_dict.end()) {
+            iter = radius_dict.find(Universal);
+            // throw Exception("unable to find the state information of the corresponding element...");
+        }
+
+        return iter->second.O_metal;
+    }
+
+    string get_time() {
+        return time;
     }
 
 private:
@@ -389,6 +426,7 @@ private:
         }
     }
 
+    // get the symmetry information of the atom    
     void get_symm_info() noexcept(false) {
 
         vector<string> sym_loop = this->loop_dict["sym_loop"];
@@ -432,9 +470,9 @@ private:
                 string cur = "";
                 for(int i = 1; i < split.size(); i++) {
                     cur += split[i];
-                    if(i != split.size() - 1) {
-                        cur += " ";
-                    }
+                    // if(i != split.size() - 1) {
+                    //     cur += " ";
+                    // }
                 }
 
                this->name_HM = clean_str(cur);
@@ -462,9 +500,9 @@ private:
                     string cur = "";
                     for(int i = 1; i < split.size(); i++) {
                         cur += split[i];
-                        if (i != split.size() - 1) {
-                            cur += " ";
-                        }
+                        // if (i != split.size() - 1) {
+                        //     cur += " ";
+                        // }
                     }
 
                     this->name_HM = clean_str(cur);
@@ -530,21 +568,17 @@ private:
         }
     }
 
-    // convert fractional coordinates to real coordinates
-    vector<double> frac2cart(vector<double> &atom_frac_cd) {
-        vector<double> lx_vec = this->cell[0];
-        vector<double> ly_vec = this->cell[1];
-        vector<double> lz_vec = this->cell[2];
-
-        double frac_a = atom_frac_cd[0];
-        double frac_b = atom_frac_cd[1];
-        double frac_c = atom_frac_cd[2];
-
-        double x_cart = lx_vec[0] * frac_a + lx_vec[1] * frac_b + lx_vec[2] * frac_c;
-        double y_cart = ly_vec[0] * frac_a + ly_vec[1] * frac_b + ly_vec[2] * frac_c;
-        double z_cart = lz_vec[0] * frac_a + lz_vec[1] * frac_b + lz_vec[2] * frac_c;
-
-        return vector<double>{x_cart, y_cart, z_cart};
+    // get cif file post time
+    void get_post_time() {
+        // _audit_update_record
+        string str = this->cif_buf;
+        std::regex rgx("_audit_update_record\\s+(.*)");
+        for (std::sregex_token_iterator it(str.begin(), str.end(), rgx), end; it != end; it++) {
+            string cur = it->str();
+            // cerr << cur << endl;
+            vector<string> params = del_split(cur, ' ');
+            time = clean_str(params[1]);
+        }
     }
 
     // convert real coordinates to fractional coordinates
@@ -595,11 +629,13 @@ private:
             auto a = radius_dict.find(atom_a), b = radius_dict.find(atom_b);
 
             if(a == radius_dict.end()) {
-                throw Exception(atom_a + " 's radius not found");
+                a = radius_dict.find(Universal);
+                // throw Exception(atom_a + " 's radius not found");
             }
 
             if(b == radius_dict.end()) {
-                throw Exception(atom_b + " 's radius not found");
+                b = radius_dict.find(Universal);
+                // throw Exception(atom_b + " 's radius not found");
             }
 
             double radius_a = get_num(a->second.radius);
@@ -681,17 +717,6 @@ private:
         return chem_formula;
     }
 
-    // return the element is metal or not
-    string get_atom_state(string element) noexcept(false) {
-        auto iter = radius_dict.find(element);
-        
-        if(iter == radius_dict.end()) {
-            throw Exception("unable to find the state information of the corresponding element...");
-        }
-
-        return iter->second.O_metal;
-    }
-
     // compare existing list of solvent
     bool cmp_solvent_known(string formula) noexcept(false) {
         return solvent_dict.count(formula) > 0;
@@ -733,6 +758,9 @@ private:
     vector<vector<string>> symm;
     string name_Hall;
     string name_HM;
+
+    // time
+    string time;
 };
 
 

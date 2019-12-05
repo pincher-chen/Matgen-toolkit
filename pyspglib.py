@@ -370,6 +370,7 @@ def spglib_info():
     return spglib_version,spglib_errormessage
 
 def space_group(cell):
+    print(cell[0])
     spacegroup = spg.get_spacegroup(cell, symprec=1e-5)
     
     return spacegroup

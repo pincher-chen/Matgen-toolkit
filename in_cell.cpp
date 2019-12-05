@@ -205,7 +205,6 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
         // set
         for(auto j = (i->second).begin(); j != (i->second).end(); j++) {
             // vector x-y-z
-            cout.setf(ios::left);
             out << setw(10) << left << species + to_string(cnt++) << setw(10) << left << species << setw(15) << left << (*j)[0] << setw(15) << left << (*j)[1] << setw(15) << left << (*j)[2] << setw(15) << left << "1.000" << endl;
         }
     }
