@@ -204,6 +204,19 @@ public:
         return this->atom_cd;
     }
 
+    map<string, set<vector<double>>> get_atom_cd_set() {
+        if(!this->atom_cd_set.empty()) {
+            return this->atom_cd_set;
+        }
+
+        for(auto iter = this->atom_cd.begin(); iter != this->atom_cd.end(); iter++) {
+            string species = get_species(iter->first);
+            this->atom_cd_set[species].insert(iter->second);
+        }
+
+        return this->atom_cd_set;
+    }
+
     map<string, vector<string>> get_loop_dict() {
         return this->loop_dict;
     }
@@ -415,7 +428,7 @@ private:
             }
 
             for(auto &item : data_value) {
-                if(item == "#END") {
+                if(item.find("#") != string::npos) {
                     break;
                 }
                 this->site_value.push_back(del_split(item, ' '));
@@ -540,16 +553,25 @@ private:
             int atom_site_index = std::distance(std::begin(this->site_label), \
                                                 std::find(this->site_label.begin(), this->site_label.end(), "_atom_site_label"));
             
+            int occupancy_index = std::distance(std::begin(this->site_label), \
+                                                std::find(this->site_label.begin(), this->site_label.end(), "_atom_site_occupancy"));
             // cerr << x_index << " " << y_index << " " << z_index << " " << species_index << " " << atom_site_index << endl;
             
             for(auto atom_info : this->site_value) {
                 if(atom_info.size() < this->site_label.size()) {
-                    break;
+                    throw Exception("file atom site section has some problem");
                 }
 
                 double x = get_num(atom_info[x_index]);
                 double y = get_num(atom_info[y_index]);
                 double z = get_num(atom_info[z_index]);
+
+                if(occupancy_index < atom_info.size()) {
+                    // cout << get_num(atom_info[occupancy_index]) << endl;
+                    if(get_num(atom_info[occupancy_index]) < 1.0) {
+                        throw Exception("Atom occupancy is smaller than 1.0");
+                    }
+                }
 
                 string species = get_species(atom_info[species_index]);
                 string atom_site = atom_info[atom_site_index];
@@ -730,6 +752,10 @@ private:
 
     // label - atom coordinates
     map<string, vector<double>> atom_cd;
+    
+    // specie - atom coordinates
+    map<string, set<vector<double>>> atom_cd_set;
+
     // atom
     set<string> atoms;
 

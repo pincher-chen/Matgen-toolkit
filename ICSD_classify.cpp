@@ -34,8 +34,8 @@ int main(int argc, char *argv[]) {
 
     get_res();
     vector<string> files = get_all_files(input, "cif");
-    try {
-        for(auto item : files) {
+    for(auto item : files) {
+        try {
             CIF cif = CIF(item);
             cif.parse_file();
 
@@ -80,11 +80,12 @@ int main(int argc, char *argv[]) {
                     
                     double msd = MSD(cif, other);
 
-                    cout << msd << endl;
+
                     if(msd < 0 || msd > Threshold) {
                         continue;
                     }
                     else {
+                        cout << "[MSD]" << get_filename(item) << " - " << get_filename(cmp_item) << ":\t" << msd << endl;
                         similar_file = get_filename(cmp_item);
 
                         if(cif.get_time() <= other.get_time()) {
@@ -108,11 +109,9 @@ int main(int argc, char *argv[]) {
                 }
             }
         }
-
-    }
-    catch(Exception err) {
-        cout << err.msg << endl;
-        return -1;
+        catch(Exception err) {
+            cout << err.msg << endl;
+        }
     }
     return 0;
 }
@@ -164,6 +163,8 @@ double MSD(CIF &a, CIF &b) {
     }
 
     msd = msd / a_atom_cd.size();
+
+    double rmsd = sqrt(msd);
 
     return msd;
 }

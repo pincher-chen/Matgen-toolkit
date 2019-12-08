@@ -93,6 +93,15 @@
 ### 编译
 * g++ format_conversion.cpp -o a -std=c++11
 
+### 说明
+* 参数说明
+  * `-i, --cif_in`  MOF的cif格式文件
+  * `-o, --output_path`    去除结构中溶剂的结果导出路径
+  * `-d, --skin_distance`   需要使用的表层距离（系数）
+  * `-f, --force`   强制去除结构中的未知溶剂，默认只去除公知溶剂 
+  * `-?, --help`    帮助说明
+
+
 ---
 
 ## 问题补充
