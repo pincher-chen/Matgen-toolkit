@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     parser.add<string>("mode", 'm', "the mode of the format conversion", false, "asymmetric");
 
     // format - vasp_file/opt-freq
-    parser.add<string>("type", 't', "the type of the result format, support gjf(gaussion)、vasp", true, "");
+    parser.add<string>("type", 't', "the type of the result format, support gjf(gaussion)/vasp", true, "");
 
     // coord_type - cart/frac
     parser.add<string>("coord_type", 'c', "the type of the coordinate", false, "fract");
@@ -117,13 +117,13 @@ void export_gaussion_format_result(string input, string output, string mode, str
             // out.setf(ios::showpoint);
             out.flags(ios::fixed);
             out.precision(8);
-            out << setw(8) << left << " " + species + to_string(cnt++) << setw(20) << right << cd[0] << setw(15) << right << cd[1] << setw(15) << right << cd[2] << endl;
+            out << setw(8) << left << " " + species << setw(20) << right << cd[0] << setw(15) << right << cd[1] << setw(15) << right << cd[2] << endl;
         }
     }
     out << endl;
     out.close();
 
-    cout << "Export file " << name << " successfully！" << endl;
+    cout << "Export file " << name << " successfully!" << endl;
 }
 
 void export_vasp_format_result(string input, string output, string mode, string coord_type, CIF &cif) {
@@ -197,5 +197,5 @@ void export_vasp_format_result(string input, string output, string mode, string 
             out << setw(20) << right << cd[0] << setw(15) << right << cd[1] << setw(15) << right << cd[2] << endl;        
         }
     }
-    cout << "Export file " << name << " successfully！" << endl;
+    cout << "Export file " << name << " successfully!" << endl;
 }

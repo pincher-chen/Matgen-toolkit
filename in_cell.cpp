@@ -145,5 +145,5 @@ void export_in_cell_result(string input, string output, CIF &cif, map<string, se
     out << endl << endl << "#END"; 
     out.close();
 
-    cout << "Export file " << name << " successfully！" << endl;
+    cout << "Export file " << name << " successfully!" << endl;
 }
