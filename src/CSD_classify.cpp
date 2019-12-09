@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cctype>
-#include "include/cif.h"
-#include "include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cmdline.h"
 
 using namespace std;
 

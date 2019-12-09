@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cctype>
-#include "spglib.h"
-#include "include/cif.h"
-#include "include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cmdline.h"
 
 using namespace std;
 
@@ -36,6 +35,7 @@ int main(int argc, char *argv[]) {
     vector<string> files = get_all_files(input, "cif");
     for(auto item : files) {
         try {
+            cout << "-----------------------FILE " + item + " -----------------------" << endl;
             CIF cif = CIF(item);
             cif.parse_file();
 
@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
                     cp_file(item, base_path);
                 }
                 else {
-                    cout << "Find similar file - " << similar_file << endl;
+                    cout << "File " << item << "[" << base_path << "] " << "find similar file - " << similar_file << endl;
                 }
             }
         }

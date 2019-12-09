@@ -1,13 +1,13 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "include/cif.h"
-#include "include/cif_func.h"
-#include "include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cif_func.h"
+#include "../include/cmdline.h"
 
 using namespace std;
 
-const string conf_dir = "./conf/";
+const string conf_dir = "../conf/";
 
 /* export */
 void export_gaussion_format_result(string input, string output, string mode, string coord_type, CIF &cif);

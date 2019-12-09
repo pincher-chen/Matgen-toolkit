@@ -169,6 +169,8 @@ public:
             out << line << endl;
         }
         out.close();
+
+        cout << "Export file " << clean_name << " successfully!" << endl;    
     }
 
     // get symmetry info

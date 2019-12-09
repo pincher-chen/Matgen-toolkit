@@ -1,6 +1,6 @@
 #include <iostream>
-#include "include/cif.h"
-#include "include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cmdline.h"
 
 using namespace std;
 
@@ -33,6 +33,11 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    string output = "";
+    if(parser.exist("output_path")) {
+        output = parser.get<string>("output_path");
+    }
+
     // judge remove solvent molecules anyway
     bool isForce = false;
     if(parser.exist("force")) {
@@ -45,8 +50,10 @@ int main(int argc, char *argv[]) {
         cif.parse_file();
         cif.get_known_res();
         cif.build_base_cell(skin_distance, coefficient);
-        cif.find_solvent();
-        cif.export_modify_result(parser.get<string>("output_path"), isForce);
+        cif.find_solvent();        
+        if(!output.empty()) {
+            cif.export_modify_result(output, isForce);
+        }
     } 
     catch(Exception err) {
         cout << err.msg << endl;

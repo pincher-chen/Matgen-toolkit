@@ -1,7 +1,8 @@
 #include <iostream>
 #include <iomanip>
-#include "include/cmdline.h"
-#include "include/cif.h"
+#include "../include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cif_func.h"
 #include "spglib.h"
 
 #define SYMPREC 1e-5
@@ -26,8 +27,6 @@ struct Cell {
     // atom type
     vector<int> types;
 };
-
-void get_res() noexcept(false);
 
 void set_symm_info(CIF &cif, Cell *cell);
 
@@ -144,33 +143,6 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-
-
-void get_res() noexcept(false) {
-    cout << "Getting some known resources..." << endl;
-    get_atom_radius();
-
-    get_known_solvent();
-
-    get_elements();
-
-    get_HM2Hall();
-
-    get_Hall2Number();
-
-    get_Number2Hall();
-
-    get_Hall2HM();
-
-    get_Rhomb2HexHall();
-
-    get_AP2Number();
-
-    get_Number2AP();
-
-    get_SymOpsHall();
-}
-
 void set_symm_info(CIF &cif, Cell *cell) {
     vector<vector<string>> symm = cif.get_symm();
     string name_HM = cif.get_name_HM();
@@ -267,13 +239,13 @@ vector<int> get_spglib_info() {
 void get_spacegroup(CIF &cif, Cell *cell) {
     string name_Hall = cif.get_name_Hall();
     string name_HM = cif.get_name_HM();
-    if(!name_Hall.empty()) {
+    if(!name_Hall.empty() && name_Hall != "P 1") {
         cout << "The space group is: ";
         cout << Hall2HM[name_Hall] << " " << Hall2Number[name_Hall] << endl;
         return;
     }
 
-    if(!name_HM.empty()) {
+    if(!name_HM.empty() && name_HM != "P1") {
         cout << "The space group is: ";
         cout << name_HM << " " << Hall2Number[HM2Hall[name_HM]] << endl;
         return;

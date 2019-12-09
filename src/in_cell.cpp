@@ -1,10 +1,10 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
-#include "include/cmdline.h"
-#include "include/cif.h"
-#include "include/cif_func.h"
-#include "include/func.h"
+#include "../include/cmdline.h"
+#include "../include/cif.h"
+#include "../include/cif_func.h"
+#include "../include/func.h"
 
 using namespace std;
 

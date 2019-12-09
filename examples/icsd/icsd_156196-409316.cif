@@ -1,0 +1,87 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_156196-ICSD
+_database_code_ICSD 156196
+_audit_creation_date 2007-08-01
+_chemical_name_systematic 'Silicon oxide'
+_chemical_formula_structural 'Si O2'
+_chemical_formula_sum 'O2 Si1'
+_chemical_name_structure_type Quartz,low
+_chemical_name_mineral Quartz
+_exptl_crystal_density_diffrn 2.64
+_publ_section_title
+
+;
+First in situ X-ray identification of coesite and retrograde quartz on a glass
+thin section of an ultrahigh-pressure metamorphic rock and their crystal
+structure details
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'American Mineralogist' 2007 92 57 63 AMMIAY
+loop_
+_publ_author_name
+'Ikuta, D.'
+'Kawame, N.'
+'Banno, S.'
+'Hirajima, T.'
+'Ito, K.'
+'Rakovan, J.F.'
+'Downs, R.T.'
+'Tamada, O.'
+_cell_length_a 4.923(1)
+_cell_length_b 4.923(1)
+_cell_length_c 5.409(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 113.53
+_cell_formula_units_Z 3
+_symmetry_space_group_name_H-M 'P 32 2 1'
+_symmetry_Int_Tables_number 154
+_refine_ls_R_factor_all 0.0866
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, -x+y, -z+2/3'
+2 'x-y, -y, -z+1/3'
+3 'y, x, -z'
+4 '-x+y, -x, z+1/3'
+5 '-y, x-y, z+2/3'
+6 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Si4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Si1 Si4+ 3 a 0.468(2) 0 0.6667 0.022 1. 0
+O1 O2- 6 c 0.414(5) 0.264(4) 0.788(3) 0.028 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Si1 Si4+ 0.026(7) 0.014(8) 0.023(6) 0.007(4) -0.004(3) -0.008(7)
+O1 O2- 0.033(16) 0.023(9) 0.030(10) 0.015(12) 0.004(10) -0.008(8)
+#End of TTdata_156196-ICSD
