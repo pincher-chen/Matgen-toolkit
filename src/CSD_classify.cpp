@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) {
     parser.add<string>("output_dir", 'o', "classification result export location", true);
     parser.add<string>("specific_metal", 'm', "only remove specified metal elements(the input form likes Fe-Cu-Zn), default is all metal elements", false, "");
     parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
+    parser.add("log", 'l', "print the detail log, no log by default");
 
     parser.parse_check(argc, argv);
     
@@ -34,6 +35,11 @@ int main(int argc, char *argv[]) {
             coefficient = distance;
             skin_distance = -1.0;
         }
+    }
+
+    bool log = false;
+    if(parser.exist("log")) {
+        log = true;
     }
 
     set<string> sp_metal;
@@ -66,8 +72,10 @@ int main(int argc, char *argv[]) {
     vector<string> files = get_all_files(input, "cif");
     try {
         for(auto item : files) {
-            cout << "---------------- " << item << " ----------------" << endl;
-            CIF cif = CIF(item);
+            if(log) {
+                cout << "---------------- " << item << " ----------------" << endl;
+            }
+            CIF cif = CIF(item, log);
             cif.parse_file();
             cif.get_known_res();
             
@@ -84,7 +92,9 @@ int main(int argc, char *argv[]) {
                 }
             }
             if(!satisfy) {
-                cout << item << " contains metal!" << endl << endl;
+                if(log) {
+                    cout << item << " contains metal!" << endl << endl;
+                }
                 continue;
             }
 
@@ -93,7 +103,9 @@ int main(int argc, char *argv[]) {
             cif.build_base_cell(skin_distance, coefficient);
             satisfy = cif.judge_if_have_disorder();
             if(!satisfy) {
-                cout << item << " contains disorder-molecule!" << endl << endl;
+                if(log) {
+                    cout << item << " contains disorder-molecule!" << endl << endl;
+                }
                 continue;
             }
 
@@ -108,7 +120,9 @@ int main(int argc, char *argv[]) {
                 }
             }
             if(!satisfy) {
-                cout << item << " contains known solvent!" << endl << endl;
+                if(log) {
+                    cout << item << " contains known solvent!" << endl << endl;
+                }
                 continue;
             }
 
@@ -119,12 +133,15 @@ int main(int argc, char *argv[]) {
             else {
                 cp_file(item, output + "/csd_warning/");
             }
-            cout << endl;
+
+            if(log) {
+                cout << endl;
+            }
         }
 
     }
     catch(Exception err) {
-        cout << err.msg << endl;
+        cerr << err.msg << endl;
         return -1;
     }
     return 0;

@@ -37,14 +37,19 @@ class CIF
 
 public:
     
-    CIF(string filename) { 
-        this->filename = filename;
-        time = "";
+    CIF(string _filename, bool _log = true) { 
+        this->filename = _filename;
+        this->log = _log;
+        this->time = "";
     }
 
     // parse cif file and get information
     void parse_file() noexcept(false) {
-        cout << "Parsing the cif file - " << get_filename(this->filename) << endl;
+        
+        if(log) {
+            cout << "Parsing the cif file - " << get_filename(this->filename) << endl;
+        }
+
         split_cif();
         seek_crystal_info();
         cal_crystal_info();
@@ -55,7 +60,11 @@ public:
 
     // get known resources
     void get_known_res() {
-        cout << "Getting some known resources..." << endl;
+        
+        if(log) {
+            cout << "Getting some known resources..." << endl;
+        }
+        
         if(radius_dict.empty()) {
             get_atom_radius();
         }
@@ -67,7 +76,9 @@ public:
 
     // build base cell
     void build_base_cell(double skin_distance, double coefficient) noexcept(false) {
-        cout << "Building base cell..." << endl;
+        if(log) {
+            cout << "Building base cell..." << endl;
+        }
         if(radius_dict.empty() || solvent_dict.empty()) {
             throw Exception("please get known resources first");
         }
@@ -79,7 +90,9 @@ public:
 
     // find exist solvent
     void find_solvent(bool print = true) noexcept(false) {
-        cout << "Looking for solvent in " << get_filename(this->filename) << endl;
+        if(log) {
+            cout << "Looking for solvent in " << get_filename(this->filename) << endl;
+        }
 
         vector<string> chem_list;
         for(auto &chem : this->atom_conn_set) {
@@ -99,7 +112,7 @@ public:
             }
         }
 
-        if(print) {
+        if(print && log) {
             // printVec(chem_list);
             cout << "The calculated solvent molecule to be screened is";
             cout << " [ ";
@@ -122,7 +135,9 @@ public:
 
     // export results after removing solvent
     void export_modify_result(string output_path, bool isForce = false) {
-        cout << "Exporting result..." << endl;
+        if(log) {
+            cout << "Exporting result..." << endl;
+        }
         if(!is_folder_exist(output_path)) {
             make_dir(output_path);
         }
@@ -170,7 +185,9 @@ public:
         }
         out.close();
 
-        cout << "Export file " << clean_name << " successfully!" << endl;    
+        if(log) {
+            cout << "Export file " << clean_name << " successfully!" << endl;    
+        }
     }
 
     // get symmetry info
@@ -569,7 +586,7 @@ private:
                 double z = get_num(atom_info[z_index]);
 
                 if(occupancy_index < atom_info.size()) {
-                    // cout << get_num(atom_info[occupancy_index]) << endl;
+                    // cerr << get_num(atom_info[occupancy_index]) << endl;
                     if(get_num(atom_info[occupancy_index]) < 1.0) {
                         throw Exception("Atom occupancy is smaller than 1.0");
                     }
@@ -681,7 +698,9 @@ private:
             }
         }
         // printVec(this->have_bond_list);
-        cerr << "The number of bonded atom pairs is " << this->have_bond_list.size() << endl;
+        if(log) {
+            cout << "The number of bonded atom pairs is " << this->have_bond_list.size() << endl;
+        }
     }
 
     string get_father(map<string, string> &atom_rel, string x) {
@@ -747,6 +766,9 @@ private:
     }
 
 private:
+    // detail log
+    bool log;
+
     string filename;
     string cif_buf;
    

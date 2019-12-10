@@ -7,28 +7,28 @@ pre :
 	$(shell if [ -d ${OBJDIR} ]; then echo ""; else mkdir ${OBJDIR}; fi;)
 
 rm_mof_solvents : pre
-	g++ ./src/rm_mof_solvents.cpp -o rm_mof_solvents.out -std=c++11
-	@mv ./rm_mof_solvents.out ./bin
+	g++ ${SRCDIR}/rm_mof_solvents.cpp -o rm_mof_solvents -std=c++11
+	@mv ./rm_mof_solvents ${OBJDIR}
 
 find_space_groups : pre
-	g++ ./src/find_space_groups.cpp ./include/spglib/_build/libsymspg.so -o find_space_groups.out -I./include/spglib/src
-	@mv ./find_space_groups.out ./bin
+	g++ ${SRCDIR}/find_space_groups.cpp ./include/spglib/_build/libsymspg.so -o find_space_groups -I./include/spglib/src
+	@mv ./find_space_groups ${OBJDIR}
 
 in_cell : pre
-	g++ ./src/in_cell.cpp -o in_cell.out -std=c++11
-	@mv ./in_cell.out ./bin
+	g++ ${SRCDIR}/in_cell.cpp -o in_cell -std=c++11
+	@mv ./in_cell ${OBJDIR}
 
 ICSD_classify : pre
-	g++ ./src/ICSD_classify.cpp -o ICSD_classify.out -std=c++11
-	@mv ./ICSD_classify.out ./bin
+	g++ ${SRCDIR}/ICSD_classify.cpp -o ICSD_classify -std=c++11
+	@mv ./ICSD_classify ${OBJDIR}
 
 CSD_classify : pre
-	g++ ./src/CSD_classify.cpp -o CSD_classify.out -std=c++11
-	@mv ./CSD_classify.out ./bin
+	g++ ${SRCDIR}/CSD_classify.cpp -o CSD_classify -std=c++11
+	@mv ./CSD_classify ${OBJDIR}
 
 format : pre
-	g++ ./src/format.cpp -o format.out -std=c++11
-	@mv ./format.out ./bin
+	g++ ${SRCDIR}/format.cpp -o format -std=c++11
+	@mv ./format ${OBJDIR}
 
 clean : pre
-	@rm ./bin/*.out
+	@rm ${OBJDIR}/*

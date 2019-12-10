@@ -17,18 +17,18 @@ void export_vasp_format_result(string input, string output, string mode, string 
 int main(int argc, char *argv[]) {
     // cmd
     cmdline::parser parser;
-    parser.add<string>("input", 'i', "input csd file", true, "");
+    parser.add<string>("input", 'i', "input file", true, "");
 
     parser.add<string>("output", 'o', "output path of the conversion result ", true);
 
     // mode - in-cell/asymmetric
-    parser.add<string>("mode", 'm', "the mode of the format conversion", false, "asymmetric");
+    parser.add<string>("mode", 'm', "the mode of the format conversion(in-cell/asymmetric)", false, "asymmetric");
 
     // format - vasp_file/opt-freq
-    parser.add<string>("type", 't', "the type of the result format, support gjf(gaussion)/vasp", true, "");
+    parser.add<string>("type", 't', "the type of the result format(gjf/vasp), convert format to gaussion format or vasp format", true, "");
 
     // coord_type - cart/frac
-    parser.add<string>("coord_type", 'c', "the type of the coordinate", false, "fract");
+    parser.add<string>("coord_type", 'c', "the type of the coordinate(fract/cart), the coordinates of the atom in the conversion result are fractional coordinates or cartesian coordinates", false, "fract");
 
     parser.parse_check(argc, argv);
     
@@ -143,12 +143,12 @@ void export_vasp_format_result(string input, string output, string mode, string 
     
     // box size
     vector<vector<double>> lattice = cif.get_lattice();
-    for(int i = 0; i < 3; i++) {
-        for(int j = 0; j < 3; j++) {
-            cout << lattice[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for(int i = 0; i < 3; i++) {
+    //     for(int j = 0; j < 3; j++) {
+    //         cout << lattice[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
     
     for(int i = 0; i < 3; i++) {
         out << setw(20) << right << lattice[0][i] << setw(20) << right << lattice[1][i] << setw(20) << right << lattice[2][i] << endl;

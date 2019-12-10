@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cctype>
 #include "../include/cif.h"
+#include "../include/cif_func.h"
 #include "../include/cmdline.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ int main(int argc, char *argv[]) {
     cmdline::parser parser;
     parser.add<string>("input_dir", 'i', "icsd folder location", true, "");
     parser.add<string>("output_dir", 'o', "classification result export location", true);
+    parser.add("log", 'l', "print the detail log, no log by default");
 
     parser.parse_check(argc, argv);
     
@@ -26,17 +28,26 @@ int main(int argc, char *argv[]) {
 
     string input = parser.get<string>("input_dir");
     string output = parser.get<string>("output_dir");
+    
+    bool log = false;
+    if(parser.exist("log")) {
+        log = true;
+    }
 
     if(!is_folder_exist(input)) {
         cout << "CSD data not found!" << endl;
     }
 
-    get_res();
+    get_res(log);
     vector<string> files = get_all_files(input, "cif");
     for(auto item : files) {
         try {
-            cout << "-----------------------FILE " + item + " -----------------------" << endl;
-            CIF cif = CIF(item);
+
+            if(log) {
+                cout << "-----------------------FILE " + item + " -----------------------" << endl;
+            }
+
+            CIF cif = CIF(item, log);
             cif.parse_file();
 
             // component/element type/space group/
@@ -75,7 +86,7 @@ int main(int argc, char *argv[]) {
                 vector<string> files = get_all_files(base_path, "cif");
                 
                 for(auto cmp_item : files) {
-                    CIF other = CIF(cmp_item);
+                    CIF other = CIF(cmp_item, log);
                     other.parse_file();
                     
                     double msd = MSD(cif, other);
@@ -85,7 +96,7 @@ int main(int argc, char *argv[]) {
                         continue;
                     }
                     else {
-                        cout << "[MSD]" << get_filename(item) << " - " << get_filename(cmp_item) << ":\t" << msd << endl;
+                        // cerr << "[MSD]" << get_filename(item) << " - " << get_filename(cmp_item) << ":\\tt" << msd << endl;
                         similar_file = get_filename(cmp_item);
 
                         if(cif.get_time() <= other.get_time()) {
@@ -96,7 +107,10 @@ int main(int argc, char *argv[]) {
                             if(unlink(cmp_item.c_str()) < 0) {
                                 cerr << "unlink error" << endl;
                             }
-                            cout << "remove - " << cmp_item.c_str() << endl;
+
+                            if(log) {
+                                cout << "remove - " << cmp_item.c_str() << endl;
+                            }
                         }
                     }
                 }
@@ -105,39 +119,19 @@ int main(int argc, char *argv[]) {
                     cp_file(item, base_path);
                 }
                 else {
-                    cout << "File " << item << "[" << base_path << "] " << "find similar file - " << similar_file << endl;
+                    if(log) {
+                        cout << "File " << item << "[" << base_path << "] " << "find similar file - " << similar_file << endl;
+                    }
                 }
             }
         }
         catch(Exception err) {
-            cout << err.msg << endl;
+            if(log) {
+                cerr << err.msg << endl;
+            }
         }
     }
     return 0;
-}
-
-
-void get_res() noexcept(false) {
-    cout << "Getting some known resources..." << endl;
-    get_atom_radius();
-
-    get_elements();
-
-    get_HM2Hall();
-
-    get_Hall2Number();
-
-    get_Number2Hall();
-
-    get_Hall2HM();
-
-    get_Rhomb2HexHall();
-
-    get_AP2Number();
-
-    get_Number2AP();
-
-    get_SymOpsHall();
 }
 
 double MSD(CIF &a, CIF &b) {

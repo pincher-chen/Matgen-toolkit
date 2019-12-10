@@ -7,8 +7,11 @@
 #define eps 1e-6
 
 
-void get_res() noexcept(false) {
-    cout << "Getting some known resources..." << endl;
+void get_res(bool log = true) noexcept(false) {
+    if(log) {
+        cout << "Getting some known resources..." << endl;
+    }
+    
     get_atom_radius();
 
     get_known_solvent();

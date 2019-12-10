@@ -2,6 +2,10 @@
 <!-- TOC -->
 
 - [MOFkit](#mofkit)
+  - [Installation](#installation)
+    - [Environment](#environment)
+    - [Compile](#compile)
+    - [Configuration](#configuration)
   - [Remove Solvents](#remove-solvents)
     - [Description](#description)
     - [Usage](#usage)
@@ -10,7 +14,7 @@
     - [Description](#description-1)
     - [Usage](#usage-1)
     - [Example](#example-1)
-    - [Problem && Solution](#problem--solution)
+    - [Problem &amp;&amp; Solution](#problem-ampamp-solution)
   - [In-Cell](#in-cell)
     - [Description](#description-2)
     - [Usage](#usage-2)
@@ -33,6 +37,33 @@
 
 ---
 
+## Installation
+
+
+### Environment
+* Linux
+* GCC-5.4.0, need to support C ++ 11 and above
+* Make
+
+### Compile
+* compile all files - `make` or `make all`
+* compile specified function(`rm_mof_solvents/find_space_groups/in_cell/ICSD_classify/CSD_classify/format`) - `make func`
+* delete executable - `make clean` 
+
+### Configuration
+* The program `Find Space Groups` is based on [spglib](https://github.com/atztogo/spglib). To use this function, you need to install and configure spglib. 
+  ```shell
+  $ git clone https://github.com/atztogo/spglib.git
+  $ cd spglib
+  $ mkdir _build
+  $ cd _build
+  $ cmake ..
+  $ make
+  $ make install
+  ```
+
+---
+
 ## Remove Solvents
 
 ### Description
@@ -40,7 +71,7 @@ The program is a tool to remove solvents from MOF.
 
 ### Usage
 ```
-usage: ./bin/rm_mof_solvents.out --cif_in=string [options] ...
+usage: ./bin/rm_mof_solvents --cif_in=string [options] ...
 options:
   -i, --cif_in           input MOF cif file (string)
   -o, --output_path      output filepath (string [=])
@@ -51,7 +82,7 @@ options:
 
 ### Example
 ```
-$./bin/rm_mof_solvents.out -i ./examples/cod/ABAGAO.MOF_subset.cif -o ./example/result
+$ ./bin/rm_mof_solvents -i ./examples/cod/ABAGAO.MOF_subset.cif -o ./examples/result
 ```
 **log**
 ```
@@ -264,7 +295,7 @@ The program is used to obtain the space group information in the cif file.(base 
 
 ### Usage
 ```
-usage: ./bin/find_space_groups.out --input=string [options] ...
+usage: ./bin/find_space_groups --input=string [options] ...
 options:
   -i, --input         input cif file name (string)
   -v, --version       return the version of spglib
@@ -284,7 +315,7 @@ options:
 
 ### Example
 ```
-$ ./bin/find_space_groups.out -i ./examples/cod/WAJZUE.cif -s
+$ ./bin/find_space_groups -i ./examples/cod/WAJZUE.cif -s
 ```
 
 ```
@@ -294,7 +325,7 @@ The space group is: Pbca 61
 ```
 
 ```
-$ ./bin/find_space_groups.out -i ./examples/in-cell/ABETIN_clean.cif -s
+$ ./bin/find_space_groups -i ./examples/in-cell/ABETIN_clean.cif -s
 ```
 
 ```
@@ -305,8 +336,11 @@ The space group is: I4_1/acd 142
 
 ### Problem && Solution
 
-* **error while loading shared libraries: libsymspg.so.1: cannot open shared object file: No such file or directory** because the program will default to `/lib64/libsymspg.so` not in `/lib64/.` Therefore, the following commands need to be added to allow the program to find the library in the directory of the instruction.`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./include/spglib/_build`
+* **error while loading shared libraries: libsymspg.so.1: cannot open shared object file: No such file or directory** because the program will default to `/lib64/libsymspg.so` not in `/lib64/.` Therefore, the following commands need to be added to allow the program to find the library in the directory of the instruction.
 
+  `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./include/spglib/_build`
+
+  **spglib path please change according to the actual**
 
 ---
 
@@ -320,7 +354,7 @@ This program will obtain its in-cell structure based on the space group informat
 
 ### Usage
 ```
-usage: ./bin/in_cell.out --input_path=string --output_path=string [options] ...
+usage: ./bin/in_cell --input_path=string --output_path=string [options] ...
 options:
   -i, --input_path     input MOF cif file (string)
   -o, --output_path    output file path (string)
@@ -329,7 +363,7 @@ options:
 
 ### Example
 ```
-./bin/in_cell.out -i ./examples/cod/WAJZUE.cif -o ./examples/result
+$ ./bin/in_cell -i ./examples/cod/WAJZUE.cif -o ./examples/result
 ```
 **log**
 ```
@@ -623,40 +657,43 @@ classification rules - `component/element type/space group/`
 
 ### Usage
 ```
-usage: ./bin/ICSD_classify.out --input_dir=string --output_dir=string [options] ...
+usage: ./bin/ICSD_classify --input_dir=string --output_dir=string [options] ...
 options:
   -i, --input_dir     icsd folder location (string)
   -o, --output_dir    classification result export location (string)
+  -l, --log           print the detail log, no log by default
   -?, --help          print this message
 ```
 
 ### Example
 ```
-./bin/ICSD_classify.out -i ./examples/icsd -o ./examples/icsd_classify
+$ ./bin/ICSD_classify -i ./examples/icsd -o ./examples/icsd_classify
 ```
 ---
 
 ## CSD' Classify
 
 ### Description
+This program is used to remove files containing metal elements, disorder molecules and known solvents from the CSD database. You can specify to exclude only certain metal elements. The result may contain two folders, the folder `csd_warning` indicates that the atoms in the structure are bonded to two or more parts, and the folder `csd_normal` indicates that the atoms in the structure will only be bonded to one part.
 
 
 ### Usage
 
 ```
-usage: ./bin/CSD_classify.out --input_dir=string --output_dir=string [options] ...
+usage: ./bin/CSD_classify --input_dir=string --output_dir=string [options] ...
 options:
   -i, --input_dir         csd folder location (string)
   -o, --output_dir        classification result export location (string)
   -m, --specific_metal    only remove specified metal elements(the input form likes Fe-Cu-Zn), default is all metal elements (string [=])
   -d, --skin_distance     the skin distance(coefficient) you want to use (double [=0.25])
+  -l, --log               print the detail log, no log by default
   -?, --help              print this message
 ```
 
 ### Example
 
 ```
-./bin/CSD_classify.out -i ./examples/csd -o ./examples/csd_classify
+./bin/CSD_classify -i ./examples/csd -o ./examples/csd_classify
 ```
 
 ---
@@ -665,19 +702,30 @@ options:
 
 ### Description
 
+The program is used to convert the cif file into a file of another format. It supports customizing the atomic coordinates (atomic fractional coordinates / cartesian coordinates) in the conversion result and converting the molecular structure to in-cell or asymmetric mode.
+
 ### Usage
 ```
-usage: ./bin/format.out --input=string --output=string --type=string [options] ...
+usage: ./bin/format --input=string --output=string --type=string [options] ...
 options:
-  -i, --input         input csd file (string)
+  -i, --input         input file (string)
   -o, --output        output path of the conversion result  (string)
-  -m, --mode          the mode of the format conversion (string [=asymmetric])
-  -t, --type          the type of the result format, support gjf(gaussion)/vasp (string)
-  -c, --coord_type    the type of the coordinate (string [=fract])
+  -m, --mode          the mode of the format conversion(in-cell/asymmetric) (string [=asymmetric])
+  -t, --type          the type of the result format(gjf/vasp), convert format to vasp file format or gaussion format (string)
+  -c, --coord_type    the type of the coordinate(fract/cart), the coordinates of the atom in the conversion result are fractional coordinates or cartesian coordinates (string [=fract])
   -?, --help          print this message
 ```
 
 ### Example
 
+**convert to gaussion file**
+```
+./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t gjf
+```
+
+**convert to vasp file**
+```
+./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t vasp
+```
 
 ---

@@ -1,0 +1,84 @@
+
+#######################################################################
+#
+#                 Cambridge Crystallographic Data Centre
+#                                CCDC 
+#
+#######################################################################
+#
+# If this CIF has been generated from an entry in the Cambridge 
+# Structural Database, then it will include bibliographic, chemical, 
+# crystal, experimental, refinement or atomic coordinate data resulting 
+# from the CCDC's data processing and validation procedures.
+#
+#######################################################################
+
+data_FUYYON03
+_chemical_formula_moiety         'H10 B4'
+_chemical_name_systematic        Tetraborane(10)
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_H-M   'P 21/n'
+_symmetry_Int_Tables_number      14
+_space_group_name_Hall           '-P 2yn'
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 1/2-x,1/2+y,1/2-z
+3 -x,-y,-z
+4 1/2+x,1/2-y,1/2+z
+_cell_length_a                   5.7917(11)
+_cell_length_b                   10.145(2)
+_cell_length_c                   8.699(2)
+_cell_angle_alpha                90
+_cell_angle_beta                 106.03(2)
+_cell_angle_gamma                90
+_cell_volume                     491.251
+_exptl_crystal_colour            colorless
+_cell_formula_units_Z            4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+B1 B 0.0134(5) 0.2295(3) 0.7676(3)
+B2 B -0.1557(6) 0.0727(3) 0.7439(4)
+B3 B 0.1733(5) 0.0859(3) 0.7761(3)
+B4 B 0.1759(6) 0.2038(3) 0.6142(3)
+H1 H 0.0661(45) 0.2915(28) 0.8682(33)
+H2 H -0.1967(44) 0.2073(26) 0.7338(30)
+H3 H -0.2702(50) 0.0458(28) 0.6241(35)
+H4 H -0.2190(50) 0.0434(29) 0.8488(36)
+H5 H 0.0444(53) 0.0040(34) 0.7439(32)
+H6 H 0.3148(51) 0.0692(28) 0.8824(37)
+H7 H 0.2581(49) 0.0739(28) 0.6639(34)
+H8 H 0.3495(44) 0.2591(25) 0.6325(28)
+H9 H 0.0684(45) 0.1738(26) 0.4920(34)
+H10 H 0.0043(43) 0.2889(26) 0.6509(31)
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_site_symmetry_1
+_geom_bond_site_symmetry_2
+B1 B2 1_555 1_555
+B2 B3 1_555 1_555
+B3 B1 1_555 1_555
+B4 B1 1_555 1_555
+H1 B1 1_555 1_555
+H2 B1 1_555 1_555
+H3 B2 1_555 1_555
+H4 B2 1_555 1_555
+H5 B2 1_555 1_555
+H6 B3 1_555 1_555
+H7 B3 1_555 1_555
+H8 B4 1_555 1_555
+H9 B4 1_555 1_555
+H10 B1 1_555 1_555
+B2 H2 1_555 1_555
+B3 H5 1_555 1_555
+B3 B4 1_555 1_555
+B4 H7 1_555 1_555
+B4 H10 1_555 1_555
+
+#END

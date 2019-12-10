@@ -1,0 +1,87 @@
+
+#######################################################################
+#
+#                 Cambridge Crystallographic Data Centre
+#                                CCDC 
+#
+#######################################################################
+#
+# If this CIF has been generated from an entry in the Cambridge 
+# Structural Database, then it will include bibliographic, chemical, 
+# crystal, experimental, refinement or atomic coordinate data resulting 
+# from the CCDC's data processing and validation procedures.
+#
+#######################################################################
+
+data_FUYYUT
+_chemical_formula_moiety         'H11 B5'
+_chemical_name_systematic        Pentaborane(11)
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_H-M   'P 21/n'
+_symmetry_Int_Tables_number      14
+_space_group_name_Hall           '-P 2yn'
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 x,y,z
+2 1/2-x,1/2+y,1/2-z
+3 -x,-y,-z
+4 1/2+x,1/2-y,1/2+z
+_cell_length_a                   6.76(2)
+_cell_length_b                   8.51(3)
+_cell_length_c                   10.14(3)
+_cell_angle_alpha                90
+_cell_angle_beta                 94.3(3)
+_cell_angle_gamma                90
+_cell_volume                     581.688
+_cell_formula_units_Z            4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+B1 B 0.290 0.107 0.320
+B2 B 0.132 0.106 0.175
+B3 B 0.024 0.047 0.316
+B4 B -0.111 0.165 0.207
+B5 B -0.122 0.216 0.375
+H1 H 0.400 0.006 0.322
+H2 H 0.325 0.218 0.380
+H3 H 0.154 0.026 0.089
+H4 H -0.026 -0.065 0.327
+H5 H -0.233 0.111 0.160
+H6 H -0.035 0.300 0.428
+H7 H -0.278 0.168 0.406
+H8 H 0.255 0.173 0.220
+H9 H 0.038 0.195 0.147
+H10 H -0.159 0.308 0.257
+H11 H 0.076 0.099 0.410
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_site_symmetry_1
+_geom_bond_site_symmetry_2
+B1 B2 1_555 1_555
+B2 B3 1_555 1_555
+B3 B1 1_555 1_555
+B4 B2 1_555 1_555
+B5 B3 1_555 1_555
+H1 B1 1_555 1_555
+H2 B1 1_555 1_555
+H3 B2 1_555 1_555
+H4 B3 1_555 1_555
+H5 B4 1_555 1_555
+H6 B5 1_555 1_555
+H7 B5 1_555 1_555
+H8 B1 1_555 1_555
+H9 B2 1_555 1_555
+H10 B4 1_555 1_555
+H11 B3 1_555 1_555
+B2 H8 1_555 1_555
+B3 B4 1_555 1_555
+B4 B5 1_555 1_555
+B4 H9 1_555 1_555
+B5 H10 1_555 1_555
+
+#END
