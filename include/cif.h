@@ -311,6 +311,10 @@ public:
         return time;
     }
 
+    set<Connected> get_bonds() {
+        return this->bonds;
+    }
+
 private:
     // split the information in the cif file and save in map
     void split_cif() noexcept(false) {
@@ -687,6 +691,9 @@ private:
                 if(bond_ab < skin_distance) {
                     this->have_bond_list.push_back(iter->first);
                     this->connect_list.push_back(Connected(values[0], values[2]));
+
+                    this->bonds.insert(Connected(values[1], values[3]));
+                    this->bonds.insert(Connected(values[3], values[1]));
                 }
             }
             else {
@@ -694,6 +701,9 @@ private:
                 if(distance < bond_ab) {
                     this->have_bond_list.push_back(iter->first);
                     this->connect_list.push_back(Connected(values[0], values[2]));
+                    
+                    this->bonds.insert(Connected(values[1], values[3]));
+                    this->bonds.insert(Connected(values[3], values[1]));
                 }
             }
         }
@@ -788,6 +798,7 @@ private:
     vector<string> have_bond_list;
     
     vector<Connected> connect_list;
+    set<Connected> bonds;
     vector<set<string>> atom_conn_set;
 
     // atom_site - atom_species

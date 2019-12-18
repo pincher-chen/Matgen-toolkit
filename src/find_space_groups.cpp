@@ -9,25 +9,6 @@
 
 using namespace std;
 
-struct Cell {
-    int atom_num;
-
-    // n - array 1*3
-    vector<vector<double>> trans_arr;
-
-    // n - array 3*3
-    vector<vector<vector<double>>> symm_arr;
-
-    // 3 * 3
-    double lattice[3][3];
-
-    // atom coordinate, n * 3
-    vector<vector<double>> position;
-
-    // atom type
-    vector<int> types;
-};
-
 void set_symm_info(CIF &cif, Cell *cell);
 
 void get_cell(CIF &cif, Cell *cell);
@@ -216,7 +197,8 @@ void get_cell(CIF &cif, Cell *cell) {
         cell->position.push_back(iter->second);
         auto atom = radius_dict.find(specie);
         if(atom == radius_dict.end()) {
-            throw Exception(specie + " 's information not found");
+            atom = radius_dict.find(Universal);
+            // throw Exception(specie + " 's information not found");
         }
         cell->types.push_back(get_num(atom->second.O_metal));
     }

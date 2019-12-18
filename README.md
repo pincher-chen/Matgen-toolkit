@@ -2,35 +2,35 @@
 <!-- TOC -->
 
 - [MOFkit](#mofkit)
-  - [Installation](#installation)
-    - [Environment](#environment)
-    - [Compile](#compile)
-    - [Configuration](#configuration)
-  - [Remove Solvents](#remove-solvents)
-    - [Description](#description)
-    - [Usage](#usage)
-    - [Example](#example)
-  - [Find Space Groups](#find-space-groups)
-    - [Description](#description-1)
-    - [Usage](#usage-1)
-    - [Example](#example-1)
-    - [Problem &amp;&amp; Solution](#problem-ampamp-solution)
-  - [In-Cell](#in-cell)
-    - [Description](#description-2)
-    - [Usage](#usage-2)
-    - [Example](#example-2)
-  - [ICSD' Classify And Unique](#icsd-classify-and-unique)
-    - [Description](#description-3)
-    - [Usage](#usage-3)
-    - [Example](#example-3)
-  - [CSD' Classify](#csd-classify)
-    - [Description](#description-4)
-    - [Usage](#usage-4)
-    - [Example](#example-4)
-  - [Format](#format)
-    - [Description](#description-5)
-    - [Usage](#usage-5)
-    - [Example](#example-5)
+    - [Installation](#installation)
+        - [Environment](#environment)
+        - [Compile](#compile)
+        - [Configuration](#configuration)
+    - [Remove Solvents](#remove-solvents)
+        - [Description](#description)
+        - [Usage](#usage)
+        - [Example](#example)
+    - [Find Space Groups](#find-space-groups)
+        - [Description](#description-1)
+        - [Usage](#usage-1)
+        - [Example](#example-1)
+        - [Problem && Solution](#problem--solution)
+    - [In-Cell](#in-cell)
+        - [Description](#description-2)
+        - [Usage](#usage-2)
+        - [Example](#example-2)
+    - [ICSD' Classify And Unique](#icsd-classify-and-unique)
+        - [Description](#description-3)
+        - [Usage](#usage-3)
+        - [Example](#example-3)
+    - [CSD' Classify](#csd-classify)
+        - [Description](#description-4)
+        - [Usage](#usage-4)
+        - [Example](#example-4)
+    - [Format](#format)
+        - [Description](#description-5)
+        - [Usage](#usage-5)
+        - [Example](#example-5)
 
 <!-- /TOC -->
 # MOFkit
@@ -682,12 +682,13 @@ This program is used to remove files containing metal elements, disorder molecul
 ```
 usage: ./bin/CSD_classify --input_dir=string --output_dir=string [options] ...
 options:
-  -i, --input_dir         csd folder location (string)
-  -o, --output_dir        classification result export location (string)
-  -m, --specific_metal    only remove specified metal elements(the input form likes Fe-Cu-Zn), default is all metal elements (string [=])
-  -d, --skin_distance     the skin distance(coefficient) you want to use (double [=0.25])
-  -l, --log               print the detail log, no log by default
-  -?, --help              print this message
+  -i, --input_dir        csd folder location (string)
+  -o, --output_dir       classification result export location (string)
+  -d, --skin_distance    the skin distance(coefficient) you want to use (double [=0.25])
+  -r, --remove           only remove the cif which contains special elements or special bonds(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds) (string [=])
+  -k, --keep             only keep the cif which contains special elements and special bond(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds (string [=])
+  -l, --log              print the detail log, no log by default
+  -?, --help             print this message
 ```
 
 ### Example

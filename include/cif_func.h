@@ -1,10 +1,13 @@
 #ifndef CIF_FUNC_H
 #define CIF_FUNC_H
 
+
+#include "conf.h"
+#include "exception.h"
 #include "conf.h"
 #include "cif.h"
 
-#define eps 1e-6
+#define EPS 1e-6
 
 
 void get_res(bool log = true) noexcept(false) {
@@ -78,7 +81,7 @@ void get_symm_info(CIF &cif, vector<vector<double>> &trans_arr, vector<vector<ve
 
 // used in in-cell for modify x/y/z
 double modify_num(double num) {
-    if(num - 1.0 > eps) {
+    if(num - 1.0 > EPS) {
         return modify_num(num - 1.0);
     }
     else if(num < 0) {
@@ -117,5 +120,45 @@ map<string, set<vector<double>>> in_cell(CIF &cif) {
 
     return all_atoms;
 }
+
+
+// judge whether contains specific atoms
+// input likes A&B or A
+bool is_exist_atoms(CIF &cif, string &s) noexcept(false) {
+    vector<string> atoms = del_split(s, '&');
+    set<string> all_atoms = cif.get_atoms();
+
+    for(auto &atom : atoms) {
+        atom = element_format(atom);
+        if(!all_atoms.count(atom)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+// judge whether contains specific bonds
+// input likes A-B&C-D or A-B
+bool is_exist_bonds(CIF &cif, string &s) noexcept(false) {
+    vector<string> bonds = del_split(s, '&');
+    vector<Connected> connect;
+    for(auto &bond : bonds) {
+        vector<string> atoms = del_split(bond, '-');
+        connect.push_back(Connected(element_format(atoms[0]), element_format(atoms[1])));
+    }
+
+    set<Connected> all_bonds = cif.get_bonds();
+    for(auto &cn : connect) {
+        if(!all_bonds.count(cn)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 
 #endif

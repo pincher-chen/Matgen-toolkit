@@ -1,7 +1,7 @@
 SRCDIR = ./src
 OBJDIR = ./bin
 
-all : pre rm_mof_solvents find_space_groups in_cell ICSD_classify CSD_classify format 
+all : pre rm_mof_solvents find_space_groups in_cell icsd_classify csd_classify format 
 
 pre : 
 	$(shell if [ -d ${OBJDIR} ]; then echo ""; else mkdir ${OBJDIR}; fi;)
@@ -11,20 +11,24 @@ rm_mof_solvents : pre
 	@mv ./rm_mof_solvents ${OBJDIR}
 
 find_space_groups : pre
-	g++ ${SRCDIR}/find_space_groups.cpp ./include/spglib/_build/libsymspg.so -o find_space_groups -I./include/spglib/src
+	g++ ${SRCDIR}/find_space_groups.cpp ./include/spglib/_build/libsymspg.so -o find_space_groups -I./include/spglib/src -std=c++11
 	@mv ./find_space_groups ${OBJDIR}
 
 in_cell : pre
 	g++ ${SRCDIR}/in_cell.cpp -o in_cell -std=c++11
 	@mv ./in_cell ${OBJDIR}
 
-ICSD_classify : pre
-	g++ ${SRCDIR}/ICSD_classify.cpp -o ICSD_classify -std=c++11
-	@mv ./ICSD_classify ${OBJDIR}
+icsd_classify : pre
+	g++ ${SRCDIR}/icsd_classify.cpp -o icsd_classify -std=c++11
+	@mv ./icsd_classify ${OBJDIR}
 
-CSD_classify : pre
-	g++ ${SRCDIR}/CSD_classify.cpp -o CSD_classify -std=c++11
-	@mv ./CSD_classify ${OBJDIR}
+icsd_classify_fp : pre
+	g++ ${SRCDIR}/icsd_classify_fp.cpp -o icsd_classify_fp -std=c++11 -L ./lib -static -llapack -lblas -ltmglib -lf2c
+	@mv ./icsd_classify_fp ${OBJDIR}
+
+csd_classify : pre
+	g++ ${SRCDIR}/csd_classify.cpp -o csd_classify -std=c++11
+	@mv ./csd_classify ${OBJDIR}
 
 format : pre
 	g++ ${SRCDIR}/format.cpp -o format -std=c++11

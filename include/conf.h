@@ -63,8 +63,34 @@ struct Connected {
     string atom_b;
 
     Connected(string _a, string _b) : atom_a(_a), atom_b(_b){}
+
+    bool operator==(const Connected &other) {
+        return  this->atom_a == other.atom_a && this->atom_b == other.atom_b;
+    }
+
+    friend bool operator<(const Connected& a, const Connected& b) {
+        return a.atom_a < b.atom_a || a.atom_b < b.atom_b;
+    }
 };
 
+struct Cell {
+    int atom_num;
+
+    // n - array 1*3
+    vector<vector<double>> trans_arr;
+
+    // n - array 3*3
+    vector<vector<vector<double>>> symm_arr;
+
+    // 3 * 3
+    double lattice[3][3];
+
+    // atom coordinate, n * 3
+    vector<vector<double>> position;
+
+    // atom type
+    vector<int> types;
+};
 
 
 /* data */
@@ -103,6 +129,21 @@ map<int, int> Number2AP;
 map<string, vector<vector<string>>> SymOpsHall;
 
 /* IO Reader */
+
+// convert element like fe -> Fe, c -> C
+string element_format(string &ele) noexcept(false) {
+    if(ele.size() == 1) {
+        ele[0] = toupper(ele[0]);
+    }
+    else if(ele.size() == 2) {
+        ele[0] = toupper(ele[0]);
+        ele[1] = tolower(ele[1]);
+    }
+    else {
+        throw Exception(ele + " is illegal");
+    }
+    return ele;
+}
 
 // get atom radius
 void get_atom_radius() noexcept(false) {
@@ -164,6 +205,9 @@ void get_elements() noexcept(false) {
     else {
         string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
         elements = re_split(str, "\\n+");
+        for(auto &ele : elements) {
+            ele = element_format(ele);
+        }
     }
 }
 
