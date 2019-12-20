@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+#include <iomanip>
 #include "../include/cif.h"
 #include "../include/cif_func.h"
 #include "../include/cif_sim.h"
@@ -32,6 +33,13 @@ int main(int argc, char *argv[]) {
     string input = parser.get<string>("input_dir");
     string output = parser.get<string>("output_dir");
     
+    string log_file = output + "/" + "file_similarity_log_" + to_string(get_cutoff()).substr(0, 4) + ".txt";
+    if(!is_folder_exist(output)) {
+        make_dir(output);
+    }
+    ofstream lout(log_file);
+
+
     bool log = false;
     if(parser.exist("log")) {
         log = true;
@@ -83,9 +91,6 @@ int main(int argc, char *argv[]) {
                 cp_file(item, base_path);
             }
             else {
-                bool satisfy = true;
-                string similar_file = "";
-
                 vector<string> files = get_all_files(base_path, "cif");
                 
                 for(auto cmp_item : files) {
@@ -94,38 +99,20 @@ int main(int argc, char *argv[]) {
                     
                     double sim = get_cif_similarity(cif, other);
 
-
-                    if(sim < 0 || sim > Threshold) {
+                    if(sim < 0) {
                         continue;
                     }
                     else {
-                        // cerr << "[sim]" << get_filename(item) << " - " << get_filename(cmp_item) << ":\\tt" << sim << endl;
-                        similar_file = get_filename(cmp_item);
+                        string a = get_filename(item);
+                        string b = get_filename(cmp_item);
 
-                        if(cif.get_time() <= other.get_time()) {
-                            satisfy = false;
-                            break;
-                        }
-                        else {
-                            if(unlink(cmp_item.c_str()) < 0) {
-                                cerr << "unlink error" << endl;
-                            }
-
-                            if(log) {
-                                cout << "remove - " << cmp_item.c_str() << endl;
-                            }
-                        }
+                        lout.flags(ios::fixed);
+                        lout.precision(8);
+                        lout << setw(50) << left << a << setw(50) << left << b << setw(20) << left << sim << endl;
                     }
                 }
 
-                if(satisfy) {
-                    cp_file(item, base_path);
-                }
-                else {
-                    if(log) {
-                        cout << "File " << item << "[" << base_path << "] " << "find similar file - " << similar_file << endl;
-                    }
-                }
+                cp_file(item, base_path);
             }
         }
         catch(Exception err) {
@@ -138,6 +125,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+    lout.close();
     return 0;
 }
 

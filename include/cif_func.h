@@ -64,18 +64,41 @@ void get_symm_info(CIF &cif, vector<vector<double>> &trans_arr, vector<vector<ve
 
         // x - y - z
         for(int i = 0; i < 3; i++) {
-            if(item[i].find(ex[i]) != string::npos) {
-                s[i][i] = -1.0;
+            int index = i;
+
+            if(item[i].find("x") != string::npos) {
+                index = 0;
+            }
+            else if(item[i].find("y") != string::npos) {
+                index = 1;
             }
             else {
-                s[i][i] = 1.0;
+                index = 2;
             }
 
-            t[i] = frac2double(item[i]);
+            if(item[i].find(ex[index]) != string::npos) {
+                s[index][index] = -1.0;
+            }
+            else {
+                s[index][index] = 1.0;
+            }
+
+            t[index] = frac2double(item[i]);
         }
 
         symm_arr.push_back(s);
         trans_arr.push_back(t);
+    }
+
+    for(int i = 0; i < trans_arr.size(); i++) {
+        for(int j = 0; j < symm_arr[i].size(); j++) {
+            printVec(symm_arr[i][j]);
+            cout << " ";
+        }
+        cout << endl;
+
+        printVec(trans_arr[i]);
+        cout << endl;
     }
 }
 

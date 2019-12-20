@@ -15,7 +15,7 @@
 void get_fp_nonperiodic(int nid, int nat, int ntyp, int types[], double rxyz[][3], int znucl[], double fp[]);
 
 void get_fp_periodic(int lmax, int nat, int ntyp, int types[], double lat[3][3],
-                     double rxyz[][3], int znucl[], int natx, double cutoff, double **sfp, double **lfp);
+                     double rxyz[][3], int znucl[], int natx, double cutoff, double **sfp, double **lfp, bool print);
 
 void get_fp_periodic_short(int lmax, int nat, int ntyp, int types[], double lat[3][3],
                            double rxyz[][3], int znucl[], int natx, double cutoff, double **sfp);
@@ -50,15 +50,17 @@ void get_fp_nonperiodic(int nid, int nat, int ntyp, int types[], double rxyz[][3
 
     if ((om = (double **)malloc(sizeof(double) * nid)) == NULL)
     {
-        fprintf(stderr, "Memory could not be allocated.");
-        exit(1);
+        // fprintf(stderr, "Memory could not be allocated.");
+        // exit(1);
+        throw Exception("Memory could not be allocated.");
     }
     for (i = 0; i < nid; i++)
     {
         if ((om[i] = (double *)malloc(sizeof(double) * nid)) == NULL)
         {
-            fprintf(stderr, "Memory could not be allocated.");
-            exit(1);
+            // fprintf(stderr, "Memory could not be allocated.");
+            // exit(1);
+            throw Exception("Memory could not be allocated.");
         }
     }
     creat_om(4, nat, rxyz, rcov, amp, om);
@@ -75,14 +77,16 @@ void get_fp_nonperiodic(int nid, int nat, int ntyp, int types[], double rxyz[][3
     dsyev("V", "U", &nid, a, &lda, w, work, &lwork, &info);
     if (info > 0)
     {
-        fprintf(stderr, "Error: dsyev 1");
-        exit(1);
+        // fprintf(stderr, "Error: dsyev 1");
+        // exit(1);
+        throw Exception("Error: dsyev 1");
     }
     if (w[0] < -1E-12)
     {
         printf("w[0] = %g\n", w[0]);
-        fprintf(stderr, "Error: Negative w");
-        exit(1);
+        // fprintf(stderr, "Error: Negative w");
+        // exit(1);
+        throw Exception("Error: Negative w");
     }
 
     for (i = 0; i < nid; i++)
@@ -95,7 +99,7 @@ void get_fp_nonperiodic(int nid, int nat, int ntyp, int types[], double rxyz[][3
 }
 
 void get_fp_periodic(int lmax, int nat, int ntyp, int types[], double lat[3][3],
-                     double rxyz[][3], int znucl[], int natx, double cutoff, double **sfp, double **lfp)
+                     double rxyz[][3], int znucl[], int natx, double cutoff, double **sfp, double **lfp, bool print = false)
 {
     int i, ixyz, flag = 0;
     double rcov[nat];
@@ -113,8 +117,9 @@ void get_fp_periodic(int lmax, int nat, int ntyp, int types[], double lat[3][3],
     }
     else
     {
-        fprintf(stderr, "Error: ORBITAL.");
-        exit(1);
+        // fprintf(stderr, "Error: ORBITAL.");
+        // exit(1);
+        throw Exception("Error: ORBITAL.");
     }
 
     for (i = 0; i < nat; i++)
@@ -123,7 +128,7 @@ void get_fp_periodic(int lmax, int nat, int ntyp, int types[], double lat[3][3],
     ixyz = get_ixyz(lat, cutoff);
 
     /* flag < 0: long fp only;  == 0: short fp only; > 0: long and short fp */
-    get_fp(flag, nat, ntyp, ixyz, natx, lseg, l, lat, rxyz, types, rcov, cutoff, lfp, sfp);
+    get_fp(flag, nat, ntyp, ixyz, natx, lseg, l, lat, rxyz, types, rcov, cutoff, lfp, sfp, print);
 }
 
 void get_fp_periodic_short(int lmax, int nat, int ntyp, int types[], double lat[3][3],
@@ -145,8 +150,9 @@ void get_fp_periodic_short(int lmax, int nat, int ntyp, int types[], double lat[
     }
     else
     {
-        fprintf(stderr, "Error: ORBITAL.");
-        exit(1);
+        // fprintf(stderr, "Error: ORBITAL.");
+        // exit(1);
+        throw Exception("Error: ORBITAL.");
     }
 
     for (i = 0; i < nat; i++)
@@ -177,8 +183,9 @@ void get_fp_periodic_long(int lmax, int nat, int ntyp, int types[], double lat[3
     }
     else
     {
-        fprintf(stderr, "Error: ORBITAL.");
-        exit(1);
+        // fprintf(stderr, "Error: ORBITAL.");
+        // exit(1);
+        throw Exception("Error: ORBITAL.");
     }
 
     for (i = 0; i < nat; i++)

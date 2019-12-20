@@ -89,6 +89,7 @@ vector<string> get_all_files(string base_dir, string extend) {
 }
 
 bool cp_file(string file, string destination) {
+
     string filename = get_filename(file);
     if (!is_folder_exist(destination)) {
         make_dir(destination);
@@ -96,7 +97,8 @@ bool cp_file(string file, string destination) {
 
     ifstream in(file, ios::in);
     string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
-    ofstream out(destination + filename);
+    
+    ofstream out(destination + filename, ios::ate|ios::out);
     out << str;
 
     in.close();
