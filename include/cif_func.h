@@ -90,16 +90,16 @@ void get_symm_info(CIF &cif, vector<vector<double>> &trans_arr, vector<vector<ve
         trans_arr.push_back(t);
     }
 
-    for(int i = 0; i < trans_arr.size(); i++) {
-        for(int j = 0; j < symm_arr[i].size(); j++) {
-            printVec(symm_arr[i][j]);
-            cout << " ";
-        }
-        cout << endl;
+    // for(int i = 0; i < trans_arr.size(); i++) {
+    //     for(int j = 0; j < symm_arr[i].size(); j++) {
+    //         printVec(symm_arr[i][j]);
+    //         cout << " ";
+    //     }
+    //     cout << endl;
 
-        printVec(trans_arr[i]);
-        cout << endl;
-    }
+    //     printVec(trans_arr[i]);
+    //     cout << endl;
+    // }
 }
 
 // used in in-cell for modify x/y/z

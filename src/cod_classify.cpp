@@ -32,21 +32,24 @@ int main(int argc, char *argv[]) {
 
     string input = parser.get<string>("input_dir");
     string output = parser.get<string>("output_dir");
+
+    if(!is_folder_exist(input)) {
+        cout << "CSD data not found!" << endl;
+    }
     
     string log_file = output + "/" + "file_similarity_log_" + to_string(get_cutoff()).substr(0, 4) + ".txt";
+    ofstream lout(log_file);
+
+    map<string, set<string>> sim;
+
     if(!is_folder_exist(output)) {
         make_dir(output);
     }
-    ofstream lout(log_file);
 
 
     bool log = false;
     if(parser.exist("log")) {
         log = true;
-    }
-
-    if(!is_folder_exist(input)) {
-        cout << "CSD data not found!" << endl;
     }
 
     get_res(log);
@@ -86,16 +89,13 @@ int main(int argc, char *argv[]) {
             
             string base_path = output + "/" + f1 + "/" + f2 + "/" + f3 + "/";
 
-            lout.flags(ios::fixed);
-            lout.precision(8);
-            lout << setw(50) << left << get_filename(item) << setw(50) << left << get_filename(item) << setw(20) << left << 0.0 << endl;
-
             if(!is_folder_exist(base_path)) {
                 make_dir(base_path);
                 cp_file(item, base_path);
             }
             else {
                 vector<string> files = get_all_files(base_path, "cif");
+                
                 for(auto cmp_item : files) {
                     CIF other = CIF(cmp_item, log);
                     other.parse_file();

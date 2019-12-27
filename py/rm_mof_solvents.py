@@ -61,7 +61,7 @@ class rmsolvent:
         return cf
 
     def split_cf(self, cf):
-    ''' Split the information in the cif file and return as a dict '''
+        ''' Split the information in the cif file and return as a dict '''
         total_loop_area = re.split('\s+?loop_\n', cf)
         loop_area = len(total_loop_area)
         loop_dict = {}
@@ -96,7 +96,7 @@ class rmsolvent:
         return loop_dict
 
     def site_loop(self, loop_dict):
-    ''' Get the site information of the atom in the loop '''
+        ''' Get the site information of the atom in the loop '''
         single_loop_dict = loop_dict.get('site_loop')
         #print(single_loop_dict)
         try:
@@ -181,7 +181,7 @@ class rmsolvent:
         return self.cell, self.angle
         
     def get_atom_coordinates(self, site_loop_list):
-    ''' get the coordinate information of the atom'''
+        ''' get the coordinate information of the atom'''
         atom_cd_list = []
         for atom_dict in site_loop_list:
             #print(atom_dict)
@@ -200,7 +200,7 @@ class rmsolvent:
         return atom_cd_list
 
     def get_cart(atom_array_cd, cell):
-    '''Convert fractional coordinates to real coordinates and calculate bond lengths between different atoms'''
+        '''Convert fractional coordinates to real coordinates and calculate bond lengths between different atoms'''
         lx_vector, ly_vector, lz_vector = cell[0], cell[1], cell[2]
         frac_a, frac_b, frac_c = atom_array_cd[0], \
                                  atom_array_cd[1], \

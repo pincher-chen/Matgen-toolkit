@@ -8,7 +8,7 @@
 #include "./fp/fplib.h"
 
 const int lmax = 0;
-const double cutoff = 1.0;
+const double cutoff = 5.0;
 
 int natx;
 
@@ -280,7 +280,7 @@ void get_fp_periodic(CIF &a) {
 
 int get_natx(int nat, double lattice[3][3], double cutoff) {
     int ixyz = get_ixyz(lattice, cutoff);
-    return pow(ixyz, 3) * nat;
+    return pow(ixyz * 2, 3) * nat;
 }
 
 double get_cutoff() {

@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
     parser.add<string>("remove", 'r', "only remove the cif which contains special elements or special bonds(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds)", false, "");
     parser.add<string>("keep", 'k', "only keep the cif which contains special elements and special bond(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds", false, "");
     parser.add("log", 'l', "print the detail log, no log by default");
+    parser.add("unique", 'u', "remove duplicate files");
 
     parser.parse_check(argc, argv);
     
@@ -40,6 +41,11 @@ int main(int argc, char *argv[]) {
     bool log = false;
     if(parser.exist("log")) {
         log = true;
+    }
+
+    bool unique = false;
+    if(parser.exist("unique")) {
+        unique = true;
     }
 
     bool keep = false, rm = false;
@@ -90,11 +96,20 @@ int main(int argc, char *argv[]) {
     }
 
     vector<string> files = get_all_files(input, "cif");
+    set<string> files_set;
     for(auto item : files) {
         try {
             if(log) {
                 cout << "---------------- " << item << " ----------------" << endl;
             }
+
+            if(unique && files_set.count(get_pname(get_filename(item)))) {
+                if(log) {
+                    cout << item << " file  duplicates!" << endl << endl;
+                }
+                continue;
+            }
+
             CIF cif = CIF(item, log);
             cif.parse_file();
             cif.get_known_res();
@@ -205,6 +220,7 @@ int main(int argc, char *argv[]) {
             }
             if(!satisfy) {
                 if(log) {
+                    cp_file(item, output + "/csd_solvent/");
                     cout << item << " contains known solvent!" << endl << endl;
                 }
                 continue;
@@ -218,6 +234,11 @@ int main(int argc, char *argv[]) {
                 cp_file(item, output + "/csd_warning/");
             }
 
+            if(unique) {
+                // cout << get_pname(get_filename(item)) << endl;
+                files_set.insert(get_pname(get_filename(item)));
+            }
+
             if(log) {
                 cout << endl;
             }
@@ -229,5 +250,6 @@ int main(int argc, char *argv[]) {
             return -1;
         }
     }
+
     return 0;
 }

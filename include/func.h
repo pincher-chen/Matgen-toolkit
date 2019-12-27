@@ -69,7 +69,6 @@ string get_filename(string path) {
 }
 
 vector<string> get_all_files(string base_dir, string extend) {
-
     vector<string> files;
 
     DIR *pDir;
@@ -89,7 +88,6 @@ vector<string> get_all_files(string base_dir, string extend) {
 }
 
 bool cp_file(string file, string destination) {
-
     string filename = get_filename(file);
     if (!is_folder_exist(destination)) {
         make_dir(destination);
@@ -105,6 +103,16 @@ bool cp_file(string file, string destination) {
     out.close();
 }
 
+string get_pname(string filename) {
+    string name;
+    for(auto &c : filename) {
+        if((c >= '0' && c <= '9') || c == '.') {
+            break;
+        }
+        name += c;
+    }
+    return name;
+}
 
 // trim string
 string trim(const string &str) {

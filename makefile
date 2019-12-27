@@ -18,6 +18,10 @@ in_cell : pre
 	g++ ${SRCDIR}/in_cell.cpp -o in_cell -std=c++11
 	@mv ./in_cell ${OBJDIR}
 
+occupancy_filter : pre
+	g++ ${SRCDIR}/cif_occupancy_filter.cpp -o occupancy_filter -std=c++11
+	@mv ./occupancy_filter ${OBJDIR}
+
 icsd_classify : pre
 	g++ ${SRCDIR}/icsd_classify.cpp -o icsd_classify -std=c++11
 	@mv ./icsd_classify ${OBJDIR}

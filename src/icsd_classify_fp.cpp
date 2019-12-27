@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cctype>
+#include <iomanip>
 #include "../include/cif.h"
 #include "../include/cif_func.h"
 #include "../include/cif_sim.h"
@@ -9,7 +10,7 @@
 
 using namespace std;
 
-const double Threshold = 0.1;
+const double Threshold = 0.01;
 
 void get_res() noexcept(false);
 
@@ -38,14 +39,20 @@ int main(int argc, char *argv[]) {
     }
 
     if(!is_folder_exist(input)) {
-        cout << "CSD data not found!" << endl;
+        cout << "ICSD data not found!" << endl;
     }
 
+    string log_file = output + "/" + "file_similarity_log_" + to_string(get_cutoff()).substr(0, 4) + ".txt";
+    if(!is_folder_exist(output)) {
+        make_dir(output);
+    }
+    ofstream lout(log_file);
+
+    map<string, set<string>> simMap;
     get_res(log);
     vector<string> files = get_all_files(input, "cif");
     for(auto item : files) {
         try {
-
             if(log) {
                 cout << "-----------------------FILE " + item + " -----------------------" << endl;
             }
@@ -102,11 +109,21 @@ int main(int argc, char *argv[]) {
                         // cerr << "[sim]" << get_filename(item) << " - " << get_filename(cmp_item) << ":\\tt" << sim << endl;
                         similar_file = get_filename(cmp_item);
 
+                        
+                        string a = get_filename(item);
+                        string b = get_filename(cmp_item);
+                        
                         if(cif.get_time() <= other.get_time()) {
+                            simMap[b].insert(a);
                             satisfy = false;
                             break;
                         }
                         else {
+                            for(auto i = simMap[b].begin(); i != simMap[b].end(); i++) {
+                                simMap[a].insert(*i);
+                            }
+                            simMap.erase(b);
+                            
                             if(unlink(cmp_item.c_str()) < 0) {
                                 cerr << "unlink error" << endl;
                             }
@@ -122,6 +139,7 @@ int main(int argc, char *argv[]) {
                     cp_file(item, base_path);
                 }
                 else {
+                    simMap.erase(get_filename(item));
                     if(log) {
                         cout << "File " << item << "[" << base_path << "] " << "find similar file - " << similar_file << endl;
                     }
@@ -138,6 +156,18 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+
+    cout << "+++" << endl;
+    for(auto i = simMap.begin(); i != simMap.end(); i++) {
+        lout << setw(50) << left << i->first << ": "; 
+        for(auto j = i->second.begin(); j != i->second.end(); j++) {
+            lout << setw(50) << left << (*j);     
+        }
+        lout << endl;
+    }
+    lout.close();
+    cout << "+++" << endl;
+
     return 0;
 }
 

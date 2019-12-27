@@ -25,6 +25,8 @@ int main(int argc, char *argv[]) {
 
     string input = parser.get<string>("input_dir");
     string output = parser.get<string>("output_dir") + "/";
+
+    string err_dir = output + "error_file/";
     
     bool log = false;
     if(parser.exist("log")) {
@@ -51,6 +53,10 @@ int main(int argc, char *argv[]) {
         catch(Exception err) {
             if(log) {
                 cerr << err.msg << endl;
+            }
+
+            if(err.msg.find("[ERROR]") != string::npos) {
+                cp_file(item, err_dir);
             }
         }
     }

@@ -51,6 +51,7 @@ public:
         }
 
         split_cif();
+
         seek_crystal_info();
         cal_crystal_info();
         deal_site_loop();
@@ -348,6 +349,38 @@ private:
                     vector<string> site_loop = re_split(content, "\\r*?\\n");
                     loop_dict["aniso_site_loop"] = site_loop;
                 }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_anharm\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["anharm_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_displace_Fourier\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["displace_Fourier_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_Fourier\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["Fourier_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_U_Fourier\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["U_Fourier_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_displace_special\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["displace_special_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_occ\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["occ_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_site_oxford\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["oxford_site_loop"] = site_loop;
+                }
+                else if(std::regex_search(content, std::regex("^\\s*_atom_sites_solution\\w+?"))) {
+                    vector<string> site_loop = re_split(content, "\\r*?\\n");
+                    loop_dict["solution_site_loop"] = site_loop;
+                }
                 else if (std::regex_search(content, std::regex("^\\s*_atom_site\\w+?"))) {
                     vector<string> site_loop = re_split(content, "\\r*?\\n");
                     loop_dict["site_loop"] = site_loop;
@@ -564,6 +597,7 @@ private:
     void get_atom_coordinates() noexcept(false) {
         try {
             // printVec(this->site_label);
+            // cout << endl;
             int x_index = std::distance(std::begin(this->site_label), \
                                         std::find(this->site_label.begin(), this->site_label.end(), "_atom_site_fract_x"));
             int y_index = std::distance(std::begin(this->site_label), \
@@ -580,6 +614,16 @@ private:
                                                 std::find(this->site_label.begin(), this->site_label.end(), "_atom_site_occupancy"));
             // cerr << x_index << " " << y_index << " " << z_index << " " << species_index << " " << atom_site_index << endl;
             
+            if(x_index >= this->site_label.size() || 
+                y_index >= this->site_label.size() ||
+                z_index >= this->site_label.size()) {
+
+                // printVec(this->site_label);
+                // cout << endl;
+
+                throw Exception("[ERROR] CIF file atom site part parse error!");
+            }
+
             for(auto atom_info : this->site_value) {
                 if(atom_info.size() < this->site_label.size()) {
                     throw Exception("file atom site section has some problem");
@@ -596,7 +640,14 @@ private:
                     }
                 }
 
-                string species = get_species(atom_info[species_index]);
+                string species = "";
+                if(species_index < atom_info.size()) {
+                    species = get_species(atom_info[species_index]);
+                }
+                else {
+                    species = get_species(atom_info[atom_site_index]);
+                }
+
                 string atom_site = atom_info[atom_site_index];
 
                 string key = atom_site + "-" + species;

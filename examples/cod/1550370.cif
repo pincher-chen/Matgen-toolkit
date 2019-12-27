@@ -1,0 +1,430 @@
+#------------------------------------------------------------------------------
+#$Date: 2019-02-03 22:59:03 +0200 (Sun, 03 Feb 2019) $
+#$Revision: 213468 $
+#$URL: svn://www.crystallography.net/cod/cif/1/55/03/1550370.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1550370
+loop_
+_publ_author_name
+'Canadillas-Delgado, Laura'
+'Mazzuca, Lidia'
+'Fabelo, Oscar'
+'Rodriguez-Velamazan, J. Alberto'
+'Rodriguez-Carvajal, Juan'
+_publ_section_title
+;
+ Incommensurate structures of the [CH~3~NH~3~][Co(COOH)~3~] compound
+;
+_journal_coeditor_code           LT5013
+_journal_issue                   1
+_journal_name_full               IUCrJ
+_journal_page_first              105
+_journal_page_last               115
+_journal_paper_doi               10.1107/S2052252518015026
+_journal_volume                  6
+_journal_year                    2019
+_chemical_formula_sum            'C4 H9 Co N O6'
+_chemical_formula_weight         226
+_chemical_name_systematic        ' ?'
+_space_group_IT_number           62
+_space_group_ssg_name            Pnma(00\g)0s0
+_symmetry_cell_setting           orthorhombic
+_symmetry_space_group_name_Hall  '-P 2ac 2n'
+_symmetry_space_group_name_H-M   'P n m a'
+_cell_angle_alpha                90
+_cell_angle_beta                 90
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   8.2674(2)
+_cell_length_b                   11.6600(4)
+_cell_length_c                   8.1483(2)
+_cell_measurement_reflns_used    725
+_cell_measurement_temperature    122
+_cell_measurement_theta_max      61.15
+_cell_measurement_theta_min      5.12
+_cell_modulation_dimension       1
+_cell_volume                     785.48(4)
+_diffrn_ambient_temperature      122
+_diffrn_detector_area_resol_mean 210
+_diffrn_measured_fraction_theta_full 0.98
+_diffrn_measured_fraction_theta_max 0.98
+_diffrn_measurement_device_type
+'D19 position-sensitive detector diffractometer'
+_diffrn_measurement_method       'omega step-scans'
+_diffrn_radiation_monochromator  'copper 331'
+_diffrn_radiation_probe          neutron
+_diffrn_radiation_type           neutron
+_diffrn_radiation_wavelength     1.4569
+_diffrn_reflns_av_R_equivalents  0.1145
+_diffrn_reflns_av_unetI/netI     0.0117
+_diffrn_reflns_limit_h_max       9
+_diffrn_reflns_limit_h_min       -9
+_diffrn_reflns_limit_index_m_1_max 2
+_diffrn_reflns_limit_index_m_1_min -2
+_diffrn_reflns_limit_k_max       13
+_diffrn_reflns_limit_k_min       -8
+_diffrn_reflns_limit_l_max       10
+_diffrn_reflns_limit_l_min       -9
+_diffrn_reflns_number            22671
+_diffrn_reflns_theta_full        61.15
+_diffrn_reflns_theta_max         61.15
+_diffrn_reflns_theta_min         5.12
+_diffrn_source                   'neutron source'
+_diffrn_source_power             55000
+_diffrn_source_type              'ILL High Flux Reactor, beam H11'
+_exptl_absorpt_coefficient_mu    0.2417
+_exptl_absorpt_correction_type   numerical
+_exptl_absorpt_process_details
+;absorption corretion done through d19face, 
+d19abs and d19abscan programs from ILL
+;
+_exptl_crystal_colour            red
+_exptl_crystal_density_diffrn    1.9115
+_exptl_crystal_description       prism
+_exptl_crystal_F_000             158.404
+_exptl_crystal_size_max          5
+_exptl_crystal_size_mid          4
+_exptl_crystal_size_min          4
+_exptl_crystal_size_rad          4
+_refine_ls_extinction_method     none
+_refine_ls_goodness_of_fit_gt    6.60
+_refine_ls_goodness_of_fit_ref   4.66
+_refine_ls_hydrogen_treatment    refall
+_refine_ls_number_constraints    0
+_refine_ls_number_parameters     333
+_refine_ls_number_reflns         3543
+_refine_ls_number_restraints     0
+_refine_ls_R_factor_all          0.1189
+_refine_ls_R_factor_gt           0.0880
+_refine_ls_shift/su_max          0.0041
+_refine_ls_shift/su_mean         0.0006
+_refine_ls_structure_factor_coef F
+_refine_ls_weighting_details     w=1/(\s^2^(F)+0.0001F^2^)
+_refine_ls_weighting_scheme      sigma
+_refine_ls_wR_factor_gt          0.1048
+_refine_ls_wR_factor_ref         0.1067
+_reflns_number_gt                1880
+_reflns_number_total             3543
+_reflns_threshold_expression     I>3\s(I)
+_cod_data_source_file            lt5013.cif
+_cod_data_source_block           I
+_cod_depositor_comments
+'Adding full bibliography for 1550370--1550373.cif.'
+_cod_original_formula_sum        'C4 H9 Co1 N1 O6'
+_cod_database_code               1550370
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 x,y,z
+2 -x+0.5,-y,z+0.5
+3 -x,y+0.5,-z
+4 x+0.5,-y+0.5,-z+0.5
+5 -x,-y,-z
+6 x+0.5,y,-z+0.5
+7 x,-y+0.5,z
+8 -x+0.5,y+0.5,z+0.5
+loop_
+_space_group_symop_ssg_id
+_space_group_symop_ssg_operation_algebraic
+1 x1,x2,x3,x4
+2 -x1+1/2,-x2,x3+1/2,x4+1/2
+3 -x1,x2+1/2,-x3,-x4+1/2
+4 x1+1/2,-x2+1/2,-x3+1/2,-x4
+5 -x1,-x2,-x3,-x4
+6 x1+1/2,x2,-x3+1/2,-x4+1/2
+7 x1,-x2+1/2,x3,x4+1/2
+8 -x1+1/2,x2+1/2,x3+1/2,x4
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_adp_type
+_atom_site_U_iso_or_equiv
+_atom_site_site_symmetry_multiplicity
+_atom_site_occupancy
+_atom_site_calc_flag
+Co1 Co 0.5 0 0 Uani 0.0232(10) 4 1 d
+O1 O 0.59584(13) -0.07056(10) -0.21411(13) Uani 0.0276(4) 8 1 d
+O2 O 0.77272(13) -0.05976(10) -0.41827(13) Uani 0.0277(4) 8 1 d
+O3 O 0.47437(14) 0.15518(10) -0.12770(12) Uani 0.0273(4) 8 1 d
+N1 N 0.91481(12) 0.25 -0.03036(14) Uani 0.0307(4) 4 1 d
+C1 C 0.71991(12) -0.02969(9) -0.27949(12) Uani 0.0266(3) 8 1 d
+C3 C 1.08563(18) 0.25 0.0242(2) Uani 0.0354(6) 4 1 d
+C2 C 0.49044(17) 0.25 -0.05698(16) Uani 0.0268(4) 4 1 d
+H1 H 0.7886(3) 0.0336(3) -0.2118(3) Uani 0.0569(9) 8 1 d
+H2 H 0.5200(5) 0.25 0.0756(4) Uani 0.0483(11) 4 1 d
+H1n H 0.9118(4) 0.25 -0.1549(4) Uani 0.0562(14) 4 1 d
+H3a H 1.0897(5) 0.25 0.1551(5) Uani 0.0722(17) 4 1 d
+H2n H 0.8544(3) 0.1784(2) 0.0129(3) Uani 0.0428(7) 8 1 d
+H3b H 1.1454(4) 0.3250(3) -0.0197(4) Uani 0.0710(11) 8 1 d
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+Co1 Co 0.0245(17) 0.026(2) 0.0187(15) 0.0004(12) 0.0007(12) -0.0006(12)
+O1 O 0.0272(7) 0.0277(7) 0.0280(6) -0.0043(4) 0.0027(4) -0.0020(4)
+O2 O 0.0265(6) 0.0305(7) 0.0262(6) -0.0037(4) 0.0022(4) -0.0007(4)
+O3 O 0.0329(7) 0.0222(7) 0.0268(6) -0.0009(4) -0.0018(4) -0.0010(4)
+N1 N 0.0315(7) 0.0294(7) 0.0311(7) 0 0.0028(4) 0
+C1 C 0.0260(6) 0.0264(6) 0.0273(6) -0.0030(4) 0.0029(4) -0.0002(4)
+C3 C 0.0291(9) 0.0373(11) 0.0397(10) 0 0.0008(6) 0
+C2 C 0.0297(7) 0.0252(8) 0.0256(8) 0 -0.0028(5) 0
+H1 H 0.0542(16) 0.0659(17) 0.0506(15) -0.0279(13) 0.0142(12) -0.0258(12)
+H2 H 0.070(2) 0.0386(18) 0.0364(17) 0 -0.0106(14) 0
+H1n H 0.0433(19) 0.086(3) 0.039(2) 0 0.0018(13) 0
+H3a H 0.051(2) 0.115(4) 0.050(3) 0 -0.0058(16) 0
+H2n H 0.0463(13) 0.0360(13) 0.0461(11) -0.0088(10) 0.0050(9) 0.0029(10)
+H3b H 0.0522(16) 0.0687(19) 0.092(2) -0.0187(15) -0.0042(14) 0.0233(17)
+loop_
+_atom_site_displace_Fourier_atom_site_label
+_atom_site_displace_Fourier_axis
+_atom_site_displace_Fourier_wave_vector_seq_id
+_atom_site_displace_Fourier_param_cos
+_atom_site_displace_Fourier_param_sin
+Co1 x 1 0 -0.0011(5)
+Co1 y 1 0 0.0134(4)
+Co1 z 1 0 -0.0004(5)
+O1 x 1 -0.00139(18) -0.00133(17)
+O1 y 1 0.00210(12) 0.01322(12)
+O1 z 1 0.00026(16) 0.00035(17)
+O1 x 2 -0.0004(4) 0.0009(5)
+O1 y 2 0.0002(2) 0.0000(2)
+O1 z 2 0.0005(4) -0.0004(4)
+O2 x 1 0.00049(18) -0.00138(17)
+O2 y 1 0.00081(12) 0.01335(12)
+O2 z 1 0.00183(16) -0.00024(17)
+O3 x 1 -0.00188(18) -0.00075(16)
+O3 y 1 0.00131(12) 0.01344(12)
+O3 z 1 -0.00022(16) 0.00036(16)
+O3 x 2 -0.0008(5) -0.0002(5)
+O3 y 2 0.00004(19) 0.00000(18)
+O3 z 2 0.0002(4) -0.0003(4)
+N1 x 1 0 0
+N1 y 1 0.00339(13) 0.01261(13)
+N1 z 1 0 0
+N1 x 2 -0.0009(4) -0.0004(4)
+N1 y 2 0 0
+N1 z 2 -0.0009(4) 0.0005(4)
+C1 x 1 0.00023(16) -0.00122(15)
+C1 y 1 0.00080(10) 0.01314(11)
+C1 z 1 0.00067(15) -0.00030(15)
+C1 x 2 0.0000(4) 0.0007(4)
+C1 y 2 -0.00004(16) -0.00010(19)
+C1 z 2 -0.0003(4) -0.0001(4)
+C3 x 1 0 0
+C3 y 1 0.00067(19) 0.01261(19)
+C3 z 1 0 0
+C3 x 2 -0.0004(6) 0.0000(6)
+C3 y 2 0 0
+C3 z 2 -0.0005(6) 0.0004(6)
+C2 x 1 0 0
+C2 y 1 0.00038(15) 0.01381(15)
+C2 z 1 0 0
+H1 x 1 0.0016(4) -0.0011(4)
+H1 y 1 -0.0007(3) 0.0140(3)
+H1 z 1 0.0014(4) 0.0002(4)
+H1 x 2 0.0001(10) 0.0008(11)
+H1 y 2 -0.0003(4) 0.0002(5)
+H1 z 2 0.0010(10) 0.0001(9)
+H2 x 1 0 0
+H2 y 1 -0.0014(3) 0.0133(3)
+H2 z 1 0 0
+H2 x 2 -0.0006(15) -0.0001(15)
+H2 y 2 0 0
+H2 z 2 0.0003(11) 0.0003(11)
+H1n x 1 0 0
+H1n y 1 0.0095(4) 0.0123(4)
+H1n z 1 0 0
+H1n x 2 0.0046(14) -0.0031(15)
+H1n y 2 0 0
+H1n z 2 0.0024(13) -0.0026(13)
+H3a x 1 0 0
+H3a y 1 -0.0050(5) 0.0130(5)
+H3a z 1 0 0
+H3a x 2 0.0000(17) -0.0055(17)
+H3a y 2 0 0
+H3a z 2 0.0002(16) -0.0035(16)
+H2n x 1 -0.0005(3) -0.0002(3)
+H2n y 1 0.0028(2) 0.0133(2)
+H2n z 1 -0.0036(3) 0.0003(3)
+H2n x 2 0.0009(9) 0.0000(8)
+H2n y 2 -0.0002(4) 0.0000(4)
+H2n z 2 0.0013(8) 0.0001(8)
+H3b x 1 0.0002(4) 0.0003(4)
+H3b y 1 0.0027(3) 0.0125(3)
+H3b z 1 0.0042(5) 0.0003(5)
+H3b x 2 0.0010(11) -0.0011(12)
+H3b y 2 0.0006(6) -0.0003(6)
+H3b z 2 0.0011(13) 0.0001(13)
+loop_
+_atom_site_Fourier_wave_vector_seq_id
+_jana_atom_site_fourier_wave_vector_q1_coeff
+1 1
+2 2
+loop_
+_atom_site_U_Fourier_atom_site_label
+_atom_site_U_Fourier_tens_elem
+_atom_site_U_Fourier_wave_vector_seq_id
+_atom_site_U_Fourier_param_cos
+_atom_site_U_Fourier_param_sin
+Co1 U11 1 0.006(2) 0
+Co1 U22 1 -0.006(3) 0
+Co1 U33 1 0.003(2) 0
+Co1 U12 1 -0.0015(17) 0
+Co1 U13 1 -0.0001(18) 0
+Co1 U23 1 -0.0016(16) 0
+O1 U11 1 -0.0009(7) 0.0028(7)
+O1 U22 1 0.0001(8) -0.0014(8)
+O1 U33 1 0.0004(7) 0.0014(7)
+O1 U12 1 -0.0005(6) 0.0002(6)
+O1 U13 1 0.0010(6) 0.0006(6)
+O1 U23 1 -0.0012(6) -0.0014(6)
+O2 U11 1 0.0008(7) -0.0024(7)
+O2 U22 1 0.0000(8) -0.0006(8)
+O2 U33 1 0.0007(7) 0.0009(7)
+O2 U12 1 0.0001(6) 0.0013(6)
+O2 U13 1 0.0000(6) 0.0002(6)
+O2 U23 1 -0.0002(5) 0.0008(6)
+O3 U11 1 -0.0009(8) 0.0019(8)
+O3 U22 1 0.0004(8) -0.0026(8)
+O3 U33 1 -0.0007(7) 0.0009(7)
+O3 U12 1 0.0008(6) 0.0000(6)
+O3 U13 1 -0.0010(6) -0.0011(6)
+O3 U23 1 -0.0009(6) -0.0013(6)
+N1 U11 1 0 0
+N1 U22 1 0 0
+N1 U33 1 0 0
+N1 U12 1 0.0015(7) 0.0008(7)
+N1 U13 1 0 0
+N1 U23 1 -0.0017(6) -0.0012(6)
+C1 U11 1 0.0013(6) -0.0014(6)
+C1 U22 1 -0.0004(7) 0.0011(7)
+C1 U33 1 0.0004(6) -0.0013(6)
+C1 U12 1 0.0002(6) -0.0005(6)
+C1 U13 1 0.0006(5) -0.0002(6)
+C1 U23 1 -0.0007(5) 0.0001(5)
+C3 U11 1 0 0
+C3 U22 1 0 0
+C3 U33 1 0 0
+C3 U12 1 0.0007(10) 0.0035(10)
+C3 U13 1 0 0
+C3 U23 1 0.0011(9) -0.0012(9)
+C2 U11 1 0 0
+C2 U22 1 0 0
+C2 U33 1 0 0
+C2 U12 1 0.0006(7) -0.0003(7)
+C2 U13 1 0 0
+C2 U23 1 -0.0006(7) 0.0009(7)
+H1 U11 1 -0.0009(18) 0.0033(18)
+H1 U22 1 0.002(2) 0.005(2)
+H1 U33 1 0.0013(18) 0.0019(17)
+H1 U12 1 0.0008(17) -0.0032(16)
+H1 U13 1 -0.0008(14) -0.0007(15)
+H1 U23 1 -0.0010(15) -0.0050(16)
+H2 U11 1 0 0
+H2 U22 1 0 0
+H2 U33 1 0 0
+H2 U12 1 -0.001(2) -0.002(2)
+H2 U13 1 0 0
+H2 U23 1 0.0019(16) -0.0019(16)
+H1n U11 1 0 0
+H1n U22 1 0 0
+H1n U33 1 0 0
+H1n U12 1 0.003(2) 0.003(2)
+H1n U13 1 0 0
+H1n U23 1 0.002(2) 0.005(2)
+H3a U11 1 0 0
+H3a U22 1 0 0
+H3a U33 1 0 0
+H3a U12 1 0.003(3) 0.003(3)
+H3a U13 1 0 0
+H3a U23 1 0.008(3) 0.004(3)
+H2n U11 1 -0.0033(16) -0.0020(14)
+H2n U22 1 0.0036(16) 0.0030(16)
+H2n U33 1 -0.0020(15) -0.0027(15)
+H2n U12 1 0.0015(14) 0.0027(14)
+H2n U13 1 0.0016(12) -0.0061(12)
+H2n U23 1 -0.0012(13) 0.0003(12)
+H3b U11 1 -0.001(2) -0.0019(18)
+H3b U22 1 -0.001(2) 0.000(2)
+H3b U33 1 0.003(3) 0.001(3)
+H3b U12 1 -0.0011(19) -0.0005(19)
+H3b U13 1 -0.0007(18) 0.0023(17)
+H3b U23 1 -0.002(2) -0.001(2)
+loop_
+_atom_type_symbol
+_atom_type_scat_length_neutron
+_atom_type_scat_source
+C 6.646 International_Tables_Vol_C
+H -3.739 International_Tables_Vol_C
+Co 2.490 International_Tables_Vol_C
+N 9.360 International_Tables_Vol_C
+O 5.803 International_Tables_Vol_C
+loop_
+_cell_wave_vector_seq_id
+_cell_wave_vector_x
+_cell_wave_vector_y
+_cell_wave_vector_z
+1 0.000000 0.000000 0.143000
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle_site_ssg_symmetry_1
+_geom_angle_site_ssg_symmetry_3
+_geom_angle_av
+_geom_angle_min
+_geom_angle_max
+O1 Co1 O1 . 5_6555 179.8(3) 179.6(2) 180.0(5)
+O1 Co1 O2 . 2_6555 93.23(18) 92.8(2) 93.41(15)
+O1 Co1 O2 . 6_4545 86.77(17) 86.48(16) 87.0(2)
+O1 Co1 O3 . . 87.94(19) 87.6(2) 88.22(18)
+O1 Co1 O3 . 5_6555 92.1(2) 91.79(17) 92.3(2)
+O1 Co1 O2 5_6555 2_6555 86.77(17) 86.48(16) 87.0(2)
+O1 Co1 O2 5_6555 6_4545 93.23(18) 92.8(2) 93.41(15)
+O1 Co1 O3 5_6555 . 92.1(2) 91.79(17) 92.3(2)
+O1 Co1 O3 5_6555 5_6555 87.94(19) 87.6(2) 88.22(18)
+O2 Co1 O2 2_6555 6_4545 179.8(3) 179.6(2) 180.0(5)
+O2 Co1 O3 2_6555 . 87.79(18) 87.51(16) 88.20(15)
+O2 Co1 O3 2_6555 5_6555 92.21(18) 91.71(16) 92.5(2)
+O2 Co1 O3 6_4545 . 92.21(18) 91.71(16) 92.5(2)
+O2 Co1 O3 6_4545 5_6555 87.79(18) 87.51(16) 88.20(15)
+O3 Co1 O3 . 5_6555 179.8(3) 179.6(3) 180.0(5)
+Co1 O1 C1 . . 121.2(3) 120.8(4) 121.8(3)
+Co1 O2 C1 2_6545 . 120.0(2) 119.5(2) 120.4(2)
+Co1 O3 C2 . . 121.4(3) 121.1(3) 122.1(3)
+O1 C1 O2 . . 124.1(4) 123.5(4) 124.5(4)
+N1 C3 H3a . . 109.2(9) 106.8(9) 111.3(9)
+O3 C2 O3 . 7_5555 123.7(3) 123.5(3) 123.9(3)
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_site_ssg_symmetry_2
+_geom_bond_distance_av
+_geom_bond_distance_min
+_geom_bond_distance_max
+Co1 O1 . 2.084(5) 2.075(6) 2.100(6)
+Co1 O1 5_6555 2.084(5) 2.075(6) 2.100(6)
+Co1 O2 2_6555 2.112(3) 2.107(4) 2.117(4)
+Co1 O2 6_4545 2.112(3) 2.107(4) 2.117(4)
+Co1 O3 . 2.098(5) 2.095(6) 2.101(6)
+Co1 O3 5_6555 2.098(5) 2.095(6) 2.101(6)
+O1 C1 . 1.251(7) 1.244(7) 1.255(7)
+O2 C1 . 1.262(5) 1.255(5) 1.268(5)
+O3 C2 . 1.254(4) 1.252(4) 1.258(4)
+N1 C3 . 1.481(6) 1.474(7) 1.486(7)
+C3 H3a . 1.068(15) 1.037(15) 1.099(15)

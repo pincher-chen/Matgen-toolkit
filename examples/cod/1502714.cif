@@ -1,0 +1,357 @@
+#------------------------------------------------------------------------------
+#$Date: 2016-02-18 17:37:37 +0200 (Thu, 18 Feb 2016) $
+#$Revision: 176729 $
+#$URL: svn://www.crystallography.net/cod/cif/1/50/27/1502714.cif $
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/
+#
+# All data on this site have been placed in the public domain by the
+# contributors.
+#
+data_1502714
+loop_
+_publ_author_name
+'Gervasio, Giuliana'
+'Marabello, Domenica'
+'Bianchi, Riccardo'
+'Forni, Alessandra'
+_publ_section_title
+;
+ Detection of weak intramolecular interactions in Ru(3)(CO)(12) by
+ topological analysis of charge density distributions.
+;
+_journal_issue                   34
+_journal_name_full               'The journal of physical chemistry. A'
+_journal_page_first              9368
+_journal_page_last               9373
+_journal_paper_doi               10.1021/jp105130z
+_journal_volume                  114
+_journal_year                    2010
+_chemical_formula_moiety         'C12 O12 Ru3'
+_chemical_formula_sum            'C12 O12 Ru3'
+_chemical_formula_weight         639.33
+_space_group_IT_number           14
+_symmetry_cell_setting           monoclinic
+_symmetry_space_group_name_Hall  '-P 2yn'
+_symmetry_space_group_name_H-M   'P 1 21/n 1'
+_atom_sites_solution_primary     direct
+_atom_sites_solution_secondary   difmap
+_cell_angle_alpha                90
+_cell_angle_beta                 100.578(10)
+_cell_angle_gamma                90
+_cell_formula_units_Z            4
+_cell_length_a                   7.9959(2)
+_cell_length_b                   14.6373(8)
+_cell_length_c                   14.3746(8)
+_cell_measurement_reflns_used    149997
+_cell_measurement_temperature    100(2)
+_cell_measurement_theta_max      50.44
+_cell_measurement_theta_min      2.94
+_cell_volume                     1653.79(15)
+_computing_cell_refinement       'Oxford CrysAlisPro'
+_computing_data_collection       'Oxford CrysAlisPro'
+_computing_data_reduction        'Oxford CrysAlisPro'
+_computing_structure_refinement  'VALTOPO (Bianchi, Forni  2005)'
+_diffrn_ambient_temperature      100(2)
+_diffrn_measured_fraction_theta_full 0.999
+_diffrn_measured_fraction_theta_max 0.900
+_diffrn_measurement_device       'Oxford Gemini Ultra'
+_diffrn_measurement_method       phiscan
+_diffrn_radiation_monochromator  graphite
+_diffrn_radiation_source         'fine-focus sealed tube'
+_diffrn_radiation_type           MoK\a
+_diffrn_radiation_wavelength     0.71073
+_diffrn_reflns_av_R_equivalents  0.0290
+_diffrn_reflns_limit_h_max       16
+_diffrn_reflns_limit_h_min       -17
+_diffrn_reflns_limit_k_max       31
+_diffrn_reflns_limit_k_min       0
+_diffrn_reflns_limit_l_max       31
+_diffrn_reflns_limit_l_min       0
+_diffrn_reflns_number            149997
+_diffrn_reflns_theta_full        25.00
+_diffrn_reflns_theta_max         50.44
+_diffrn_reflns_theta_min         2.94
+_diffrn_standards_decay_%        0.00
+_exptl_absorpt_coefficient_mu    2.75
+_exptl_absorpt_correction_T_max  1.000
+_exptl_absorpt_correction_T_min  0.85
+_exptl_absorpt_correction_type   numerical
+_exptl_crystal_colour            orange
+_exptl_crystal_density_diffrn    2.552
+_exptl_crystal_description       prism
+_exptl_crystal_F_000             1200
+_exptl_crystal_size_max          0.14
+_exptl_crystal_size_mid          0.08
+_exptl_crystal_size_min          0.08
+_refine_diff_density_max         0.49
+_refine_diff_density_min         -0.50
+_refine_diff_density_rms         0.20
+_refine_ls_goodness_of_fit_all   1.0206
+_refine_ls_matrix_type           full
+_refine_ls_number_parameters     784
+_refine_ls_number_reflns         12159
+_refine_ls_R_factor_all          0.0208
+_refine_ls_shift/su_max          0.003
+_refine_ls_structure_factor_coef Fsqd
+_refine_ls_weighting_details     w=1/\s2
+_refine_ls_weighting_scheme      sigma
+_refine_ls_wR_factor_all         0.0199
+_reflns_number_gt                12160
+_reflns_number_total             17574
+_reflns_threshold_expression     >2sigma(I)
+_cod_data_source_file            jp105130z_si_002.cif
+_cod_data_source_block           Ru3(CO)12_set1A
+_cod_depositor_comments
+;
+The following automatic conversions were performed:
+
+'_symmetry_cell_setting' value 'Monoclinic' changed to 'monoclinic'
+according to /home/saulius/struct/CIF-dictionaries/cif_core.dic
+dictionary named 'cif_core.dic' version 2.4.2 from 2011-04-26.
+
+Automatic conversion script
+Id: cif_fix_values 1715 2011-07-08 13:25:40Z adriana 
+;
+_cod_original_cell_volume        1653.79(14)
+_cod_database_code               1502714
+#BEGIN Tags that were not found in dictionaries:
+_atom_site_anharm_details
+;
+The atomic anharmonic pdf is approximated by a Gram-Charlier expansion
+about the harmonic pdf, according to the expression :
+ 
+      P(u) = (1 + Cijk*Hijk/3! + Dijkl*Hijkl/4!)*P(0)
+ 
+The coefficients Cijk and Dijkl are refined in the least squares procedure.
+The reported coefficients Cijk and Dijkl are multiplied by 10000.
+;
+#END Tags that were not found in dictionaries
+loop_
+_space_group_symop_id
+_space_group_symop_operation_xyz
+1 +X,+Y,+Z
+2 1/2-X,1/2+Y,1/2-Z
+3 -X,-Y,-Z
+4 1/2+X,1/2-Y,1/2+Z
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+RU1 0.00835(12) 0.01036(13) 0.00865(12) -0.00048(11) 0.00000(11) -0.00003(10)
+RU2 0.00999(13) 0.00903(12) 0.00980(12) -0.00117(11) 0.00093(10) -0.00065(10)
+RU3 0.01018(13) 0.00944(12) 0.01100(13) 0.00111(11) 0.00113(10) 0.00135(11)
+O11 0.01697(30) 0.02149(32) 0.01414(28) 0.00040(26) 0.00642(24) 0.00009(24)
+O12 0.01423(27) 0.02013(31) 0.01561(29) 0.00119(25) 0.00602(24) -0.00004(23)
+O13 0.01994(34) 0.01865(32) 0.02468(37) -0.00727(30) 0.00461(30) -0.01006(29)
+O14 0.01917(31) 0.01798(32) 0.01928(32) 0.00566(28) 0.00184(26) 0.00668(27)
+O21 0.01683(32) 0.02750(39) 0.01556(30) -0.00291(29) 0.00672(26) -0.00168(28)
+O22 0.01993(32) 0.02003(32) 0.01567(29) -0.00120(27) 0.00806(27) -0.00225(24)
+O23 0.02575(39) 0.01279(29) 0.02453(37) 0.00316(29) 0.00401(32) 0.00435(27)
+O24 0.01499(32) 0.03991(53) 0.01888(37) -0.00335(36) -0.00228(29) -0.00902(36)
+O31 0.02025(37) 0.03037(43) 0.02197(38) 0.00802(34) 0.01085(33) 0.00530(33)
+O32 0.01933(33) 0.02467(36) 0.01610(30) 0.00549(30) 0.00749(27) 0.00383(27)
+O33 0.01530(33) 0.03406(46) 0.01931(36) 0.00236(33) -0.00429(29) 0.00332(34)
+O34 0.02679(40) 0.01216(30) 0.02874(43) -0.00390(30) 0.00650(35) -0.00346(29)
+C11 0.01128(22) 0.01441(23) 0.01171(22) -0.00032(17) 0.00278(18) 0.00021(17)
+C12 0.01119(21) 0.01320(22) 0.01114(22) 0.00020(18) 0.00251(18) -0.00009(16)
+C13 0.01271(24) 0.01312(23) 0.01410(23) -0.00301(19) 0.00218(18) -0.00337(18)
+C14 0.01267(23) 0.01340(23) 0.01257(22) 0.00205(19) 0.00072(17) 0.00279(19)
+C21 0.01295(24) 0.01613(25) 0.01162(22) -0.00173(19) 0.00323(19) -0.00151(18)
+C22 0.01339(23) 0.01351(22) 0.01194(22) -0.00113(19) 0.00371(19) -0.00101(18)
+C23 0.01643(25) 0.00952(22) 0.01605(25) 0.00050(20) 0.00303(20) 0.00146(19)
+C24 0.01214(25) 0.02009(27) 0.01292(24) -0.00276(21) -0.00021(20) -0.00427(21)
+C31 0.01395(25) 0.01790(26) 0.01472(25) 0.00334(21) 0.00446(21) 0.00329(20)
+C32 0.01350(24) 0.01475(24) 0.01284(23) 0.00272(19) 0.00325(19) 0.00169(18)
+C33 0.01212(25) 0.01818(27) 0.01397(25) 0.00159(20) -0.00086(21) 0.00216(20)
+C34 0.01620(26) 0.00982(23) 0.01792(27) -0.00053(20) 0.00344(21) -0.00086(19)
+loop_
+_atom_site_label
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_occupancy
+RU1 0.69623(4) 0.08057(2) 0.33898(2) 1
+RU2 0.44110(4) -0.02437(2) 0.22174(2) 1
+RU3 0.44046(4) 0.17015(2) 0.20638(2) 1
+O11 0.47846(11) 0.10578(6) 0.49290(6) 1
+O12 0.93846(11) 0.06871(6) 0.19515(6) 1
+O13 0.89446(13) 0.24901(7) 0.42321(8) 1
+O14 0.88086(12) -0.08227(6) 0.44662(7) 1
+O21 0.21211(12) -0.01773(7) 0.37197(6) 1
+O22 0.66198(12) -0.04168(6) 0.06769(6) 1
+O23 0.57041(14) -0.21119(6) 0.29823(8) 1
+O24 0.12255(13) -0.06513(10) 0.07281(8) 1
+O31 0.20155(14) 0.18694(8) 0.35080(8) 1
+O32 0.67141(13) 0.16508(7) 0.05618(7) 1
+O33 0.12966(13) 0.19579(9) 0.04791(8) 1
+O34 0.56820(15) 0.36289(6) 0.26132(8) 1
+C11 0.54973(8) 0.09502(4) 0.43177(5) 1
+C12 0.84049(8) 0.07191(4) 0.24357(5) 1
+C13 0.82235(9) 0.18561(5) 0.39180(5) 1
+C14 0.81259(9) -0.02165(5) 0.40692(5) 1
+C21 0.30074(9) -0.01474(5) 0.31800(5) 1
+C22 0.58483(9) -0.03032(4) 0.12600(5) 1
+C23 0.52140(9) -0.14165(5) 0.26932(5) 1
+C24 0.24101(10) -0.04986(5) 0.12719(5) 1
+C31 0.29366(10) 0.17559(5) 0.29977(5) 1
+C32 0.59017(9) 0.16217(5) 0.11331(5) 1
+C33 0.24469(10) 0.18518(5) 0.10650(5) 1
+C34 0.51979(10) 0.29132(5) 0.23944(5) 1
+loop_
+_geom_angle_atom_site_label_1
+_geom_angle_atom_site_label_2
+_geom_angle_atom_site_label_3
+_geom_angle
+_geom_angle_site_symmetry_1
+_geom_angle_site_symmetry_2
+_geom_angle_site_symmetry_3
+_geom_angle_publ_flag
+RU(2) RU(1) RU(3) 60.22(1) 1_555 1_555 1_555 yes
+RU(2) RU(1) C(11) 90.48(2) 1_555 1_555 1_555 yes
+RU(2) RU(1) C(12) 90.04(2) 1_555 1_555 1_555 yes
+RU(2) RU(1) C(13) 159.23(2) 1_555 1_555 1_555 yes
+RU(2) RU(1) C(14) 96.19(2) 1_555 1_555 1_555 yes
+RU(3) RU(1) C(11) 87.70(2) 1_555 1_555 1_555 yes
+RU(3) RU(1) C(12) 90.23(2) 1_555 1_555 1_555 yes
+RU(3) RU(1) C(13) 99.02(2) 1_555 1_555 1_555 yes
+RU(3) RU(1) C(14) 156.39(2) 1_555 1_555 1_555 yes
+C(11) RU(1) C(12) 177.27(3) 1_555 1_555 1_555 yes
+C(11) RU(1) C(13) 88.88(3) 1_555 1_555 1_555 yes
+C(11) RU(1) C(14) 91.86(3) 1_555 1_555 1_555 yes
+C(12) RU(1) C(13) 89.69(3) 1_555 1_555 1_555 yes
+C(12) RU(1) C(14) 90.75(3) 1_555 1_555 1_555 yes
+C(13) RU(1) C(14) 104.58(3) 1_555 1_555 1_555 yes
+RU(1) RU(2) RU(3) 59.90(1) 1_555 1_555 1_555 yes
+RU(1) RU(2) C(21) 89.09(2) 1_555 1_555 1_555 yes
+RU(1) RU(2) C(22) 89.47(2) 1_555 1_555 1_555 yes
+RU(1) RU(2) C(23) 96.63(2) 1_555 1_555 1_555 yes
+RU(1) RU(2) C(24) 158.43(3) 1_555 1_555 1_555 yes
+RU(3) RU(2) C(21) 89.41(2) 1_555 1_555 1_555 yes
+RU(3) RU(2) C(22) 89.02(2) 1_555 1_555 1_555 yes
+RU(3) RU(2) C(23) 156.53(3) 1_555 1_555 1_555 yes
+RU(3) RU(2) C(24) 98.53(3) 1_555 1_555 1_555 yes
+C(21) RU(2) C(22) 178.26(3) 1_555 1_555 1_555 yes
+C(21) RU(2) C(23) 90.59(3) 1_555 1_555 1_555 yes
+C(21) RU(2) C(24) 90.17(3) 1_555 1_555 1_555 yes
+C(22) RU(2) C(23) 90.55(3) 1_555 1_555 1_555 yes
+C(22) RU(2) C(24) 90.81(3) 1_555 1_555 1_555 yes
+C(23) RU(2) C(24) 104.93(3) 1_555 1_555 1_555 yes
+RU(1) RU(3) RU(2) 59.88(1) 1_555 1_555 1_555 yes
+RU(1) RU(3) C(31) 90.41(2) 1_555 1_555 1_555 yes
+RU(1) RU(3) C(32) 88.61(2) 1_555 1_555 1_555 yes
+RU(1) RU(3) C(33) 159.10(3) 1_555 1_555 1_555 yes
+RU(1) RU(3) C(34) 95.51(2) 1_555 1_555 1_555 yes
+RU(2) RU(3) C(31) 88.86(3) 1_555 1_555 1_555 yes
+RU(2) RU(3) C(32) 90.04(2) 1_555 1_555 1_555 yes
+RU(2) RU(3) C(33) 99.24(3) 1_555 1_555 1_555 yes
+RU(2) RU(3) C(34) 155.35(3) 1_555 1_555 1_555 yes
+C(31) RU(3) C(32) 178.79(4) 1_555 1_555 1_555 yes
+C(31) RU(3) C(33) 89.94(3) 1_555 1_555 1_555 yes
+C(31) RU(3) C(34) 90.30(4) 1_555 1_555 1_555 yes
+C(32) RU(3) C(33) 90.72(3) 1_555 1_555 1_555 yes
+C(32) RU(3) C(34) 90.50(3) 1_555 1_555 1_555 yes
+C(33) RU(3) C(34) 105.39(3) 1_555 1_555 1_555 yes
+RU(1) C(11) O(11) 172.90(7) 1_555 1_555 1_555 yes
+C(21) C(11) C(31) 59.73(2) 1_555 1_555 1_555 yes
+RU(1) C(12) O(12) 172.96(7) 1_555 1_555 1_555 yes
+C(22) C(12) C(32) 60.14(2) 1_555 1_555 1_555 yes
+RU(1) C(13) O(13) 178.65(11) 1_555 1_555 1_555 yes
+RU(1) C(14) O(14) 179.63(15) 1_555 1_555 1_555 yes
+RU(2) C(21) O(21) 173.05(8) 1_555 1_555 1_555 yes
+C(11) C(21) C(31) 59.29(2) 1_555 1_555 1_555 yes
+RU(2) C(22) O(22) 173.49(7) 1_555 1_555 1_555 yes
+RU(2) C(23) O(23) 179.39(23) 1_555 1_555 1_555 yes
+RU(2) C(24) O(24) 179.00(10) 1_555 1_555 1_555 yes
+RU(3) C(31) O(31) 173.16(8) 1_555 1_555 1_555 yes
+C(11) C(31) C(21) 60.98(2) 1_555 1_555 1_555 yes
+RU(3) C(32) O(32) 173.72(7) 1_555 1_555 1_555 yes
+C(12) C(32) C(22) 60.32(2) 1_555 1_555 1_555 yes
+RU(3) C(33) O(33) 178.69(7) 1_555 1_555 1_555 yes
+RU(3) C(34) O(34) 178.38(8) 1_555 1_555 1_555 yes
+loop_
+_geom_bond_atom_site_label_1
+_geom_bond_atom_site_label_2
+_geom_bond_distance
+_geom_bond_site_symmetry_1
+_geom_bond_site_symmetry_2
+_geom_bond_publ_flag
+RU(1) RU(2) 2.8459(4) 1_555 1_555 yes
+RU(1) RU(3) 2.8468(4) 1_555 1_555 yes
+RU(1) C(11) 1.9415(8) 1_555 1_555 yes
+RU(1) C(12) 1.9516(8) 1_555 1_555 yes
+RU(1) C(13) 1.9173(7) 1_555 1_555 yes
+RU(1) C(14) 1.9299(7) 1_555 1_555 yes
+RU(2) RU(3) 2.8558(4) 1_555 1_555 yes
+RU(2) C(21) 1.9402(8) 1_555 1_555 yes
+RU(2) C(22) 1.9501(8) 1_555 1_555 yes
+RU(2) C(23) 1.9146(8) 1_555 1_555 yes
+RU(2) C(24) 1.9359(8) 1_555 1_555 yes
+RU(3) C(31) 1.9403(9) 1_555 1_555 yes
+RU(3) C(32) 1.9556(9) 1_555 1_555 yes
+RU(3) C(33) 1.9326(8) 1_555 1_555 yes
+RU(3) C(34) 1.9139(8) 1_555 1_555 yes
+O(11) C(11) 1.1426(12) 1_555 1_555 yes
+O(12) C(12) 1.1404(12) 1_555 1_555 yes
+O(13) C(13) 1.1411(12) 1_555 1_555 yes
+O(14) C(14) 1.1386(11) 1_555 1_555 yes
+O(21) C(21) 1.1436(13) 1_555 1_555 yes
+O(22) C(22) 1.1404(13) 1_555 1_555 yes
+O(23) C(23) 1.1412(12) 1_555 1_555 yes
+O(24) C(24) 1.1341(12) 1_555 1_555 yes
+O(31) C(31) 1.1431(15) 1_555 1_555 yes
+O(32) C(32) 1.1376(13) 1_555 1_555 yes
+O(33) C(33) 1.1380(12) 1_555 1_555 yes
+O(34) C(34) 1.1408(12) 1_555 1_555 yes
+#BEGIN Loops that were not found in dictionaries:
+loop_
+_atom_site_anharm_gc_c_label
+_atom_site_anharm_gc_c_111
+_atom_site_anharm_gc_c_112
+_atom_site_anharm_gc_c_122
+_atom_site_anharm_gc_c_113
+_atom_site_anharm_gc_c_123
+_atom_site_anharm_gc_c_133
+_atom_site_anharm_gc_c_222
+_atom_site_anharm_gc_c_223
+_atom_site_anharm_gc_c_233
+_atom_site_anharm_gc_c_333
+Ru1 -0.006(13) 0.039(11) -0.003(6) 0.025(10) -0.008(7) 0.009(6) 0.001(2)
+0.004(3) -0.009(3) 0.002(2)
+RU2 0.008(14) -0.004(11) -0.007(6) 0.008(11) -0.013(7) 0.013(6) 0.001(2)
+-0.003(3) 0.006(3) 0.002(2)
+RU3 -0.008(15) -0.019(11) -0.004(6) -0.024(12) 0.010(7) -0.005(6) 0.000(2)
+0.004(3) 0.006(3) 0.003(3)
+loop_
+_atom_site_anharm_gc_d_label
+_atom_site_anharm_gc_d_1111
+_atom_site_anharm_gc_d_1112
+_atom_site_anharm_gc_d_1122
+_atom_site_anharm_gc_d_1113
+_atom_site_anharm_gc_d_1123
+_atom_site_anharm_gc_d_1133
+_atom_site_anharm_gc_d_1222
+_atom_site_anharm_gc_d_1223
+_atom_site_anharm_gc_d_1233
+_atom_site_anharm_gc_d_1333
+_atom_site_anharm_gc_d_2222
+_atom_site_anharm_gc_d_2223
+_atom_site_anharm_gc_d_2233
+_atom_site_anharm_gc_d_2333
+_atom_site_anharm_gc_d_3333
+RU1 0.0002(16) -0.0009(18) 0.0017(8) -0.0038(18) -0.0007(13) -0.0026(9)
+-0.0004(5) -0.0004(7) -0.0005(7) -0.0022(6) 0.0008(2) -0.0003(3) 0.0011(2)
+-0.0001(3) -0.0005(2)
+RU2 0.0030(18) -0.0040(19) 0.0011(8) -0.0010(18) 0.0017(14) -0.0005(10)
+-0.0009(5) -0.0005(6) -0.0006(7) -0.0002(5) 0.0002(1) 0.0001(3) 0.0002(2)
+0.0003(3) 0.0003(2)
+RU3 0.0037(19) 0.0014(19) 0.0011(8) 0.0012(19) -0.0014(14) 0.0001(10) 0.0002(5)
+0.0006(7) -0.0007(8) 0.0010(6) 0.0005(1) 0.0004(3) 0.0001(2) 0.0004(3)
+0.0002(2)
+#END Loops that were not found in dictionaries
