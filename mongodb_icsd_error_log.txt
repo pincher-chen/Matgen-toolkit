@@ -1,2 +1,0 @@
-.\test\2\Al-Gd\227\icsd_607819-114819.cif:'gbk' codec can't encode character '\u201e' in position 1197: illegal multibyte sequence
-.\test\3\Eu-Se-Tm\62\icsd_631668-138668.cif:'gbk' codec can't encode character '\xc3' in position 767: illegal multibyte sequence
