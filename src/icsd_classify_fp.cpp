@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
         cout << "ICSD data not found!" << endl;
     }
 
-    string log_file = output + "/" + "file_similarity_log_" + to_string(get_cutoff()).substr(0, 4) + ".txt";
+    string log_file = output + "/" + "log_similarity_" + to_string(get_cutoff()).substr(0, 4) + ".txt";
     if(!is_folder_exist(output)) {
         make_dir(output);
     }
@@ -157,7 +157,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    cout << "+++" << endl;
     for(auto i = simMap.begin(); i != simMap.end(); i++) {
         lout << setw(50) << left << i->first << ": "; 
         for(auto j = i->second.begin(); j != i->second.end(); j++) {
@@ -166,7 +165,6 @@ int main(int argc, char *argv[]) {
         lout << endl;
     }
     lout.close();
-    cout << "+++" << endl;
 
     return 0;
 }

@@ -51,7 +51,6 @@ public:
         }
 
         split_cif();
-
         seek_crystal_info();
         cal_crystal_info();
         deal_site_loop();
@@ -208,10 +207,11 @@ public:
     string get_species(const string &s) {
         string species = "";
         for(auto &c : s) {
-            if(c >= '0' && c <= '9') {
-                break;
+            if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                species += c;
+                continue;
             }
-            species += c;
+            break;
         }
         return species;
     }
@@ -369,7 +369,8 @@ private:
                     vector<string> site_loop = re_split(content, "\\r*?\\n");
                     loop_dict["displace_special_site_loop"] = site_loop;
                 }
-                else if(std::regex_search(content, std::regex("^\\s*_atom_site_occ\\w+?"))) {
+                else if (std::regex_search(content, std::regex("^\\s*_atom_site_occ\\w+?")) &&
+                         !std::regex_search(content, std::regex("^\\s*_atom_site_occupancy"))) {
                     vector<string> site_loop = re_split(content, "\\r*?\\n");
                     loop_dict["occ_site_loop"] = site_loop;
                 }
@@ -417,6 +418,10 @@ private:
                 string cur = it->str();
                 // cerr << cur << endl;
                 vector<string> params = del_split(cur, ' ');
+
+                if(params.size() < 2) {
+                    continue;
+                }
                 string key = params[0];
                 double value = get_num(params[1]);
 
@@ -472,10 +477,13 @@ private:
     void deal_site_loop() noexcept(false) {
         try {
             vector<string> site_loop = this->loop_dict["site_loop"];
+
+            // printVec(site_loop);
+            // cout << endl;
             vector<string> data_value;
 
             for(auto data : site_loop) {
-                if(std::regex_match(data, std::regex("\\s*_\\w+.*?"))) {
+                if(std::regex_match(data, std::regex("\\s*_(\\w|\\[)+.*?"))) {
                     this->site_label.push_back(trim(data));
                 }
                 else {
@@ -532,8 +540,8 @@ private:
             }
         }
 
-        vector<string> chaos_loop = this->loop_dict["chaos_loop"];
-        for(auto item : chaos_loop) {
+        vector<string> lines = del_split(this->cif_buf, '\n');
+        for(auto item : lines) {
             if(item.find("name_H-M") != string::npos) {
                 vector<string> split =  del_split(item, ' ');
                 string cur = "";
@@ -561,36 +569,36 @@ private:
             }
         }
 
-        if(this->loop_dict.count("unknow_loop")) {
-            vector<string> unknow_loop = this->loop_dict["unknow_loop"];
-            for(auto item : unknow_loop) {
-                if(item.find("name_H-M") != string::npos) {
-                    vector<string> split =  del_split(item, ' ');
-                    string cur = "";
-                    for(int i = 1; i < split.size(); i++) {
-                        cur += split[i];
-                        // if (i != split.size() - 1) {
-                        //     cur += " ";
-                        // }
-                    }
+        // if(this->loop_dict.count("unknow_loop")) {
+        //     vector<string> unknow_loop = this->loop_dict["unknow_loop"];
+        //     for(auto item : unknow_loop) {
+        //         if(item.find("name_H-M") != string::npos) {
+        //             vector<string> split =  del_split(item, ' ');
+        //             string cur = "";
+        //             for(int i = 1; i < split.size(); i++) {
+        //                 cur += split[i];
+        //                 // if (i != split.size() - 1) {
+        //                 //     cur += " ";
+        //                 // }
+        //             }
 
-                    this->name_HM = clean_str(cur);
-                }
+        //             this->name_HM = clean_str(cur);
+        //         }
 
-                if(item.find("name_Hall") != string::npos) {
-                    vector<string> split =  del_split(item, ' ');
-                    string cur = "";
-                    for(int i = 1; i < split.size(); i++) {
-                        cur += split[i];
-                        if (i != split.size() - 1) {
-                            cur += " ";
-                        }
-                    }
+        //         if(item.find("name_Hall") != string::npos) {
+        //             vector<string> split =  del_split(item, ' ');
+        //             string cur = "";
+        //             for(int i = 1; i < split.size(); i++) {
+        //                 cur += split[i];
+        //                 if (i != split.size() - 1) {
+        //                     cur += " ";
+        //                 }
+        //             }
 
-                    this->name_Hall = clean_str(cur);
-                }
-            }
-        }
+        //             this->name_Hall = clean_str(cur);
+        //         }
+        //     }
+        // }
     }
 
     // get the coordinates information of the atom
@@ -621,12 +629,17 @@ private:
                 // printVec(this->site_label);
                 // cout << endl;
 
-                throw Exception("[ERROR] CIF file atom site part parse error!");
+                throw Exception("[ERROR] CIF file atom site section parse error!");
             }
 
             for(auto atom_info : this->site_value) {
                 if(atom_info.size() < this->site_label.size()) {
-                    throw Exception("file atom site section has some problem");
+                    // printVec(atom_info);
+                    // cout << endl;
+
+                    // printVec(site_label);
+                    // cout << endl;
+                    throw Exception("[ERROR] CIF file atom site section has some problem");
                 }
 
                 double x = get_num(atom_info[x_index]);

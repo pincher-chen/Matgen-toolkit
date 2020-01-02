@@ -1,0 +1,77 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure, and the U.S. Secretary of
+#Commerce on behalf of the United States.  All rights reserved.
+data_631668-ICSD
+_database_code_ICSD 631668
+_audit_creation_date 2012-02-01
+_chemical_name_systematic 'Europium thulium selenide (1/2/4)'
+_chemical_formula_structural 'Eu Tm2 Se4'
+_chemical_formula_sum 'Eu1 Se4 Tm2'
+_chemical_name_structure_type CaFe2O4
+_exptl_crystal_density_diffrn 7.
+_publ_section_title
+
+;
+Sur les systÃ¨mes formÃ©s entre les sÃ©lÃ©niures L2 Se3 des Ã©lÃ©ments des terres
+rares et le sÃ©lÃ©niure EuSe d'europium
+;
+_publ_section_comment 'Cell and Type only determined'
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Bulletin de la Societe Chimique de France' 1968 1968 3632 3635 BSCFAS
+loop_
+_publ_author_name
+'Souleau, C.'
+'Guittard, M.'
+_cell_length_a 12.46(1)
+_cell_length_b 4.13(1)
+_cell_length_c 14.85(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 764.18
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P n m a'
+_symmetry_Int_Tables_number 62
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, y, -z+1/2'
+2 'x, -y+1/2, z'
+3 '-x+1/2, y+1/2, z+1/2'
+4 '-x, -y, -z'
+5 '-x+1/2, -y, z+1/2'
+6 '-x, y+1/2, -z'
+7 'x+1/2, -y+1/2, -z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Eu2+ 2
+Tm3+ 3
+Se2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Eu1 Eu2+ 4 c 0.76 0.25 0.665 . 1. 0
+Tm1 Tm3+ 4 c 0.437 0.25 0.611 . 1. 0
+Tm2 Tm3+ 4 c 0.417 0.25 0.098 . 1. 0
+Se1 Se2- 4 c 0.205 0.25 0.172 . 1. 0
+Se2 Se2- 4 c 0.13 0.25 0.47 . 1. 0
+Se3 Se2- 4 c 0.026 0.25 0.716 . 1. 0
+Se4 Se2- 4 c 0.409 0.25 0.423 . 1. 0
+#End of TTdata_631668-ICSD

@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
 
     bool log = false;
     if(!is_folder_exist(input)) {
-        cout << "CSD data not found!" << endl;
+        cout << "ICSD data not found!" << endl;
     }
 
     get_res(log);

@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
         }
         catch(Exception err) {
             if(log) {
-                cerr << err.msg << endl;
+                cerr << item << " " << err.msg << endl;
             }
 
             if(err.msg.find("[ERROR]") != string::npos) {

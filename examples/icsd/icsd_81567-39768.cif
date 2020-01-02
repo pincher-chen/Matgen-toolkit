@@ -1,0 +1,115 @@
+
+#(C) 2019 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_81567-ICSD
+_database_code_ICSD 81567
+_audit_creation_date 1997-05-13
+_chemical_name_systematic
+'Potassium diiron(III) dioxohydroxoselenate(IV) tris(selenate(IV))'
+_chemical_formula_structural 'K Fe2 (Se O2 (O H)) (Se O3)3'
+_chemical_formula_sum 'H1 Fe2 K1 O12 Se4'
+_exptl_crystal_density_diffrn 3.96
+_publ_section_title
+
+;
+Crystal structures and structural relationships of K Fe2 (Se O2 O H) (Se O3)3
+and Sr Co2 (Se O2 O H)2 (Se O3)2
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Alloys and Compounds' 1996 240 25 32 JALCEU
+loop_
+_publ_author_name
+'Giester, G.'
+'Wildner, M.'
+_cell_length_a 9.983(4)
+_cell_length_b 5.270(1)
+_cell_length_c 10.614(4)
+_cell_angle_alpha 90.
+_cell_angle_beta 97.42(2)
+_cell_angle_gamma 90.
+_cell_volume 553.73
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 1 2 1'
+_symmetry_Int_Tables_number 3
+_refine_ls_R_factor_all 0.029
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-x, y, -z'
+2 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+K1+ 1
+Fe3+ 3
+Se4+ 4
+O2- -2
+H1+ 1
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+K1 K1+ 1 c 0.5 0.5719(4) 0 . 1. 0
+K2 K1+ 1 b 0 0.4952(5) 0.5 . 1. 0
+Fe1 Fe3+ 2 e 0.74789(7) 0.0000(3) 0.25969(5) . 1. 0
+Fe2 Fe3+ 2 e 0.25798(6) 0.5155(3) 0.24159(5) . 1. 0
+Se1 Se4+ 2 e 0.22700(4) 0.01988(13) 0.06136(4) . 1. 0
+Se2 Se4+ 2 e 0.26541(4) 0.00760(13) 0.42719(3) . 1. 0
+Se3 Se4+ 2 e 0.59778(4) 0.49224(12) 0.35572(4) . 1. 0
+Se4 Se4+ 2 e 0.90826(4) 0.52556(12) 0.15382(4) . 1. 0
+O1 O2- 2 e 0.3052(4) 0.2979(7) 0.0973(3) . 1. 0
+O2 O2- 2 e 0.7120(4) 0.9382(7) 0.0750(3) . 1. 0
+O3 O2- 2 e 0.3207(3) 0.8188(7) 0.1607(3) . 1. 0
+O4 O2- 2 e 0.1970(4) 0.7225(7) 0.3854(3) . 1. 0
+O5 O2- 2 e 0.8121(4) 0.0774(7) 0.4439(3) . 1. 0
+O6 O2- 2 e 0.1731(3) 0.2078(7) 0.3193(3) . 1. 0
+O7 O2- 2 e 0.4301(3) 0.4422(8) 0.3466(3) . 1. 0
+O8 O2- 2 e 0.6445(3) 0.3222(7) 0.2311(3) . 1. 0
+O9 O2- 2 e 0.6005(4) 0.7918(7) 0.2996(4) . 1. 0
+O10 O2- 2 e 0.0705(3) 0.5650(7) 0.1375(3) . 1. 0
+O11 O2- 2 e 0.8835(4) 0.7082(7) 0.2777(3) . 1. 0
+O12 O2- 2 e 0.9220(4) 0.2212(7) 0.2293(4) . 1. 0
+H1 H1+ 2 e 0.983(5) 0.201(11) 0.260(5) 0.004(13) 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+K1 K1+ 0.0167(7) 0.0282(10) 0.0245(7) 0 0.0065(5) 0
+K2 K1+ 0.0191(6) 0.0253(7) 0.0140(4) 0 0.0020(4) 0
+Fe1 Fe3+ 0.0131(2) 0.0096(3) 0.0097(2) 0.0000(2) 0.0009(2) 0.0003(3)
+Fe2 Fe3+ 0.0118(2) 0.0096(2) 0.0099(2) -.0001(3) 0.0013(2) -.0002(3)
+Se1 Se4+ 0.0121(2) 0.0108(2) 0.0108(1) -.0007(3) -.0006(1) 0.0015(3)
+Se2 Se4+ 0.0106(2) 0.0102(2) 0.0103(1) 0.0001(3) -.0004(1) 0.0004(3)
+Se3 Se4+ 0.0095(2) 0.0126(3) 0.0111(2) 0.0005(2) -.0003(1) -.0010(2)
+Se4 Se4+ 0.0095(2) 0.0126(3) 0.0108(1) 0.0001(2) -.0005(1) -.0004(2)
+O1 O2- 0.021(2) 0.013(2) 0.012(1) -.002(1) 0.005(1) -.002(1)
+O2 O2- 0.029(2) 0.017(2) 0.008(1) -.001(1) 0.002(1) 0.002(1)
+O3 O2- 0.015(2) 0.010(2) 0.013(2) 0.002(1) 0.001(1) 0.005(1)
+O4 O2- 0.020(2) 0.010(2) 0.017(2) -.001(1) 0.005(1) -.004(1)
+O5 O2- 0.022(2) 0.015(2) 0.009(1) -.003(1) 0.000(1) 0.000(1)
+O6 O2- 0.011(2) 0.013(2) 0.013(1) 0.000(1) 0.000(1) 0.003(1)
+O7 O2- 0.010(1) 0.020(2) 0.019(2) -.001(1) -.002(1) 0.005(1)
+O8 O2- 0.014(2) 0.011(1) 0.015(1) 0.003(1) 0.001(1) -.003(1)
+O9 O2- 0.015(2) 0.011(2) 0.040(2) 0.001(1) 0.009(2) 0.002(2)
+O10 O2- 0.011(1) 0.016(2) 0.015(1) -.001(1) 0.001(1) 0.003(1)
+O11 O2- 0.015(2) 0.014(2) 0.015(2) 0.005(1) 0.000(1) -.003(1)
+O12 O2- 0.011(2) 0.013(2) 0.026(2) 0.001(1) 0.002(2) 0.006(1)
+#End of TTdata_81567-ICSD

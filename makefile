@@ -34,6 +34,10 @@ csd_classify : pre
 	g++ ${SRCDIR}/csd_classify.cpp -o csd_classify -std=c++11
 	@mv ./csd_classify ${OBJDIR}
 
+cod_classify : pre
+	g++ ${SRCDIR}/cod_classify.cpp -o cod_classify -std=c++11
+	@mv ./cod_classify ${OBJDIR}
+
 format : pre
 	g++ ${SRCDIR}/format.cpp -o format -std=c++11
 	@mv ./format ${OBJDIR}
