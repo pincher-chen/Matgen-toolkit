@@ -42,5 +42,9 @@ format : pre
 	g++ ${SRCDIR}/format.cpp -o format -std=c++11
 	@mv ./format ${OBJDIR}
 
+splice_molecule : pre
+	g++ ${SRCDIR}/splice_molecule.cpp -o splice_molecule -std=c++11
+	@mv ./splice_molecule ${OBJDIR}
+
 clean : pre
 	@rm ${OBJDIR}/*

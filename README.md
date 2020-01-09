@@ -2,35 +2,39 @@
 <!-- TOC -->
 
 - [MOFkit](#mofkit)
-    - [Installation](#installation)
-        - [Environment](#environment)
-        - [Compile](#compile)
-        - [Configuration](#configuration)
-    - [Remove Solvents](#remove-solvents)
-        - [Description](#description)
-        - [Usage](#usage)
-        - [Example](#example)
-    - [Find Space Groups](#find-space-groups)
-        - [Description](#description-1)
-        - [Usage](#usage-1)
-        - [Example](#example-1)
-        - [Problem && Solution](#problem--solution)
-    - [In-Cell](#in-cell)
-        - [Description](#description-2)
-        - [Usage](#usage-2)
-        - [Example](#example-2)
-    - [ICSD' Classify And Unique](#icsd-classify-and-unique)
-        - [Description](#description-3)
-        - [Usage](#usage-3)
-        - [Example](#example-3)
-    - [CSD' Classify](#csd-classify)
-        - [Description](#description-4)
-        - [Usage](#usage-4)
-        - [Example](#example-4)
-    - [Format](#format)
-        - [Description](#description-5)
-        - [Usage](#usage-5)
-        - [Example](#example-5)
+  - [Installation](#installation)
+    - [Environment](#environment)
+    - [Compile](#compile)
+    - [Configuration](#configuration)
+  - [Remove Solvents](#remove-solvents)
+    - [Description](#description)
+    - [Usage](#usage)
+    - [Example](#example)
+  - [Find Space Groups](#find-space-groups)
+    - [Description](#description-1)
+    - [Usage](#usage-1)
+    - [Example](#example-1)
+    - [Problem &amp;&amp; Solution](#problem-ampamp-solution)
+  - [In-Cell](#in-cell)
+    - [Description](#description-2)
+    - [Usage](#usage-2)
+    - [Example](#example-2)
+  - [ICSD' Classify And Unique](#icsd-classify-and-unique)
+    - [Description](#description-3)
+    - [Usage](#usage-3)
+    - [Example](#example-3)
+  - [CSD' Classify](#csd-classify)
+    - [Description](#description-4)
+    - [Usage](#usage-4)
+    - [Example](#example-4)
+  - [Format](#format)
+    - [Description](#description-5)
+    - [Usage](#usage-5)
+    - [Example](#example-5)
+  - [Splice Molecule](#splice-molecule)
+    - [Description](#description-6)
+    - [Usage](#usage-6)
+    - [Example](#example-6)
 
 <!-- /TOC -->
 # MOFkit
@@ -721,12 +725,50 @@ options:
 
 **convert to gaussion file**
 ```
-./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t gjf
+$ ./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t gjf
 ```
 
 **convert to vasp file**
 ```
-./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t vasp
+$ ./bin/format -i ./examples/cod/WAJZUE.cif -o ./examples/result -t vasp
 ```
+
+---
+
+
+## Splice Molecule
+
+### Description
+
+The program is used to splice A and B molecules according to specified atoms.
+
+### Usage
+
+```
+usage: ./bin/splice_molecule --molecule_a=string --molecule_b=string --output=string --type=string --connect_a=int --connect_b=int [options] ...
+options:
+  -a, --molecule_a    path of the molecule A (string)
+  -b, --molecule_b    path of the molecule B (string)
+  -o, --output        the output path (string)
+  -t, --type          the type of the result format(gjf/xyz), convert format to gaussion format or xyz format (string)
+  -i, --connect_a     the serial number of connect site in molecule A (int)
+  -j, --connect_b     the serial number of connect site in molecule B (int)
+  -?, --help          print this message
+```
+
+### Example
+
+```
+$ ./bin/splice_molecule -a ./examples/mol/molecule-A-label.mol -b ./examples/mol/molecule-B-label.mol -i 31 -j 7 -t gjf -o ./examples/mol
+```
+
+**Molecule A**
+![mol A](./images/mol_A.png)
+
+**Molecule B**
+![mol B](./images/mol_B.png)
+
+**Splice Result**
+![mol A&B](./images/mol_A&B.png)
 
 ---
