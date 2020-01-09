@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const string conf_dir = "../conf/";
+const string conf_dir = "./conf/";
 
 /* export */
 void export_gaussion_format_result(string input, string output, string mode, string coord_type, CIF &cif);
@@ -90,6 +90,10 @@ void export_gaussion_format_result(string input, string output, string mode, str
 
     string basic = conf_dir + "opt-freq.conf";
     ifstream in(basic, ios::in);
+
+    if(!in) {
+        cerr << "gaussion opt-freq.conf not found!" << endl;
+    }
     string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
     in.close();
 

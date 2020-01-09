@@ -1,5 +1,5 @@
-#ifndef IO_HELPER_H
-#define IO_HELPER_H
+#ifndef CIF_H
+#define CIF_H
 
 #include <string>
 #include <fstream>
@@ -695,7 +695,7 @@ private:
         
     }
 
-    double clac_distance(vector<double> &a_cd, vector<double> &b_cd) {
+    double calc_distance(vector<double> &a_cd, vector<double> &b_cd) {
         // coordinate transformation
         vector<double> a_cart = frac2cart(a_cd);
         vector<double> b_cart = frac2cart(b_cd);
@@ -716,7 +716,7 @@ private:
                 vector<double> a_cd = a->second;
                 vector<double> b_cd = b->second;            
 
-                double distance = clac_distance(a_cd, b_cd);
+                double distance = calc_distance(a_cd, b_cd);
 
                 string name = a->first + "-" + b->first;
 

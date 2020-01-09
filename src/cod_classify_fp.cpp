@@ -46,13 +46,18 @@ int main(int argc, char *argv[]) {
         cout << "COD data not found!" << endl;
     }
 
-    map<string, vector<string>> files;
-    get_res(log);
+    try {
+        map<string, vector<string>> files;
+        get_res(log);
+    }
+    catch(Exception err) {
+        cerr << err.msg << endl;    
+    }
     
     // parse log
     ifstream in(log_file, ios::in);
     if(!in.is_open()) {
-        throw Exception(log_file + " does not exist or fails to open!");
+        cout << log_file + " does not exist or fails to open!" << endl;
     }
     else {
         string str((std::istreambuf_iterator<char>(in)), std::istreambuf_iterator<char>());
@@ -76,20 +81,30 @@ int main(int argc, char *argv[]) {
         }
         else {
             for(int i = 0; i < files.size(); i++) {
-                CIF a_cif = CIF(input + "/" + files[i], log);
-                a_cif.parse_file();
-                for(int j = i + 1; j < files.size(); j++) {
-                    CIF b_cif = CIF(input + "/" + files[j], log);
-                    b_cif.parse_file();
-                    double sim = get_cif_similarity(a_cif, b_cif);
+                try {
+                    CIF a_cif = CIF(input + "/" + files[i], log);
+                    a_cif.parse_file();
+                    for(int j = i + 1; j < files.size(); j++) {
+                        CIF b_cif = CIF(input + "/" + files[j], log);
+                        b_cif.parse_file();
+                        double sim = get_cif_similarity(a_cif, b_cif);
 
-                    lout.flags(ios::fixed);
-                    lout.precision(8);
-                    lout << setw(50) << left << files[i] << setw(50) << left << files[j] << setw(20) << left << sim << endl;
+                        lout.flags(ios::fixed);
+                        lout.precision(8);
+                        lout << setw(50) << left << files[i] << setw(50) << left << files[j] << setw(20) << left << sim << endl;
+                    }
+                }
+                catch(Exception err) {
+                    if(log) {
+                        cerr << err.msg << endl;
+                    }
+
+                    if(err.msg.find("Error:") != string::npos) {
+                        cp_file(files[i], output + "/error_file/");
+                    }
                 }
             }
         }
-
         lout.close();
     }
     return 0;
