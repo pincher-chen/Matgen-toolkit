@@ -181,7 +181,7 @@ int main(int argc, char *argv[]) {
             }
         }
 
-        cout << "Theta: " << theta << endl;
+        // cout << "Theta: " << theta << endl;
         // for(auto i : T) {
         //     printVec(i);
         //     cout << endl;
@@ -203,15 +203,12 @@ int main(int argc, char *argv[]) {
         // 得到偏移矩阵
         vector<double> offset;
 
-        printVec(b_point);
-        cout << endl;
-
         for(int i = 0; i < b_point.size(); i++) {
             offset.push_back(b_point[i] - new_atoms_cd[indexB][i]);
         }
 
-        printVec(offset);
-        cout << endl;
+        // printVec(offset);
+        // cout << endl;
 
 
         // 坐标加上偏移
@@ -222,8 +219,9 @@ int main(int argc, char *argv[]) {
         }
 
         double minX, minY, minZ, maxX, maxY, maxZ;
-        maxX = maxY = maxZ = DBL_MIN;
+        maxX = maxY = maxZ = -1 * DBL_MAX;
         minX = minY = minZ = DBL_MAX;
+
         for(auto &item : new_atoms_cd) {
             double x = item[0];
             double y = item[1];
@@ -243,14 +241,14 @@ int main(int argc, char *argv[]) {
         newVec.push_back(new_atoms_cd[indexB][1] - (minY + maxY) / 2);
         newVec.push_back(new_atoms_cd[indexB][2] - (minZ + maxZ) / 2);
 
-        printVec(newVec);
-        cout << endl;
+        // printVec(newVec);
+        // cout << endl;
         
-        printVec(oppVecA);
-        cout << endl;
+        // printVec(oppVecA);
+        // cout << endl;
 
-        double _tmp = (newVec[0] * oppVecA[0] + newVec[1] * oppVecA[1] + newVec[2] * oppVecA[2]) / (calc_vector_length(oppVecA) * calc_vector_length(newVec));
-        cout << acos(_tmp) << endl;
+        // double _tmp = (newVec[0] * oppVecA[0] + newVec[1] * oppVecA[1] + newVec[2] * oppVecA[2]) / (calc_vector_length(oppVecA) * calc_vector_length(newVec));
+        // cout << acos(_tmp) << endl;
 
         // print
         string name;

@@ -37,7 +37,7 @@ public:
     Molecule(string _filename) {
         this->filename = _filename;
 
-        maxX = maxY = maxZ = DBL_MIN;
+        maxX = maxY = maxZ = -1 * DBL_MAX;
         minX = minY = minZ = DBL_MAX;
     }
 
