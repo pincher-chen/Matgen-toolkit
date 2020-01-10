@@ -11,7 +11,6 @@ int main(int argc, char *argv[]) {
     cmdline::parser parser;
     parser.add<string>("input_dir", 'i', "csd folder location", true, "");
     parser.add<string>("output_dir", 'o', "classification result export location", true);
-    parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
     parser.add<string>("remove", 'r', "only remove the cif which contains special elements or special bonds(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds)", false, "");
     parser.add<string>("keep", 'k', "only keep the cif which contains special elements and special bond(the input form likes special meatal/special bonds(Fe|Cu/Fe-O|C-O&C-H) or only input one of them, please use '/' as separators for elements and bonds", false, "");
     parser.add("log", 'l', "print the detail log, no log by default");
@@ -22,20 +21,6 @@ int main(int argc, char *argv[]) {
     if (argc == 1 || parser.exist("help")) {
         cout << parser.usage();
         return 0;
-    }
-
-    double skin_distance = 0.25;
-    double coefficient = 0;
-    if(parser.exist("skin_distance")) {
-        double distance = parser.get<double>("distance");
-        if(distance < 1.0) {
-            skin_distance = distance;
-            coefficient = -1.0;
-        }
-        else {
-            coefficient = distance;
-            skin_distance = -1.0;
-        }
     }
 
     bool log = false;
@@ -166,9 +151,9 @@ int main(int argc, char *argv[]) {
             }
             
             // judge whether contain disorder-molecule
-            cif.build_base_cell(skin_distance, coefficient);
+            cif.build_base_cell();
             satisfy = cif.judge_if_have_disorder();
-            if(!satisfy) {
+            if(satisfy) {
                 if(log) {
                     cout << item << " contains disorder-molecule!" << endl << endl;
                 }
@@ -219,8 +204,8 @@ int main(int argc, char *argv[]) {
                 }
             }
             if(!satisfy) {
+                cp_file(item, output + "/csd_solvent/");
                 if(log) {
-                    cp_file(item, output + "/csd_solvent/");
                     cout << item << " contains known solvent!" << endl << endl;
                 }
                 continue;

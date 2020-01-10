@@ -762,6 +762,9 @@ options:
 $ ./bin/splice_molecule -a ./examples/mol/molecule-A-label.mol -b ./examples/mol/molecule-B-label.mol -i 31 -j 7 -t gjf -o ./examples/mol
 ```
 
+> the red box represents the specified spliced atom
+
+
 **Molecule A**
 ![mol A](./images/mol_A.png)
 

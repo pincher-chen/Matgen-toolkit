@@ -243,7 +243,7 @@ class rmsolvent:
     @staticmethod
     def atom_radius():
         radius_list = []
-        with open('./conf/raduis.txt', 'r') as f:
+        with open('./conf/radius.txt', 'r') as f:
             data = f.readlines()
         for line in data:
             radius_dict = {}

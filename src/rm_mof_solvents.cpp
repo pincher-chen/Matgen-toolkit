@@ -9,7 +9,6 @@ int main(int argc, char *argv[]) {
     cmdline::parser parser;
     parser.add<string>("cif_in", 'i', "input MOF cif file", true, "");
     parser.add<string>("output_path", 'o', "output filepath", false);
-    parser.add<double>("skin_distance", 'd', "the skin distance(coefficient) you want to use", false, 0.25);
     parser.add("force", 'f', "remove solvent molecules anyway");
 
     parser.parse_check(argc, argv);
@@ -17,20 +16,6 @@ int main(int argc, char *argv[]) {
     if (argc == 1 || parser.exist("help")) {
         cout << parser.usage();
         return 0;
-    }
-
-    double skin_distance = 0.25;
-    double coefficient = 0;
-    if(parser.exist("skin_distance")) {
-        double distance = parser.get<double>("distance");
-        if(distance < 1.0) {
-            skin_distance = distance;
-            coefficient = -1.0;
-        }
-        else {
-            coefficient = distance;
-            skin_distance = -1.0;
-        }
     }
 
     string output = "";
@@ -49,7 +34,7 @@ int main(int argc, char *argv[]) {
     try {
         cif.parse_file();
         cif.get_known_res();
-        cif.build_base_cell(skin_distance, coefficient);
+        cif.build_base_cell();
         cif.find_solvent();        
         if(!output.empty()) {
             cif.export_modify_result(output, isForce);

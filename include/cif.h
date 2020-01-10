@@ -75,7 +75,7 @@ public:
     }
 
     // build base cell
-    void build_base_cell(double skin_distance, double coefficient) noexcept(false) {
+    void build_base_cell() noexcept(false) {
         if(log) {
             cout << "Building base cell..." << endl;
         }
@@ -84,7 +84,7 @@ public:
         }
 
         calc_bond_distance();
-        judge_if_have_bond(skin_distance, coefficient);
+        judge_if_have_bond();
         connect_network();
     }
 
@@ -97,6 +97,7 @@ public:
         vector<string> chem_list;
         for(auto &chem : this->atom_conn_set) {
             string formula = get_chem_formula(chem);
+            // cout << formula << endl;
             chem_list.push_back(formula);
 
             bool isAdd = false;
@@ -272,7 +273,7 @@ public:
             double radius_a = get_num(a->second.radius);
             double radius_b = get_num(b->second.radius);
 
-            if(distance - radius_a - radius_b < 0.7) {
+            if(distance < 0.5 * (radius_a + radius_b)) {
                 return true;
             }
         }
@@ -664,7 +665,7 @@ private:
                 string atom_site = atom_info[atom_site_index];
 
                 string key = atom_site + "-" + species;
-            
+                
                 this->atom_cd[key] = vector<double>{x, y, z};
                 this->atoms.insert(species);
             }
@@ -727,12 +728,19 @@ private:
         // printMap(this->atom_dist);
     }
 
-    void judge_if_have_bond(double skin_distance, double coefficient) noexcept(false) {
+    void judge_if_have_bond() noexcept(false) {
         for(auto iter = this->atom_dist.begin(); iter != this->atom_dist.end(); iter++) {
             vector<string> values = del_split(iter->first, '-');
 
+            // printVec(values);
+            // cout << endl;
+
             string atom_a = values[1];
             string atom_b = values[3];
+
+            // cout << values[0] << " " << values[2] << endl;
+
+            // cerr << atom_a << " " << atom_b << endl;
             double distance = iter->second;
 
             auto a = radius_dict.find(atom_a), b = radius_dict.find(atom_b);
@@ -750,25 +758,12 @@ private:
             double radius_a = get_num(a->second.radius);
             double radius_b = get_num(b->second.radius);
 
-            if(skin_distance > 0) {
-                double bond_ab = distance - radius_a - radius_b;
-                if(bond_ab < skin_distance) {
-                    this->have_bond_list.push_back(iter->first);
-                    this->connect_list.push_back(Connected(values[0], values[2]));
-
-                    this->bonds.insert(Connected(values[1], values[3]));
-                    this->bonds.insert(Connected(values[3], values[1]));
-                }
-            }
-            else {
-                double bond_ab = (radius_a + radius_b) * coefficient;
-                if(distance < bond_ab) {
-                    this->have_bond_list.push_back(iter->first);
-                    this->connect_list.push_back(Connected(values[0], values[2]));
-                    
-                    this->bonds.insert(Connected(values[1], values[3]));
-                    this->bonds.insert(Connected(values[3], values[1]));
-                }
+            if(distance <= 1.2 * (radius_a + radius_b) && distance >= 0.5 * (radius_a + radius_b)) {
+                this->have_bond_list.push_back(iter->first);
+                this->connect_list.push_back(Connected(values[0], values[2]));
+                
+                this->bonds.insert(Connected(values[1], values[3]));
+                this->bonds.insert(Connected(values[3], values[1]));
             }
         }
         // printVec(this->have_bond_list);
@@ -792,6 +787,7 @@ private:
         map<string, string> atom_rel;
         
         for(auto item : this->connect_list) {
+            // cerr << item.atom_a << " " << item.atom_b << endl;
             atom_rel[item.atom_a] = item.atom_a;
             atom_rel[item.atom_b] = item.atom_b;
         }
