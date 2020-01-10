@@ -93,12 +93,15 @@ $$P^{'} = T * P $$
 ## Example
 
 **Molecule A**
+
 ![mol A](../images/mol_A.png)
 
 **Molecule B**
+
 ![mol B](../images/mol_B.png)
 
 **Splice Result**
+
 ![mol A&B](../images/mol_A&B.png)
 
 ## Reference
