@@ -58,6 +58,8 @@
 * The program `Find Space Groups` is based on [spglib](https://github.com/atztogo/spglib). To use this function, you need to install and configure spglib. 
   ```shell
   $ git clone https://github.com/atztogo/spglib.git
+  $ module load gcc/5.4.0 (load gcc environment, this command only works if you use module tool in supercomputer/cluster)
+  $ module load cmake/3.5.1 (load cmake environment)
   $ cd spglib
   $ mkdir _build
   $ cd _build
