@@ -133,9 +133,12 @@ map<string, set<vector<double>>> in_cell(CIF &cif) {
                     
         int size = symm_arr.size();
         for(int i = 0; i < size; i++) {
-            double x = modify_num(symm_arr[i][0][0] * iter->second[0] + trans_arr[i][0]);
-            double y = modify_num(symm_arr[i][1][1] * iter->second[1] + trans_arr[i][1]);
-            double z = modify_num(symm_arr[i][2][2] * iter->second[2] + trans_arr[i][2]);
+//             double x = modify_num(symm_arr[i][0][0] * iter->second[0] + trans_arr[i][0]);
+//             double y = modify_num(symm_arr[i][1][1] * iter->second[1] + trans_arr[i][1]);
+//             double z = modify_num(symm_arr[i][2][2] * iter->second[2] + trans_arr[i][2]);
+            double x = modify_num(symm_arr[i][0][0] * iter->second[0] + symm_arr[i][0][1] * iter->second[1] + symm_arr[i][0][2] * iter->second[2] + trans_arr[i][0]);
+            double y = modify_num(symm_arr[i][1][0] * iter->second[0] + symm_arr[i][1][1] * iter->second[1] + symm_arr[i][1][2] * iter->second[2] + trans_arr[i][1]);
+            double z = modify_num(symm_arr[i][2][0] * iter->second[0] + symm_arr[i][2][1] * iter->second[1] + symm_arr[i][2][2] * iter->second[2] + trans_arr[i][2]);
             all_atoms[species].insert(vector<double> {x, y, z});
         }
 
