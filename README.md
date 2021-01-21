@@ -67,7 +67,7 @@
   $ make
   $ make install
   ```
-### Configuration for *_fp_.cpp
+### Configuration for *_fp_*.cpp
 ```
 module load  gcc/5.4.0
 module load  LAPACK/3.8.0-gcc-5.4.0
