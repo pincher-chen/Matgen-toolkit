@@ -67,6 +67,13 @@
   $ make
   $ make install
   ```
+### Configuration for *_fp_.cpp
+```
+module load  gcc/5.4.0
+module load  LAPACK/3.8.0-gcc-5.4.0
+g++ ./src/icsd_classify_fp.cpp -o icsd_classify_fp -std=c++11 -L/WORK/app/LAPACK/3.8.0-gcc-5.4.0/lib64 -llapack -lblas -ltmglib
+```
+
 
 ---
 
